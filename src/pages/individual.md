@@ -2,6 +2,7 @@
 title: Getting started
 pageTitle: Prodigy - Get the most out of your Prodigy system.
 description: Your Prodigy account includes powerful tools to help with your training management.
+layout: user
 ---
 
 Learn how to get Prodigy up and running for your organization. {% .lead %}

@@ -2,7 +2,8 @@ import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import '../styles/globals.css'
 
-import { Layout } from '@/components/Layout'
+import DefaultLayout from '@/components/DefaultLayout'
+import UserLayout from '@/components/UserLayout'
 
 import 'focus-visible'
 import '@/styles/tailwind.css'
@@ -62,15 +63,28 @@ export default function App({ Component, pageProps }) {
     ? collectHeadings(pageProps.markdoc.content)
     : []
 
+  // Determine the layout to use
+  const layout = pageProps.markdoc?.frontmatter.layout || 'default'
+  console.log('Selected layout:', layout)
+
+  const LayoutComponent = {
+    default: DefaultLayout,
+    user: UserLayout,
+  }[layout]
+
+  if (!LayoutComponent) {
+    throw new Error(`No layout found for layout type: ${layout}`)
+  }
+
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
       </Head>
-      <Layout title={title} tableOfContents={tableOfContents}>
+      <LayoutComponent title={title} tableOfContents={tableOfContents}>
         <Component {...pageProps} />
-      </Layout>
+      </LayoutComponent>
     </>
   )
 }

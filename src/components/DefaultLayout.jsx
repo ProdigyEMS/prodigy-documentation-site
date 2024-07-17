@@ -44,16 +44,14 @@ const navigation = [
       { title: 'Complete Class for User', href: '/docs/complete-class' },
       { title: 'Import Classes to NREMT', href: '/docs/import-to-nremt' },
       { title: 'Reporting', href: '/docs/reporting' }
-
     ],
   },
   {
     title: 'Purchasing Prodigy',
     links: [
-      { title: 'How is Prodigy Purcahsed?', href: '/docs/purchase' },
+      { title: 'How is Prodigy Purchased?', href: '/docs/purchase' },
       { title: 'Using Handtevy', href: '/docs/handtevy' },
-      { title: 'Contact Sales', href: '/docs/contactSales' },
-
+      { title: 'Contact Sales', href: '/docs/contactSales' }
     ],
   },
   {
@@ -65,7 +63,6 @@ const navigation = [
     ],
   },
 ]
-
 
 function Header({ navigation }) {
   let [isScrolled, setIsScrolled] = useState(false)
@@ -152,7 +149,7 @@ function useTableOfContents(tableOfContents) {
   return currentSection
 }
 
-export function Layout({ children, title, tableOfContents }) {
+export default function DefaultLayout({ children, title, tableOfContents }) {
   let router = useRouter()
   let isHomePage = router.pathname === '/'
   let allLinks = navigation.flatMap((section) => section.links)
