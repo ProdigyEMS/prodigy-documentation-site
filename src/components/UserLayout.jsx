@@ -16,8 +16,8 @@ const userNavigation = [
   {
     title: 'User Dashboard',
     links: [
-      { title: 'Overview', href: '/user' },
-      { title: 'Profile', href: '/user/profile' },
+      { title: 'Getting Started', href: '/individual' },
+      { title: 'Profile', href: '/docs/user/full-demo' },
       { title: 'Settings', href: '/user/settings' },
     ],
   },
