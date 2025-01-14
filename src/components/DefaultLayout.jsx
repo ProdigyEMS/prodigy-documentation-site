@@ -26,7 +26,8 @@ const navigation = [
       { title: 'Managing Users', href: '/docs/user-management' },
       { title: 'Certifications', href: '/docs/certifications' },
       { title: 'Certification Alerts', href: '/docs/alerts' },
-      { title: 'Managing Groups', href: '/docs/groups' }
+      { title: 'Managing Groups', href: '/docs/groups' },
+      { title: 'Organization View', href: '/docs/organization' }
     ],
   },
   {
