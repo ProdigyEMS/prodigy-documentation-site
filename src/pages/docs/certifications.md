@@ -4,7 +4,7 @@ description: Learn how to management certifications in your Prodigy account.
 ---
 
 The certifications section allows you to add certifications for individuals and report on certification status.  
-{%videoplayer src="https://cdn.jwplayer.com/videos/Li5tvWkb-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/docs-video-posters/Copy+of+Video+Poster+(1).png" /%}
+{%videoplayer src="https://cdn.jwplayer.com/videos/ZmRZWMnV-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/docs-video-posters/Copy+of+Video+Poster+(1).png" /%}
 ---
 
 ## Report on Certifications
