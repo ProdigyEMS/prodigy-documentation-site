@@ -4,7 +4,7 @@ description: Learn how to use Prodigy to manage your Handtevy provider course.
 ---
 
 If you are using Prodigy for your Handtevy online training, this article will walk you through the process.
-{%videoplayer src="https://cdn.jwplayer.com/videos/ULFKyxHU-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/docs-video-posters/Copy+of+Video+Poster.png" /%}
+{%videoplayer src="https://cdn.jwplayer.com/videos/rPGvLo70-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/docs-video-posters/Copy+of+Video+Poster.png" /%}
 
 ---
 ## Using Prodigy for Handtevy

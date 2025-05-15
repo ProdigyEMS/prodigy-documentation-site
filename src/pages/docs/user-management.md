@@ -36,7 +36,7 @@ From the users tab, you can see a table of all users in your account and export 
 
 ## Individual User Records
 {%figure src="/images/individual-user.png" atl="User Panel" /%}
-Click on a user from the Users tab to get to their individual record. From here, you can see their training plans and full transcript. From their transcript, you can export individual certificates for your records. You can send them a password reset and change their role within the department. The Employee ID field is used by departments that have set up single sign on, SSO, with us. If your department is interested in integrating Prodigy with other software, please reach out to [Support@prodigyems.com](mailto:Support@prodigyems.com). Finally, you can add and remove individual users from groups from this section.
+Click on a user from the Users tab to get to their individual record. From here, you can see their training plans and full transcript. From their transcript, you can export individual certificates for your records. You can change their role within the department or add and remove them from groups.
 
 ### Employee Status
 There are two options in the employee status section.
