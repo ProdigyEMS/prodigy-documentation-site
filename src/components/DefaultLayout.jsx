@@ -60,6 +60,7 @@ const navigation = [
     links: [
       { title: 'Do you Have an API?', href: '/docs/api' },
       { title: 'Is my Users Data Safe?', href: '/docs/data-safe' },
+      { title: 'URL Allow List', href: '/docs/allow_list' },
       { title: 'Contact Support', href: '/docs/contactSupport' }
     ],
   },
