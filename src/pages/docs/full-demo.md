@@ -8,6 +8,7 @@ This video includes an entire recorded demo of the Prodigy system. We will cover
 ---
 
 ## Video
+
 {%videoplayer src="https://content.jwplatform.com/videos/CqVw2j0j-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/docs-video-posters/full_demo.png" /%}
 This video was published on **May 11th, 2023**
 

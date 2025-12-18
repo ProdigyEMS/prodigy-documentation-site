@@ -1,5 +1,5 @@
 import { DarkMode, Gradient, LightMode } from '@/components/Icon'
-import { SiGoogleclassroom } from "react-icons/si";
+import { SiGoogleclassroom } from 'react-icons/si'
 
 export function AssignIcon({ id, color }) {
   return (
@@ -18,11 +18,19 @@ export function AssignIcon({ id, color }) {
       </defs>
       <LightMode>
         <circle cx={12} cy={12} r={12} fill={`url(#${id}-gradient)`} />
-         <SiGoogleclassroom color="black" size="2rem" className="stroke-custom"/>
+        <SiGoogleclassroom
+          color="black"
+          size="2rem"
+          className="stroke-custom"
+        />
       </LightMode>
 
       <DarkMode>
-        <SiGoogleclassroom fill={`url(#${id}-gradient-dark)`} stroke={`url(#${id}-gradient-dark)`} size="2rem"/>
+        <SiGoogleclassroom
+          fill={`url(#${id}-gradient-dark)`}
+          stroke={`url(#${id}-gradient-dark)`}
+          size="2rem"
+        />
       </DarkMode>
     </>
   )

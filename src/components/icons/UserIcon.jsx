@@ -1,8 +1,6 @@
 import { DarkMode, Gradient, LightMode } from '@/components/Icon'
-import { RiUserAddLine } from "react-icons/ri";
-import { FaUserPlus } from "react-icons/fa"
-
-
+import { RiUserAddLine } from 'react-icons/ri'
+import { FaUserPlus } from 'react-icons/fa'
 
 export function UserIcon({ id, color }) {
   return (
@@ -20,12 +18,18 @@ export function UserIcon({ id, color }) {
         />
       </defs>
       <LightMode>
-        <circle cx={12} cy={12} r={12} fill={`url(#${id}-gradient)`} className="stroke-custom"/>
-         <RiUserAddLine color="black" size="2rem"/>
+        <circle
+          cx={12}
+          cy={12}
+          r={12}
+          fill={`url(#${id}-gradient)`}
+          className="stroke-custom"
+        />
+        <RiUserAddLine color="black" size="2rem" />
       </LightMode>
 
       <DarkMode>
-        <FaUserPlus fill="#10A9EA" size="2rem"/>
+        <FaUserPlus fill="#10A9EA" size="2rem" />
       </DarkMode>
     </>
   )
