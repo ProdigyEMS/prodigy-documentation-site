@@ -21,7 +21,7 @@
     "axios-hooks": "^4.0.0",
     "clsx": "^1.2.1",
     "focus-visible": "^5.2.0",
-    "next": "13.0.2",
+    "next": "14.2.35",
     "next-hubspot": "^1.1.5",
     "postcss-focus-visible": "^6.0.4",
     "postcss-import": "^14.1.0",
