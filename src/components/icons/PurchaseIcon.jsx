@@ -1,6 +1,5 @@
 import { DarkMode, Gradient, LightMode } from '@/components/Icon'
-import { FaRegMoneyBillAlt, FaMoneyBillAlt } from "react-icons/fa";
-
+import { FaRegMoneyBillAlt, FaMoneyBillAlt } from 'react-icons/fa'
 
 export function PurchaseIcon({ id, color }) {
   return (
@@ -19,11 +18,11 @@ export function PurchaseIcon({ id, color }) {
       </defs>
       <LightMode>
         <circle cx={12} cy={12} r={12} fill={`url(#${id}-gradient)`} />
-         <FaRegMoneyBillAlt color="black" size="2rem"/>
+        <FaRegMoneyBillAlt color="black" size="2rem" />
       </LightMode>
 
       <DarkMode>
-        <FaMoneyBillAlt fill="#10A9EA" size="2rem"/>
+        <FaMoneyBillAlt fill="#10A9EA" size="2rem" />
       </DarkMode>
     </>
   )

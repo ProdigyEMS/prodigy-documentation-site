@@ -52,10 +52,13 @@ export function Hero() {
                 Get the most out of Prodigy
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
-                Learn how to use the features of Prodigy to bring your training to the next level. 
+                Learn how to use the features of Prodigy to bring your training
+                to the next level.
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                <Button href="https://frontend.prodigyems.com/login">Log In to Prodigy</Button>
+                <Button href="https://frontend.prodigyems.com/login">
+                  Log In to Prodigy
+                </Button>
               </div>
             </div>
           </div>
@@ -82,7 +85,13 @@ export function Hero() {
                 unoptimized
                 priority
               />
-              <Image  src="/images/prodigy-header.jpg" height="400" width="400" alt="header iamge" className='rounded-lg'/>
+              <Image
+                src="/images/prodigy-header.jpg"
+                height="400"
+                width="400"
+                alt="header iamge"
+                className="rounded-lg"
+              />
             </div>
           </div>
         </div>

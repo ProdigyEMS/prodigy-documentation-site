@@ -27,7 +27,7 @@ const navigation = [
       { title: 'Certifications', href: '/docs/certifications' },
       { title: 'Certification Alerts', href: '/docs/alerts' },
       { title: 'Managing Groups', href: '/docs/groups' },
-      { title: 'Organization View', href: '/docs/organization' }
+      { title: 'Organization View', href: '/docs/organization' },
     ],
   },
   {
@@ -41,10 +41,13 @@ const navigation = [
       { title: 'Training Plan Builder', href: '/docs/training-plan-builder' },
       { title: 'Training Plans', href: '/docs/training-plans' },
       { title: 'Class Assignments', href: '/docs/assignments' },
-      { title: 'Training Plan Assignments', href: '/docs/assign-training-plans' },
+      {
+        title: 'Training Plan Assignments',
+        href: '/docs/assign-training-plans',
+      },
       { title: 'Complete Class for User', href: '/docs/complete-class' },
       { title: 'Import Classes to NREMT', href: '/docs/import-to-nremt' },
-      { title: 'Reporting', href: '/docs/reporting' }
+      { title: 'Reporting', href: '/docs/reporting' },
     ],
   },
   {
@@ -52,7 +55,7 @@ const navigation = [
     links: [
       { title: 'How is Prodigy Purchased?', href: '/docs/purchase' },
       { title: 'Using Handtevy', href: '/docs/handtevy' },
-      { title: 'Contact Sales', href: '/docs/contactSales' }
+      { title: 'Contact Sales', href: '/docs/contactSales' },
     ],
   },
   {
@@ -61,7 +64,7 @@ const navigation = [
       { title: 'Do you Have an API?', href: '/docs/api' },
       { title: 'Is my Users Data Safe?', href: '/docs/data-safe' },
       { title: 'URL Allow List', href: '/docs/allow_list' },
-      { title: 'Contact Support', href: '/docs/contactSupport' }
+      { title: 'Contact Support', href: '/docs/contactSupport' },
     ],
   },
 ]
