@@ -1,7 +1,6 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
 
-
 const tags = {
   callout: {
     attributes: {
@@ -40,7 +39,7 @@ const tags = {
     render: ({ src, poster }) => (
       <videoplayer>
         <video controls autoPlay={false} playsInline poster={poster}>
-                <source src={src} type="video/mp4"/>          
+          <source src={src} type="video/mp4" />
         </video>
       </videoplayer>
     ),

@@ -1,7 +1,7 @@
 export const config = {
-    variables: {
-      user: {
-        name: "James DiClemente",
-      },
+  variables: {
+    user: {
+      name: 'James DiClemente',
     },
-   };
+  },
+}
