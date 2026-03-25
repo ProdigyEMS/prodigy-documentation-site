@@ -4,7 +4,7 @@ description: Learn how to build a survey for a Prodigy class.
 ---
 
 Surveys can be used to collect feedback and information from your providers after they complete a class. You are not required to have a survey as part of a class and the survey questions can be optional.
-{%videoplayer src="https://content.jwplatform.com/videos/9X64XiAR-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/docs-video-posters/survey+builder.png" /%}
+{%videoplayer mediaId="9X64XiAR" /%}
 ---
 ## New Survey
 To get started, choose **Surveys** under the **Classes** menu. 
