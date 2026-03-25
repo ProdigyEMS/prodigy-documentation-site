@@ -16,7 +16,11 @@ export function JWPlayer({ mediaId }) {
     playerDiv.id = playerId
     container.appendChild(playerDiv)
 
+    let scriptEl = null
+    let mounted = true
+
     const init = () => {
+      if (!mounted) return
       window.jwplayer(playerId).setup({
         playlist: `https://cdn.jwplayer.com/v2/media/${mediaId}`,
         width: '100%',
@@ -29,16 +33,20 @@ export function JWPlayer({ mediaId }) {
     } else {
       const existing = document.querySelector(`script[src="${PLAYER_SCRIPT}"]`)
       if (existing) {
+        scriptEl = existing
         existing.addEventListener('load', init)
       } else {
         const script = document.createElement('script')
         script.src = PLAYER_SCRIPT
         script.addEventListener('load', init)
         document.head.appendChild(script)
+        scriptEl = script
       }
     }
 
     return () => {
+      mounted = false
+      if (scriptEl) scriptEl.removeEventListener('load', init)
       try {
         window.jwplayer(playerId).remove()
       } catch (_) {}
