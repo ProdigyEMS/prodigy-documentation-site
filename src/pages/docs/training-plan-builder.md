@@ -4,7 +4,7 @@ description: Learn how to build custom training plans in Prodigy.
 ---
 
 As a training officer, you will be able to create and assign custom training plans using a mix of Prodigy content and your own custom content.
-{%videoplayer src="https://content.jwplatform.com/videos/i8L7BmLT-oKF7OKp9.mp4" poster="/images/training-plan-builder-video.png" /%}
+{%videoplayer mediaId="i8L7BmLT" /%}
 ---
 
 ## Training Plan Section

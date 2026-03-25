@@ -4,7 +4,7 @@ description: Learn how to create an class for your account.
 ---
 
 This guide will walk you through all the features of our class builder. It’s a long guide and we would suggest you watch the video as well. If you are a training officer for multiple departments, you will only need to create a class once and you can then share it with your other departments. Classes that are added here can only be seen by users in your account.
-{%videoplayer src="https://content.jwplatform.com/videos/1yw7from-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/docs-video-posters/create+class.png" /%}
+{%videoplayer mediaId="1yw7from" /%}
 ---
 {% callout title="Class Take Types" %}
 Whether you are creating a Live course and only using Prodigy for tracking, a Live or Virtual Live course that you are using Prodigy for registration, or a distributive course. You will use this class builder to create the class for all of these scenarios.
