@@ -4,7 +4,7 @@ description: This guide will walk you through the assignment functions in Prodig
 ---
 
 This guide will walk you through creating class assignments and reporting on class assignments.
-{%videoplayer src="https://cdn.jwplayer.com/videos/ZACPRtRs-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/docs-video-posters/assignments.png" /%}
+{%videoplayer mediaId="ZACPRtRs" /%}
 ---
 ## Create Assignment
 When you create an assignment each user will get an email alerting them of the assignment and letting them know who assigned it and when it is due. It will also add the assignment to their dashboard and to their assignment tabs. To create and manage assignments click the **Assignments** tab. 

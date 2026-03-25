@@ -1,5 +1,8 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
+import dynamic from 'next/dynamic'
+
+const JWPlayer = dynamic(() => import('@/components/JWPlayer').then((m) => m.JWPlayer), { ssr: false })
 
 
 const tags = {
@@ -34,16 +37,9 @@ const tags = {
   videoplayer: {
     selfClosing: true,
     attributes: {
-      src: { type: String },
-      poster: { type: String },
+      mediaId: { type: String },
     },
-    render: ({ src, poster }) => (
-      <videoplayer>
-        <video controls autoPlay={false} playsInline poster={poster}>
-                <source src={src} type="video/mp4"/>          
-        </video>
-      </videoplayer>
-    ),
+    render: ({ mediaId }) => <JWPlayer mediaId={mediaId} />,
   },
 
   'quick-links': {

@@ -4,7 +4,7 @@ description: Learn how to edit a class that has been published.
 ---
 
 After a class is published, you can edit any part of the class as well as see a few new options from the edit menu.
-{%videoplayer src="https://content.jwplatform.com/videos/jfrHgZeo-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/edit+class.png" /%}
+{%videoplayer mediaId="jfrHgZeo" /%}
 
 ---
 ## Edit Class

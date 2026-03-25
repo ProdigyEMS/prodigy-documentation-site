@@ -4,7 +4,7 @@ description: We cover the most popular reporting features of Prodigy.
 ---
 
 This article will walk you through our standard reports in Prodigy, we can build custom reports as well, reach out to our support team to learn more. 
-{%videoplayer src="https://cdn.jwplayer.com/videos/vdmJnNXG-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/docs-video-posters/reporting.png" /%}
+{%videoplayer mediaId="vdmJnNXG" /%}
 ---
 ## Reports
 These represents the main reports built in to Prodigy under the reporting tab. All of the reports that you see have an option to export to csv at the top of the page. There are other areas of the site where you may report on data including under certifications, users, and assignements. Our team is also able to build custom reports that can be run in real-time or sent automatically. Reach out to our [Support Team](mailto:support@prodigyems.com) if you need a custom report built. 
