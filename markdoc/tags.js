@@ -2,7 +2,12 @@ import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
 import dynamic from 'next/dynamic'
 
-const JWPlayer = dynamic(() => import('@/components/JWPlayer').then((m) => m.JWPlayer), { ssr: false })
+const JWPlayer = dynamic(() => import('@/components/JWPlayer').then((m) => m.JWPlayer), {
+  ssr: false,
+  loading: () => (
+    <div className="aspect-video w-full bg-gray-100 animate-pulse rounded" />
+  ),
+})
 
 
 const tags = {
@@ -37,7 +42,7 @@ const tags = {
   videoplayer: {
     selfClosing: true,
     attributes: {
-      mediaId: { type: String },
+      mediaId: { type: String, required: true, errorLevel: 'critical' },
     },
     render: ({ mediaId }) => <JWPlayer mediaId={mediaId} />,
   },
