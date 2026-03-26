@@ -7,7 +7,7 @@ The Users section of your training officer account gives you access to everythin
 
 To get started, click **Users** in the left sidebar of your training officer account.
 
-{%videoplayer mediaId="2zXIcoVG" /%}
+{%videoplayer mediaId="w2iDRVRe" /%}
 
 ---
 
@@ -29,12 +29,12 @@ There are several ways to add users to your department. If you have questions ab
 
 {%figure src="/images/user-management-2.png" alt="Invite Users modal with email and role fields" /%}
 
-Our recommended option is to invite users individually. Click the **Invite Users** button in the top right of the My Users page. Enter the email address in the **To** field. You can add multiple emails at once by pasting a list, and each one will appear as a separate pill in the field.
+Click the **Invite Users** button in the top right of the My Users page. Enter the email address in the **To** field. You can add multiple emails at once by pasting a list, and each one will appear as a separate email in the field.
 
 Select a **User Role** from the dropdown (General User, Training Officer, or Admin) and click **Send Invite**. Each user will receive an email asking them to join your department. If they don't already have a Prodigy account, they will be prompted to create one. If they already have an account, even with a different email address, they can connect it to your department.
 
 {% callout title="Copy Invitation Link" %}
-The Invite Users modal also includes a **Copy Invitation Link** option. This generates a link that anyone can use to register and join your department. The link can be used multiple times and doesn't expire for a year. We recommend using direct invitations whenever possible for better control over who joins your department.
+The Invite Users modal also includes a Copy Invitation Link option. This generates a link that anyone can use to register and join your department. The link can be used multiple times and doesn't expire for a year. We recommend using direct invitations whenever possible for better control over who joins your department.
 {% /callout %}
 
 ### Invitations Tab
