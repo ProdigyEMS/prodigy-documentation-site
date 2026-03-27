@@ -4,6 +4,7 @@ description: Learn how to create an class for your account.
 ---
 
 This guide will walk you through all the features of our class builder. It’s a long guide and we would suggest you watch the video as well. If you are a training officer for multiple departments, you will only need to create a class once and you can then share it with your other departments. Classes that are added here can only be seen by users in your account.
+<!-- TODO: Update this video with the few new peices in class builder -->
 {%videoplayer mediaId="1yw7from" /%}
 
 ---
