@@ -17,8 +17,12 @@ export function JWPlayer({ mediaId }) {
   useEffect(() => {
     if (!mediaId) return
 
+    setError(false)
+
     const playerId = playerIdRef.current
     const container = containerRef.current
+
+    if (!container) return
 
     // Create a fresh div for JW Player to target imperatively so JW Player's
     // DOM replacement doesn't interfere with React's reconciliation.
