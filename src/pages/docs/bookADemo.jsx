@@ -20,7 +20,7 @@ export default function App() {
         <h2>Book a Demo</h2>
         <p>
           See Prodigy EMS in action. Schedule a personalized demo with one of our
-          sales representatives and learn how Prodigy can streamline your agency's
+          sales representatives and learn how Prodigy can streamline your agency&apos;s
           operations from dispatch to billing.
         </p>
         <div
@@ -29,18 +29,6 @@ export default function App() {
         />
       </div>
 
-      {/* Contact Sales */}
-      <div className="salesSection">
-        <h2>Contact Sales</h2>
-        <p>
-          Have questions or want a custom quote? Fill out the form below and a
-          member of our sales team will be in touch shortly. If you can include
-          the number of clinicians on staff, we can prepare a tailored pricing
-          estimate for your agency.
-        </p>
-        {/* Form will go here */}
-      </div>
-
-    </div>
+</div>
   );
 }
