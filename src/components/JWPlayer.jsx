@@ -15,9 +15,11 @@ export function JWPlayer({ mediaId }) {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    if (!mediaId) return
-
     setError(false)
+  }, [mediaId])
+
+  useEffect(() => {
+    if (!mediaId || error) return
 
     const playerId = playerIdRef.current
     const container = containerRef.current
@@ -85,7 +87,7 @@ export function JWPlayer({ mediaId }) {
         container.innerHTML = ''
       } catch (_) {}
     }
-  }, [mediaId])
+  }, [mediaId, error])
 
   if (!mediaId) {
     return (
@@ -100,7 +102,7 @@ export function JWPlayer({ mediaId }) {
       <div className="aspect-video w-full flex items-center justify-center bg-gray-100 rounded text-sm text-gray-500">
         Video unavailable.{' '}
         <a
-          href={`https://cdn.jwplayer.com/v2/media/${mediaId}`}
+          href={`https://cdn.jwplayer.com/previews/${mediaId}`}
           className="underline ml-1"
           target="_blank"
           rel="noopener noreferrer"
