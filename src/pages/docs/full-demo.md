@@ -3,13 +3,13 @@ title: Full Demo
 description: This guide will provide a full overview of Prodigy.
 ---
 
-This video includes an entire recorded demo of the Prodigy system. We will cover all functions as well as our origin story and philosophy on online education in EMS. Use this calendar link to [schedule your demo](https://meetings.hubspot.com/ryan1574) today, or you can reach out to [Sales@prodigyems.com](mailto:Sales@prodigyems.com).
+This video includes an entire recorded demo of the Prodigy system. We will cover all functions as well as our origin story and philosophy on online education in EMS. Use this calendar link to [schedule your demo](/docs/bookADemo) today, or you can reach out to [Sales@prodigyems.com](mailto:Sales@prodigyems.com).
 
 ---
 
 ## Video
 {%videoplayer mediaId="CqVw2j0j" /%}
-This video was published on **May 11th, 2023**
+This video was published on **April 3rd, 2024**
 
 ## updates
 
