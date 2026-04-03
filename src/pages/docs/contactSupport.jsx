@@ -1,22 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 
 export default function App() {
+  const [formError, setFormError] = useState(false);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "//js.hsforms.net/forms/embed/v2.js";
     script.charset = "utf-8";
     script.type = "text/javascript";
     script.onload = () => {
-      if (window.hbspt) {
+      try {
+        if (!window.hbspt) throw new Error("hbspt not available");
         window.hbspt.forms.create({
           portalId: "4753378",
           formId: "6d3a0119-bce0-467a-aa5e-4b468432844a",
           region: "na1",
           target: "#hubspot-support-form",
         });
+      } catch (_) {
+        setFormError(true);
       }
     };
+    script.onerror = () => setFormError(true);
     document.body.appendChild(script);
     return () => {
       document.body.removeChild(script);
@@ -39,7 +45,14 @@ export default function App() {
           received, and the device or browser you&apos;re using.
         </p>
       </div>
-      <div id="hubspot-support-form" />
+      {formError ? (
+        <p>
+          The support form failed to load. Please email us directly at{" "}
+          <a href="mailto:Support@prodigyems.com">Support@prodigyems.com</a>.
+        </p>
+      ) : (
+        <div id="hubspot-support-form" />
+      )}
     </div>
   );
 }
