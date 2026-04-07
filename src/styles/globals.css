@@ -139,6 +139,23 @@ a.button2:active {
   flex-wrap: wrap;
 }
 
+.form-columns-2 {
+  display: flex !important;
+  gap: 1rem;
+}
+
+.form-columns-2 .hs-form-field {
+  flex: 1;
+}
+
+.form-columns-2 .hs-input {
+  width: 100% !important;
+}
+
+.form-columns-1 .hs-input {
+  width: 100% !important;
+}
+
 @media only screen and (max-width: 513px) {
   .form-columns-2 {
     display: flex !important;

@@ -51,8 +51,7 @@ const navigation = [
     title: 'Purchasing Prodigy',
     links: [
       { title: 'How is Prodigy Purchased?', href: '/docs/purchase' },
-      { title: 'Using Handtevy', href: '/docs/handtevy' },
-      { title: 'Contact Sales', href: '/docs/contactSales' }
+      { title: 'Book a Demo', href: '/docs/bookADemo' }
     ],
   },
   {

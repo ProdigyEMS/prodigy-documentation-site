@@ -1,52 +1,131 @@
 ---
 title: Managing Users
-description: Learn how to management users in your Prodigy account. 
+description: Learn how to manage users in your Prodigy account.
 ---
 
-The user tab on your Prodigy account will give you access to all of the features you need to manage your staff.
-{%videoplayer mediaId="2zXIcoVG" /%}
+The Users section of your training officer account gives you access to everything you need to manage your department's staff, from inviting new users and importing them in bulk to viewing individual training records and managing group assignments.
+
+To get started, click **Users** in the left sidebar of your training officer account.
+
+{%videoplayer mediaId="w2iDRVRe" /%}
 
 ---
-## Adding users
-There are several ways to add users in to your prodigy account, if you have questions about the best option, we are happy to help get you started.
-{%figure src="/images/user-panel.png" atl="User Panel" /%}
-### Invite users
-{%figure src="/images/send-invite.png" caption="Access from Users->Invite New User" atl="User Panel" /%}
-Our recommended option is to invite users individually to Prodigy. When you choose to invite users, they will receive an email asking them to join your organization. If they don’t have an account they will be prompted to create one. If they have an account (even if it’s a different email address) they can connect it to your organization. 
 
-Click Users -> Invite New User. You can paste multiple emails in this box. If you have a list of email addresses, just copy and paste it here and they will all receive a separate invite. Once sent, click on the “Pending Invites” tab to see who hasn’t been accepted yet and send reminders. If you invite a user who is already in your account, they will not receive an invite.
+## Department Users
 
-### Add individual users
-You can add a user in directly as long as their email address is not already in use. Click on Users -> Add New User. We only require a name, email, and user role to get them started. The user will receive an email with their login credentials. 
+{%figure src="/images/user-management-1.png" alt="My Users page showing department users list with filters" /%}
 
-### Bulk upload
-When we first set up your organization, we can bulk upload all of your users. A form will be sent as part of your on boarding package that can be used for bulk upload. Once uploaded, all new users will get an email with their login credentials. We still prefer inviting users over bulk upload since inviting them allows them to set up an account with an existing Prodigy account.  
+The **Department Users** tab shows a table of all users currently in your department. Each row displays the user's name, employee ID, phone, email, role, and status. You can sort the table by clicking on any column header.
 
-### User self registration
-{%figure src="/images/send-link.png" caption="Access from Users->Invite New User" atl="User Panel" /%}
-If you prefer to allow your users to completely manage their own registration, you can choose the self-registration option. This will give you access to a single link that you can send out in bulk, once clicked, anyone with the link can register and be connected to your department. Click Users -> Invite New User -> Copy Invitation Link. Now you can send this link out for registration. 
+Use the filters at the top of the table to narrow down your view. You can filter by **Status** (Active or Inactive), **User Role** (General User, Training Officer, or Admin), and **Groups**. Click the refresh button to reset your filters. To download the current filtered view as a CSV, click the **Export** button in the top right corner of the table.
 
-{% callout type="warning" title="User Already Exists" %}
-If an email address is already in use, even if not in your account, the system will not let you use it again and you will get an error that the account already exists. In these cases, you can invite the user to have them added to your account.
+Click on any user's name to open their individual user record.
+
+## Adding Users
+
+There are several ways to add users to your department. If you have questions about the best option for your organization, we are happy to help get you started.
+
+### Invite Users
+
+{%figure src="/images/user-management-2.png" alt="Invite Users modal with email and role fields" /%}
+
+Click the **Invite Users** button in the top right of the My Users page. Enter the email address in the **To** field. You can add multiple emails at once by pasting a list, and each one will appear as a separate email in the field.
+
+Select a **User Role** from the dropdown (General User, Training Officer, or Admin) and click **Send Invite**. Each user will receive an email asking them to join your department. If they don't already have a Prodigy account, they will be prompted to create one. If they already have an account, even with a different email address, they can connect it to your department.
+
+{% callout title="Copy Invitation Link" %}
+The Invite Users modal also includes a Copy Invitation Link option. This generates a link that anyone can use to register and join your department. The link can be used multiple times and doesn't expire for a year. We recommend using direct invitations whenever possible for better control over who joins your department.
 {% /callout %}
 
-## User Reporting
-{%figure src="/images/user-reporting.png" atl="User Panel" /%}
-From the users tab, you can see a table of all users in your account and export the current view by clicking export in the top right. You can filter this list by Role, Status, and Group.  
+### Invitations Tab
+
+{%figure src="/images/user-management-3.png" alt="Invitations tab showing pending invites with status and resend option" /%}
+
+After sending invitations, switch to the **Invitations** tab to track their status. Each invitation shows the email, invite date, department, role, and current status. Pending invitations will show a **Pending** status along with a **Resend Invite** link if you need to send the email again.
+
+Once a user accepts their invitation, they will be moved to the Department Users tab and the invitation will be removed from this list. If you need to cancel an invitation, select the checkbox next to it and click **Remove Selected**.
+
+You can search invitations by email and filter by status using the controls at the top of the table.
+
+### Upload Users CSV
+
+{%figure src="/images/user-management-4.png" alt="Import Users page with CSV upload area and sample download link" /%}
+
+For adding multiple users at once, click the **Upload Users CSV** button from the My Users page. If you need help with the file format, click **Download a sample CSV** to get a template.
+
+{%figure src="/images/user-management-5.png" alt="Sample CSV format showing required columns" /%}
+
+Your CSV file should include the following columns: **firstname**, **lastname**, **email**, **role**, and **employee_id**. The role column should contain one of the three available roles: general user, training officer, or admin. The employee_id column is optional. Drag and drop your file or click to upload. The file must be a .csv under 25 MiB.
+
+#### Review and Confirm
+
+{%figure src="/images/user-management-6.png" alt="Review and Confirm screen showing imported user details with department and role dropdowns" /%}
+
+After uploading, you will see a **Review and Confirm** screen showing each user that will be imported. The Department and Role columns are dropdowns, so you can update them here before importing. You can also remove any users you don't want to import by clicking the trash icon.
+
+When everything looks correct, click **Import Users** to complete the process. If you need to make changes to your CSV, click **Back to Import Users** to start over.
+
+#### Import Summary
+
+{%figure src="/images/user-management-7.png" alt="Import Summary showing Created, Updated, Invited, and Skipped tabs" /%}
+
+After the import completes, you will see an **Import Summary** with four tabs:
+
+* **Created** - Brand new users who did not have a Prodigy account. These users are added directly to your department and will receive login credentials via email.
+* **Updated** - Existing users in your department whose information was updated based on the CSV.
+* **Invited** - Users who already have a Prodigy account but are not in your department. These users will receive an invitation email and will see the invite on their dashboard when they log in.
+* **Skipped** - Users who could not be imported. Click this tab to see details on why they were skipped.
+
+You can search by email within each tab to find specific users. Click **Got It** when you are done reviewing.
+
+{% callout type="warning" title="Existing Email Addresses" %}
+If an email address is already in use on Prodigy, even if not in your department, the system will not create a new account. Instead, that user will receive an invitation to join your department.
+{% /callout %}
 
 ## Individual User Records
-{%figure src="/images/individual-user.png" atl="User Panel" /%}
-Click on a user from the Users tab to get to their individual record. From here, you can see their training plans and full transcript. From their transcript, you can export individual certificates for your records. You can change their role within the department or add and remove them from groups.
 
-### Employee Status
-There are two options in the employee status section.
+Click on any user's name from the Department Users tab to open their individual record. The user record has three tabs: **User Profile**, **Training Plans**, and **Transcripts**.
 
-#### Remove user
-This will remove a user from your account. Once removed, you won't have access to see their records. A user will never lose their account, it will just be disassociated from your organization. They will still be able to log in and see their training records but they will no longer have access to your department's training and will need to purchase a bundle to continue to use the system.
+### User Profile
 
-#### Inactive and Active
-An inactive user will still have full access to the system, this setting is used to assist with reporting. Typically, users who are gone for extended periods of time (military deployment, college, etc.) are marked as inactive since they may not be required to complete training requirements.
+{%figure src="/images/user-management-8.png" alt="User Profile showing contact info, department role, groups, status, and password reset" /%}
 
-{% callout title="Accidental Deletion" %}
-If you accidentally delete a user, simply invite them back to the department and no records will be lost. 
+The User Profile shows the user's basic information on the left side, including their name, email, phone number, employee ID, and EMS ID. Phone number and EMS ID are set by the user on their own account and cannot be edited by training officers. Employee ID can be edited by clicking the pencil icon next to it.
+
+On the right side, you will find several management sections:
+
+**Department Role** allows you to change the user's role within your department using the dropdown. The available roles are General User, Training Officer, and Admin.
+
+**Groups** shows which groups the user belongs to. Groups are created by your department and can be used to organize users for reporting and assignments. Click **Add To Group** to add them to a new group, or click **Remove** next to any group to take them out.
+
+**Member Status** controls whether the user is Active or Inactive in your department. Toggling a user to Inactive removes their access to Prodigy and removes them from billing. This is designed for temporary leave situations like military deployment or extended time off, since you can toggle them back to Active at any time to restore access.
+
+**Remove Member** removes the user from your department entirely. This does not delete their Prodigy account. The user retains access to their personal records on Prodigy but will no longer be able to access department-specific data, training, or resources. They will need to purchase a bundle to continue using the system individually.
+
+{% callout title="Accidental Removal" %}
+If you accidentally remove a user, simply invite them back to the department and no records will be lost.
+{% /callout %}
+
+**Password** allows you to send a password reset email to the user by clicking **Send Password Reset**.
+
+### Training Plans
+
+{%figure src="/images/user-management-9.png" alt="Training Plans tab showing plan progress with requirement categories" /%}
+
+The **Training Plans** tab shows the user's progress on any assigned training plans. If the user has multiple training plans, use the **Select Training Plan** dropdown in the top right to switch between them.
+
+Each training plan displays the plan name, certification period, and overall progress as both hours completed and a percentage. Below that, the **All Requirements** section breaks down progress by requirement category, showing hours completed toward each requirement group. Click on a category to expand it and see the individual classes counted toward that requirement.
+
+### Transcripts
+
+{%figure src="/images/user-management-10.png" alt="Transcripts tab showing completed classes with filters and certificate downloads" /%}
+
+The **Transcripts** tab shows a complete record of the user's class completions. Each row displays the class name, creation date, take type, duration, registration date, completion date, and CAPCE number if applicable.
+
+Use the filters at the top to narrow the list by **Take Type** (Distributive, Live, or both) and **Credit Type**. You can also search by class name. Click **Export** to download the filtered transcript as a CSV.
+
+The **Certificate** column provides a PDF download icon for each completed class, allowing you to download individual certificates for your records.
+
+{% callout type="warning" title="Deleting Transcript Records" %}
+The trash icon next to each transcript row will delete that completion record from the user's transcript. Use this carefully. If a record is deleted by mistake, contact Prodigy support and we can restore it.
 {% /callout %}

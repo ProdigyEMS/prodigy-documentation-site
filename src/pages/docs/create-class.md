@@ -4,7 +4,9 @@ description: Learn how to create an class for your account.
 ---
 
 This guide will walk you through all the features of our class builder. It’s a long guide and we would suggest you watch the video as well. If you are a training officer for multiple departments, you will only need to create a class once and you can then share it with your other departments. Classes that are added here can only be seen by users in your account.
+
 {%videoplayer mediaId="1yw7from" /%}
+
 ---
 {% callout title="Class Take Types" %}
 Whether you are creating a Live course and only using Prodigy for tracking, a Live or Virtual Live course that you are using Prodigy for registration, or a distributive course. You will use this class builder to create the class for all of these scenarios.
@@ -36,6 +38,9 @@ This page is where you will set basic information such as name, description, and
 * **Class Image** - This will show up on both the class page and catalog. The image will be scaled to fit both areas, but the recommended size is listed below the input. You can drag and drop an image or click the box to upload.
 {%figure src="/images/catalog-class-creation.png" atl="Add Class" /%}
 {%figure src="/images/classpage-create-class.png" atl="Add Class" /%}
+### Departments Authorized
+{%figure src="/images/class-creation-1.png" atl="Add Class" /%}
+This section is for users who are training officers in more than one department or for organizations. Departments with **Read Access** can view and assign the course. Departments with **Edit Access** have full control over the class.
 ### Take Types
 The take type allows you to choose how you will be offering this class. You can choose either one or both of the take types.
 * **Distributive** - Traditional online class, if selected you will be able to add different segments to the class as well as a post-class test.
@@ -141,7 +146,10 @@ To **reorder** questions, grab the area next to the question number and drag and
 {%figure src="/images/edit-question.png" atl="Add Class" /%}
 #### Quiz Options
 To add a new question, click the **Add Quiz Question** button. The **Passing Score** represents the required total score for a user to pass a quiz, the default is 80%.  If you want each user to see the questions presented in a random order, click the **Shuffle Quiz Questions** option. If you choose **Hide correct answers in results**, the student will see their score but not the correct answers.
-{%figure src="/images/quiz-options-feedback.png" atl="Add Class" /%}
+#### Quiz Bank
+If you check the **Enable question limit per attempt** the system will randomly generate a quiz using the number of questions entered in the **Number of questions per attempt** box. If this is left unckecked, the quiz will include all questions
+
+{%figure src="/images/quiz-options-3.png" atl="Add Class" /%}
 {% callout type="warning" title="Quiz Validation" %}
 When you publish a quiz, we will run validation to make sure the quiz meets certain criteria. There are 2 errors that we see commonly. **Correct answer index must be set for multiple-choice** - This is caused when you have not selected a correct answer for a question. **Every question must have unique answers** - You cannot have the same possible answer twice on a question. 
 {% /callout %}

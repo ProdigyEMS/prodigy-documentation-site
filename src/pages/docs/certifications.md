@@ -25,7 +25,13 @@ Users or a training officer can upload images to a certification record. You can
 A training officer or a user can add an individual certification to an account.
 ### Adding a Certification
 {%figure src="/images/add-cert.png" atl="Certification Panel" /%}
-You will first select the user you will be adding the certification to. Next, select the certification type, the other options will change based on this selection. The 2 most common certifications are NREMT and State EMS Certification. State and City are required for State EMS Certification and NREMT, as we are required to report these to CAPCE. We also use the state to help build more accurate training plans. The certification number is important and you should take care to add any leading letters along with the number. For example, the M at the beginning of a Paramedic NREMT certification. We use this data to help link up records on the NREMT site. The issued date is the date the most current certification was received and the expiration date is the listed expiration date. Prodigy counts classes on a training plan between the issued date and the expiration date, this is what allows you to easily start classes at any time for your next recertification cycle. It is optional to upload an image.
+1. **Select the user** you are adding the certification to.
+2. **Select the certification type** — the remaining fields will update based on your selection. The two most common types are NREMT and State EMS Certification.
+3. **State and City** are required for NREMT and State EMS Certification. We are required to report these to CAPCE and also use the state to build more accurate training plans.
+4. **Certification Number** — enter the full number, including any leading letters. For example, a Paramedic NREMT certification begins with the letter M. This is used to help link records on the NREMT site.
+5. **Issued Date** — the date the most current certification was received.
+6. **Expiration Date** — the listed expiration date on the certification. Prodigy counts classes on a training plan between the issued date and the expiration date, which allows users to start classes at any point in their recertification cycle.
+7. **Image** — uploading a copy of the certification is optional.
 {% callout type="warning" title="Wrong Initial Date" %}
 It is common for users to see old classes on their training plan even after updating their expiration date. This is almost always due to an incorrect Issued Date. This date should be set to when they received their most current card, for NREMT certified providers, this can be found on the NREMT website. Many users just use their last expiration date, which works as long as you haven’t started any training before that date.
 {% /callout %}
