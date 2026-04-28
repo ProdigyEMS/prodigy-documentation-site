@@ -39,6 +39,11 @@
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.7.0"
   },
+  "overrides": {
+    "postcss": "^8.5.10",
+    "follow-redirects": "^1.16.0",
+    "yaml": "^2.8.3"
+  },
   "browser": {
     "fs": false,
     "path": false,
