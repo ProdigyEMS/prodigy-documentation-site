@@ -39,6 +39,9 @@
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.7.0"
   },
+  "overrides": {
+    "postcss": "^8.5.10"
+  },
   "browser": {
     "fs": false,
     "path": false,
