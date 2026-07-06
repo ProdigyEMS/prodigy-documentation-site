@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/react'
 import clsx from 'clsx'
 
@@ -44,40 +44,67 @@ function SystemIcon(props) {
   )
 }
 
-export function ThemeSelector(props) {
-  let [selectedTheme, setSelectedTheme] = useState()
+/**
+ * Subscribes to theme changes from outside React: the `data-theme` attribute
+ * on <html> (mutated by this component and by the inline script in
+ * _document.jsx) and cross-tab `storage` events. Storage events are reflected
+ * into the attribute so the _document MutationObserver applies classes and
+ * the snapshot below picks the change up.
+ *
+ * @param {() => void} callback - React's store-changed notifier.
+ * @returns {() => void} Unsubscribe function.
+ */
+function subscribeToThemeChanges(callback) {
+  const observer = new MutationObserver(callback)
+  observer.observe(document.documentElement, { attributeFilter: ['data-theme'] })
 
-  useEffect(() => {
-    if (selectedTheme) {
-      document.documentElement.setAttribute('data-theme', selectedTheme.value)
-    } else {
-      setSelectedTheme(
-        themes.find(
-          (theme) =>
-            theme.value === document.documentElement.getAttribute('data-theme')
-        )
+  const onStorage = (event) => {
+    if (event.key === 'theme') {
+      document.documentElement.setAttribute(
+        'data-theme',
+        event.newValue ?? 'system'
       )
     }
-  }, [selectedTheme])
+  }
+  window.addEventListener('storage', onStorage)
 
-  useEffect(() => {
-    let handler = () =>
-      setSelectedTheme(
-        themes.find(
-          (theme) => theme.value === (window.localStorage.theme ?? 'system')
-        )
-      )
+  return () => {
+    observer.disconnect()
+    window.removeEventListener('storage', onStorage)
+  }
+}
 
-    window.addEventListener('storage', handler)
+export function ThemeSelector(props) {
+  // The theme's source of truth lives outside React (the data-theme attribute
+  // + localStorage, wired together by the _document inline script), so read
+  // it with useSyncExternalStore instead of mirroring it into state via
+  // effects. The server snapshot is null: the attribute only exists on the
+  // client, and the pre-hydration inline script has already set it by the
+  // time this hydrates.
+  const themeValue = useSyncExternalStore(
+    subscribeToThemeChanges,
+    () => document.documentElement.getAttribute('data-theme'),
+    () => null
+  )
+  const selectedTheme = themes.find((theme) => theme.value === themeValue) ?? null
 
-    return () => window.removeEventListener('storage', handler)
-  }, [])
+  /**
+   * Applies a picked theme by writing the data-theme attribute; the
+   * _document MutationObserver persists it to localStorage and toggles the
+   * dark class.
+   *
+   * @param {{ value: string }} theme - The picked theme option.
+   * @returns {void}
+   */
+  const handleThemeChange = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme.value)
+  }
 
   return (
     <Listbox
       as="div"
       value={selectedTheme}
-      onChange={setSelectedTheme}
+      onChange={handleThemeChange}
       {...props}
     >
       <ListboxLabel className="sr-only">Theme</ListboxLabel>
