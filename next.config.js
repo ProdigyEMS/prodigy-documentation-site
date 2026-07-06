@@ -1,4 +1,5 @@
 const withMarkdoc = require('@markdoc/next.js')
+const { withSentryConfig } = require('@sentry/nextjs')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,4 +11,20 @@ const nextConfig = {
   transpilePackages: ['@docsearch/react'],
 }
 
-module.exports = withMarkdoc()(nextConfig)
+/**
+ * Sentry build options. Source-map upload only happens when SENTRY_AUTH_TOKEN
+ * is present in the build env; without it the build still succeeds and error
+ * capture works, just with minified stack traces.
+ *
+ * @see https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
+ */
+const sentryBuildOptions = {
+  org: 'prodigyems',
+  project: 'docs',
+  silent: !process.env.CI,
+  widenClientFileUpload: true,
+}
+
+// withSentryConfig must be the outermost wrapper so it processes the final
+// config produced by withMarkdoc.
+module.exports = withSentryConfig(withMarkdoc()(nextConfig), sentryBuildOptions)
