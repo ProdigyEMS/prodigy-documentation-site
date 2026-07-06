@@ -1,13 +1,17 @@
 import { Fragment } from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import { Highlight } from 'prism-react-renderer'
+
+// Tokens are styled by src/styles/prism.css via `.token.*` classes. The empty
+// theme is the documented v2 way to opt out of inline theme styles (v1's
+// `theme={undefined}` + defaultProps equivalent).
+const cssOnlyTheme = { plain: {}, styles: [] }
 
 export function Fence({ children, language }) {
   return (
     <Highlight
-      {...defaultProps}
       code={children.trimEnd()}
       language={language}
-      theme={undefined}
+      theme={cssOnlyTheme}
     >
       {({ className, style, tokens, getTokenProps }) => (
         <pre className={className} style={style}>
