@@ -85,8 +85,8 @@ export function ThemeSelector(props) {
         className="flex h-6 w-6 items-center justify-center rounded-lg shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5"
         aria-label={selectedTheme?.name}
       >
-        <LightIcon className="hidden h-4 w-4 fill-sky-400 [[data-theme=light]_&]:block" />
-        <DarkIcon className="hidden h-4 w-4 fill-sky-400 [[data-theme=dark]_&]:block" />
+        <LightIcon className="hidden h-4 w-4 fill-sky-400 in-data-[theme=light]:block" />
+        <DarkIcon className="hidden h-4 w-4 fill-sky-400 in-data-[theme=dark]:block" />
         <LightIcon className="hidden h-4 w-4 fill-slate-400 [:not(.dark)[data-theme=system]_&]:block" />
         <DarkIcon className="hidden h-4 w-4 fill-slate-400 [.dark[data-theme=system]_&]:block" />
       </ListboxButton>
@@ -98,14 +98,14 @@ export function ThemeSelector(props) {
             className={clsx(
               'flex cursor-pointer select-none items-center rounded-[0.625rem] p-1',
               'text-slate-700 dark:text-slate-400',
-              'data-[selected]:text-sky-500',
-              'data-[focus]:text-slate-900 data-[focus]:bg-slate-100',
-              'dark:data-[focus]:text-white dark:data-[focus]:bg-slate-900/40',
+              'data-selected:text-sky-500',
+              'data-focus:text-slate-900 data-focus:bg-slate-100',
+              'dark:data-focus:text-white dark:data-focus:bg-slate-900/40',
             )}
           >
             {({ selected }) => (
               <>
-                <div className="rounded-md bg-white p-1 shadow ring-1 ring-slate-900/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5">
+                <div className="rounded-md bg-white p-1 shadow-sm ring-1 ring-slate-900/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5">
                   <theme.icon
                     className={clsx(
                       'h-4 w-4',

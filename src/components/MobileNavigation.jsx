@@ -69,7 +69,7 @@ export function MobileNavigation({ navigation }) {
       <Dialog
         open={isOpen}
         onClose={setIsOpen}
-        className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-slate-900/50 pr-10 backdrop-blur lg:hidden"
+        className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-slate-900/50 pr-10 backdrop-blur-sm lg:hidden"
         aria-label="Navigation"
       >
         <DialogPanel className="min-h-full w-full max-w-xs bg-white px-4 pt-5 pb-12 dark:bg-slate-900 sm:px-6">

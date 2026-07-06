@@ -91,7 +91,7 @@ export function JWPlayer({ mediaId }) {
 
   if (!mediaId) {
     return (
-      <div className="aspect-video w-full flex items-center justify-center bg-gray-100 rounded text-sm text-gray-500">
+      <div className="aspect-video w-full flex items-center justify-center bg-gray-100 rounded-sm text-sm text-gray-500">
         No video ID provided.
       </div>
     )
@@ -99,7 +99,7 @@ export function JWPlayer({ mediaId }) {
 
   if (error) {
     return (
-      <div className="aspect-video w-full flex items-center justify-center bg-gray-100 rounded text-sm text-gray-500">
+      <div className="aspect-video w-full flex items-center justify-center bg-gray-100 rounded-sm text-sm text-gray-500">
         Video unavailable.{' '}
         <a
           href={`https://cdn.jwplayer.com/previews/${mediaId}`}

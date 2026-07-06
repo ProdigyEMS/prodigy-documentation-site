@@ -42,6 +42,12 @@ docs.prodigyems.com has a Route53 health check + CloudWatch alarm (`HealthCheckD
 - `transpilePackages: ['@docsearch/react']` in `next.config.js` works around that packaging bug (ESM syntax in `.js` files without `"type": "module"`). Removing it requires proving the package fixed its packaging.
 - Majors that change build tooling (Tailwind, Next itself) need real migration work — do not merge on a red preview.
 
+## Tailwind v4 gotchas
+
+- In v4, the typography plugin's `.prose` rules land in the **same cascade layer as utilities**, so an equal-specificity `.prose :where(p)` rule can override utilities like `m-0` on elements rendered inside the page-level Prose wrapper (in v3 utilities always won). Components that render inside docs content must mark non-prose elements with `not-prose` (see `Callout.jsx`, `QuickLinks.jsx`). Symptom: mysterious extra margins inside callouts/cards.
+- There is no `tailwind.config.js` — the theme lives in `src/styles/tailwind.css` (`@theme` block); dark mode is the `@custom-variant dark` line; typography loads via `@plugin`.
+- v4's browser floor is Safari 16.4+ / Chrome 111+ / Firefox 128+; the `:focus-visible` polyfill was removed accordingly.
+
 ## Merging PRs
 
 `main` requires one approving review with `enforce_admins` on, and the PR author cannot self-approve. Solo-maintainer merges require a second reviewer or temporarily lifting `enforce_admins` (restore it immediately).

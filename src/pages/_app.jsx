@@ -5,7 +5,6 @@ import '../styles/globals.css'
 import DefaultLayout from '@/components/DefaultLayout'
 import UserLayout from '@/components/UserLayout'
 
-import 'focus-visible'
 import '@/styles/tailwind.css'
 
 function getNodeText(node) {
