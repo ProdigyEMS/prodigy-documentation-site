@@ -33,4 +33,8 @@ yarn-error.log*
 # vercel
 .vercel
 
+# sentry (written by the @sentry/nextjs build plugin)
+.env.sentry-build-plugin
+.sentryclirc
+
 TODO.md
