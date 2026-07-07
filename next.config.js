@@ -55,8 +55,19 @@ const sentryBuildOptions = {
 const finalConfig = withSentryConfig(withMarkdoc()(nextConfig), sentryBuildOptions)
 
 // withMarkdoc's createTurbopackConfig emits an incomplete '*.md' rule under
-// the same key as ours and would win the spread; restore the complete rule.
-finalConfig.turbopack = nextConfig.turbopack
+// the same key as ours and would win the spread. Restore ONLY our rule via a
+// merge: replacing the whole turbopack object would clobber what the other
+// wrappers added — notably Sentry's `debugIds: true` (Turbopack's native
+// debug-id emission, without which server stack traces never symbolicate;
+// Sentry skips its own injection when it believes native IDs are on) and
+// Sentry's instrumentation rules.
+finalConfig.turbopack = {
+  ...finalConfig.turbopack,
+  rules: {
+    ...finalConfig.turbopack?.rules,
+    '*.md': nextConfig.turbopack.rules['*.md'],
+  },
+}
 
 // The builds are Turbopack-only now: drop the webpack config that withMarkdoc
 // unconditionally attaches (Next 16 fails fast on webpack config otherwise).
