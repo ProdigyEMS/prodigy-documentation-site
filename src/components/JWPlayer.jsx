@@ -14,9 +14,14 @@ export function JWPlayer({ mediaId }) {
   const playerIdRef = useRef(generatePlayerId())
   const [error, setError] = useState(false)
 
-  useEffect(() => {
+  // Reset the error when the media changes, using the set-state-during-render
+  // pattern (https://react.dev/learn/you-might-not-need-an-effect) instead of
+  // an effect so React restarts the render before committing.
+  const [prevMediaId, setPrevMediaId] = useState(mediaId)
+  if (prevMediaId !== mediaId) {
+    setPrevMediaId(mediaId)
     setError(false)
-  }, [mediaId])
+  }
 
   useEffect(() => {
     if (!mediaId || error) return

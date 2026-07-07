@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
@@ -21,7 +21,7 @@
     "axios": "^1.3.2",
     "axios-hooks": "^5.1.1",
     "clsx": "^2.0.0",
-    "next": "15.5.20",
+    "next": "16.2.10",
     "next-hubspot": "^2.0.1",
     "prism-react-renderer": "^2.4.1",
     "react": "19.2.7",
@@ -32,8 +32,8 @@
     "tailwindcss": "^4.3.2"
   },
   "devDependencies": {
-    "eslint": "8.57.1",
-    "eslint-config-next": "15.5.20",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.2.10",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.8.0"
   },
