@@ -42,6 +42,10 @@ docs.prodigyems.com has a Route53 health check + CloudWatch alarm (`HealthCheckD
 - `transpilePackages: ['@docsearch/react']` in `next.config.js` works around that packaging bug (ESM syntax in `.js` files without `"type": "module"`). Removing it requires proving the package fixed its packaging.
 - Majors that change build tooling (Tailwind, Next itself) need real migration work — do not merge on a red preview.
 
+## Turbopack + Markdoc
+
+Builds run on Turbopack (Next 16 default). `@markdoc/next.js` 0.5.0's own Turbopack support is broken (incomplete loader options, bare-specifier resolution silently producing an empty schema, absolute-path imports), so `next.config.js` wires a hand-written `turbopack.rules` entry through the project-local shim `markdoc-turbopack-loader.js`. **Do not add `--webpack` back**: the webpack config is deliberately stripped from the final Next config, so webpack builds no longer compile `.md` pages. Remove the shim + rules when `@markdoc/next.js` ≥ 0.6.0 ships the upstream fix (markdoc/next.js#70).
+
 ## Tailwind v4 gotchas
 
 - In v4, the typography plugin's `.prose` rules land in the **same cascade layer as utilities**, so an equal-specificity `.prose :where(p)` rule can override utilities like `m-0` on elements rendered inside the page-level Prose wrapper (in v3 utilities always won). Components that render inside docs content must mark non-prose elements with `not-prose` (see `Callout.jsx`, `QuickLinks.jsx`). Symptom: mysterious extra margins inside callouts/cards.
