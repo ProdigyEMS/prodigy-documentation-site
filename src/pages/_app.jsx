@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import '../styles/globals.css'
+// Server-side Sentry init fallback for Netlify runtimes that skip
+// instrumentation.js (see the module for details). Must load with every page.
+import '@/lib/sentry-server-fallback'
 
 import DefaultLayout from '@/components/DefaultLayout'
 import UserLayout from '@/components/UserLayout'
