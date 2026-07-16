@@ -11,9 +11,14 @@ When you run into a problem that we can't reproduce on our end, our support team
 The **console log** records messages and errors from the Prodigy application itself. A **HAR file** (HTTP Archive) records every request your browser made on the page and how the server responded. A **NetLog** records low-level connection details from the whole browser, which helps diagnose problems like blocked or dropped connections on restrictive networks. You usually only need to capture the one our support team asks for.
 {% /callout %}
 
+{% callout title="Check the status page first" %}
+Before capturing anything, take a quick look at [status.prodigyems.com](https://status.prodigyems.com). If there is an active incident, the problem is already on our radar and you don't need to capture diagnostics — the status page will update as we work on it.
+{% /callout %}
+
 ## Before You Start
 
 - Use **Google Chrome** or **Microsoft Edge** on a computer. The steps below show Chrome, but Edge works the same way.
+- Grab your exact browser version: type `chrome://version` (or `edge://version`) into the address bar and copy the first line. Include it in your email — small version differences sometimes matter.
 - Know how to make the problem happen. The captures only record what happens while they are running, so you will reproduce the issue *while* capturing.
 - Note the time the problem happens and the address in the URL bar. Including these in your email helps us line your capture up with our server logs.
 
@@ -74,6 +79,27 @@ A NetLog captures connection-level details from the entire browser. Our team usu
 4. Switch to another tab and reproduce the problem on Prodigy.
 5. Come back to the `chrome://net-export` tab and click **Stop Logging**. The page shows the location of the finished file.
 
+## Capturing Video Playback Diagnostics
+
+If a video loads but won't play smoothly — endless buffering, no sound, a black frame — Chrome's media diagnostics page records details that don't show up in a HAR file or NetLog, like the codec in use and playback errors.
+
+1. Open a new tab and type `chrome://media-internals` into the address bar (in Edge, `edge://media-internals`):
+
+{%figure src="/images/network-troubleshooting-7.png" alt="Chrome's media-internals page showing the empty Players list before any media has played" /%}
+
+2. Leave that tab open, switch back to Prodigy, and press play on the video.
+3. Return to the `chrome://media-internals` tab. An entry now appears in the **Players** list — click it to expand the player's properties and event log.
+4. There is no export button on this page, so take a screenshot of the expanded entry (or select and copy the text) and include it with your email.
+
+## Recording Your Screen
+
+For problems you can see but logs can't easily explain — a button that does nothing, a page that renders wrong, a form that won't submit — a short screen recording is often the fastest way to show us. Both major systems have a recorder built in:
+
+- **Windows**: press **Win+Alt+R** to start and stop recording (Xbox Game Bar). The clip saves to your Videos → Captures folder.
+- **Mac**: press **Shift+Cmd+5**, choose a recording option, and click Stop in the menu bar when done.
+
+Keep the recording under a minute if you can, and include the browser's address bar in the frame so we can see what page you're on.
+
 ## Example: Reporting a Video That Won't Play
 
 Suppose a video in one of your classes shows a spinner and never starts. Here's how you would put this guide together:
@@ -107,4 +133,4 @@ Jordan
 
 ## Sending the Files to Us
 
-Email the files as attachments to [Support@prodigyems.com](mailto:Support@prodigyems.com), along with what went wrong, the time it happened, and the page you were on. If a file is too large to attach (NetLogs can grow quickly), compress it into a `.zip` first, or reply to your support ticket and we'll send you an upload link. You can also start from the chat icon on the Prodigy page and our team will tell you where to send the files.
+Email the files as attachments to [Support@prodigyems.com](mailto:Support@prodigyems.com), along with what went wrong, the time it happened, and the page you were on. If Prodigy displayed an error message with a reference code, include that code too — it lets us jump straight to the matching error in our logs. If a file is too large to attach (NetLogs can grow quickly), compress it into a `.zip` first, or reply to your support ticket and we'll send you an upload link. You can also start from the chat icon on the Prodigy page and our team will tell you where to send the files.
