@@ -60,6 +60,7 @@ const navigation = [
       { title: 'Do you Have an API?', href: '/docs/api' },
       { title: 'Is my Users Data Safe?', href: '/docs/data-safe' },
       { title: 'URL Allow List', href: '/docs/allow_list' },
+      { title: 'Network Requirements for IT', href: '/docs/network-requirements' },
       { title: 'Network Troubleshooting', href: '/docs/network-troubleshooting' },
       { title: 'Contact Support', href: '/docs/contactSupport' }
     ],
