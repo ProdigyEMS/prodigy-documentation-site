@@ -15,6 +15,8 @@ The **console log** records messages and errors from the Prodigy application its
 Before capturing anything, take a quick look at [status.prodigyems.com](https://status.prodigyems.com). If there is an active incident, the problem is already on our radar and you don't need to capture diagnostics — the status page will update as we work on it.
 {% /callout %}
 
+If you haven't already, it's worth running the quick checks in [Try This First](/docs/try-this-first) — many issues clear before you need to capture anything. If the trouble is on a filtered department or station network, [Network Requirements for IT](/docs/network-requirements) covers what your IT team needs to allow.
+
 ## Before You Start
 
 - Use **Google Chrome** or **Microsoft Edge** on a computer. The steps below show Chrome, but Edge works the same way.
