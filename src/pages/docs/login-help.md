@@ -19,7 +19,7 @@ The most common cause of "my password doesn't work" is trying to log in with a d
 
 ## You Have More Than One Account
 
-If you've worked with multiple departments or signed up more than once with different addresses, you may have two accounts — and your training history may be split between them. Rather than keep both, contact [Support@prodigyems.com](mailto:Support@prodigyems.com) and we can help you sort out which account to use going forward.
+If you've worked with multiple departments or signed up more than once with different addresses, you may have two accounts — and your training history may be split between them. You don't have to keep both: contact [Support@prodigyems.com](mailto:Support@prodigyems.com) and we can **merge your accounts into one** so your training history is combined, or help you sort out which account to use going forward.
 
 An existing account can also be connected to a new department — you don't need to create a fresh account when you join one. If your department sent an invitation to a different address than your existing account, you can still accept it and connect the account you already have. See [Managing Users](/docs/user-management) for how invitations work.
 
