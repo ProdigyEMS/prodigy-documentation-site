@@ -19,7 +19,7 @@ The complete list of domains Prodigy uses — including our video streaming and 
 
 Two categories deserve special attention:
 
-- **Video delivery** (`*.jwplayer.com`, `*.jwpcdn.com`, and related domains): class content streams from these. Web filters that block "streaming media" as a category will break class videos while leaving the rest of Prodigy working, which is confusing for users.
+- **Video delivery** (`*.jwplayer.com`, `*.jwpcdn.com`, and related domains) carry your class video. Web filters that block "streaming media" as a category will break class videos while leaving the rest of Prodigy working, which is confusing for users.
 - **Payments** (`js.stripe.com`): required on pages where individuals purchase access.
 
 ## SSL/TLS Inspection
