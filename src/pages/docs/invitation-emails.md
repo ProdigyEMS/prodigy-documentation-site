@@ -28,7 +28,7 @@ If the address is right and the status is still **Pending**, click the **Resend 
 The **Invite Users** modal includes a **Copy Invitation Link** option. Copy the link and send it to the user yourself — by text message, your own email, or your department's messaging tool. Anyone with the link can register and join your department, so share it only with the people you intend to invite.
 
 {% callout title="About the invitation link" %}
-The link can be used multiple times and doesn't expire for a year. Direct email invitations are still the better default because they give you control over exactly who joins, but the link is a reliable fallback when email delivery is the problem.
+The link can be used multiple times and stays valid for one year before it expires. Direct email invitations are still the better default because they give you control over exactly who joins, but the link is a reliable fallback when email delivery is the problem.
 {% /callout %}
 
 ## Ask IT to Allow Our Emails

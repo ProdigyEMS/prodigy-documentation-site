@@ -24,7 +24,7 @@ const navigation = [
     title: 'Account Management',
     links: [
       { title: 'Managing Users', href: '/docs/user-management' },
-      { title: "Didn't Get an Invitation Email?", href: '/docs/invitation-emails' },
+      { title: 'Didn\'t Get an Invitation Email?', href: '/docs/invitation-emails' },
       { title: 'Certifications', href: '/docs/certifications' },
       { title: 'Certification Alerts', href: '/docs/alerts' },
       { title: 'Managing Groups', href: '/docs/groups' },
