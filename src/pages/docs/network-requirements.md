@@ -5,6 +5,8 @@ description: What your IT department needs to know to make Prodigy work on depar
 
 This page is written for the IT staff who manage a department, station, or municipal network. It covers what Prodigy needs from the network, the filtering features that most often break it, and how to verify everything works.
 
+If you're a user who landed here, it's worth running the quick checks in [Try This First](/docs/try-this-first) before escalating — many problems that look like the network are cleared by a hard refresh or a different browser.
+
 ---
 
 ## The Basics
