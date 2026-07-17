@@ -21,7 +21,7 @@ Click your profile and log out, then log back in. This refreshes your session, w
 
 ## Try an Incognito or Private Window
 
-Open a private window with **Ctrl+Shift+N** (Chrome, Windows), **Cmd+Shift+N** (Chrome, Mac), or **Ctrl+Shift+P** (Edge and Firefox), and log in to Prodigy there.
+Open a private window with **Ctrl+Shift+N** (Chrome or Edge on Windows), **Cmd+Shift+N** (Chrome or Edge on Mac), or **Ctrl+Shift+P** / **Cmd+Shift+P** (Firefox), and log in to Prodigy there.
 
 If everything works in the private window, the culprit is almost always a **browser extension** (ad blockers and privacy tools are frequent offenders) or **stale site data**. Try disabling extensions for the Prodigy site, or clear the site's data: in Chrome, click the icon to the left of the address bar, choose **Site settings**, and click **Delete data**.
 
