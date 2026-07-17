@@ -21,17 +21,17 @@ The most common cause of "my password doesn't work" is trying to log in with a d
 
 If you've worked with multiple departments or signed up more than once with different addresses, you may have two accounts — and your training history may be split between them. You can combine them yourself: log in to the account you want to keep, open **Manage Account** from your profile menu, and under **User Settings** go to **Emails & Account Merge**. Click **Merge Existing Account**, enter the email address of your other account, and click **Request Merge**. We'll send that account a confirmation email — approve it and the two accounts are combined into one.
 
-Once merged, all of your data — class completions, certifications, training plans, and organizations — lives in the account you kept, and you can log in with either email address. Merging is permanent and can't be undone, so do it once you're sure both accounts are yours. If you can't get into one of the accounts to complete the merge, contact [Support@prodigyems.com](mailto:Support@prodigyems.com) and we'll help.
+Once merged, all of your data — class completions, certifications, training plans, and organizations — lives in the account you kept, and you can log in with either email address. Merging is permanent and can't be undone, so do it once you're sure both accounts are yours. If you can't get into one of the accounts to complete the merge, contact [Support@prodigyems.com](mailto:Support@prodigyems.com) and we'll help. For the complete step-by-step, see [Merging Accounts](/docs/account-merge).
 
 An existing account can also be connected to a new department — you don't need to create a fresh account when you join one. If your department sent an invitation to a different address than your existing account, you can still accept it and connect the account you already have. See [Managing Users](/docs/user-management) for how invitations work.
 
 ## Your Invitation Doesn't Work
 
-If you're trying to join through an emailed invitation and the link doesn't go through, ask your training officer to resend it — they can do this from the **Invitations** tab in the Users section. If the invitation email never arrived at all, spam filtering is the usual reason.
+If you're trying to join through an emailed invitation and the link doesn't go through, ask your training officer to resend it — they can do this from the **Invitations** tab in the Users section. If the invitation email never arrived at all, spam filtering is the usual reason — [Didn't Get an Invitation Email?](/docs/invitation-emails) has the full checklist for your training officer to work through.
 
 ## The Login Page Itself Misbehaves
 
-If the login page won't load, the button does nothing, or you're bounced back to the login screen after signing in, the problem is usually the browser or the network rather than your account:
+If the login page won't load, the button does nothing, or you're bounced back to the login screen after signing in, the problem is usually the browser or the network rather than your account. The quick checks in [Try This First](/docs/try-this-first) clear most of these; the essentials are:
 
 - Try an **incognito/private window**, and try **Google Chrome** or **Microsoft Edge** if you're using something else.
 - Try a **different network** (like a phone hotspot). If that fixes it, a firewall or filter on the original network is interfering — send your IT department our [URL Allow List](/docs/allow_list).
