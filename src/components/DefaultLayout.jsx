@@ -27,7 +27,8 @@ const navigation = [
       { title: 'Certifications', href: '/docs/certifications' },
       { title: 'Certification Alerts', href: '/docs/alerts' },
       { title: 'Managing Groups', href: '/docs/groups' },
-      { title: 'Organization View', href: '/docs/organization' }
+      { title: 'Organization View', href: '/docs/organization' },
+      { title: 'Merging Accounts', href: '/docs/account-merge' }
     ],
   },
   {

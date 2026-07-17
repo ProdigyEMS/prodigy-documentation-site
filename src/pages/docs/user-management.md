@@ -43,6 +43,8 @@ The Invite Users modal also includes a Copy Invitation Link option. This generat
 
 After sending invitations, switch to the **Invitations** tab to track their status. Each invitation shows the email, invite date, department, role, and current status. Pending invitations will show a **Pending** status along with a **Resend Invite** link if you need to send the email again.
 
+If a user tells you an invitation never arrived, see [Didn't Get an Invitation Email?](/docs/invitation-emails) for the checks to run.
+
 Once a user accepts their invitation, they will be moved to the Department Users tab and the invitation will be removed from this list. If you need to cancel an invitation, select the checkbox next to it and click **Remove Selected**.
 
 You can search invitations by email and filter by status using the controls at the top of the table.
@@ -79,7 +81,7 @@ After the import completes, you will see an **Import Summary** with four tabs:
 You can search by email within each tab to find specific users. Click **Got It** when you are done reviewing.
 
 {% callout type="warning" title="Existing Email Addresses" %}
-If an email address is already in use on Prodigy, even if not in your department, the system will not create a new account. Instead, that user will receive an invitation to join your department.
+If an email address is already in use on Prodigy, even if not in your department, the system will not create a new account. Instead, that user will receive an invitation to join your department. If a user has since realized they have two separate accounts, they can combine them themselves — see [Merging Accounts](/docs/account-merge).
 {% /callout %}
 
 ## Individual User Records
