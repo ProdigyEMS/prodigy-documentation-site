@@ -31,11 +31,12 @@ If you're not already using them, try **Google Chrome** or **Microsoft Edge**. I
 
 ## Try a Different Network
 
-If you're on a department or station network, try the same thing from a phone hotspot or your home connection. If it works away from the station, a firewall or content filter on that network is likely blocking something Prodigy needs — send your IT department our [URL Allow List](/docs/allow_list).
+If you're on a department or station network, try the same thing from a phone hotspot or your home connection. If it works away from the station, a firewall or content filter on that network is likely blocking something Prodigy needs — send your IT department our [URL Allow List](/docs/allow_list), and point them to [Network Requirements for IT](/docs/network-requirements) for how to allow Prodigy properly.
 
 ## Still Stuck?
 
 You've ruled out the easy stuff. Two ways to go from here:
 
+- If it's specifically a login, password, or account problem, see [Trouble Logging In?](/docs/login-help).
 - Follow the [Network Troubleshooting Guide](/docs/network-troubleshooting) to capture diagnostics our team can analyze.
 - Contact us at [Support@prodigyems.com](mailto:Support@prodigyems.com) or through the chat icon on the Prodigy page. Mention which of the checks above you already tried — it saves a round trip.
