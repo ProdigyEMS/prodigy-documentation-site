@@ -19,7 +19,9 @@ The most common cause of "my password doesn't work" is trying to log in with a d
 
 ## You Have More Than One Account
 
-If you've worked with multiple departments or signed up more than once with different addresses, you may have two accounts — and your training history may be split between them. You don't have to keep both: contact [Support@prodigyems.com](mailto:Support@prodigyems.com) and we can **merge your accounts into one** so your training history is combined, or help you sort out which account to use going forward.
+If you've worked with multiple departments or signed up more than once with different addresses, you may have two accounts — and your training history may be split between them. You can combine them yourself: log in to the account you want to keep, open **Manage Account** from your profile menu, and under **User Settings** go to **Emails & Account Merge**. Click **Merge Existing Account**, enter the email address of your other account, and click **Request Merge**. We'll send that account a confirmation email — approve it and the two accounts are combined into one.
+
+Once merged, all of your data — class completions, certifications, training plans, and organizations — lives in the account you kept, and you can log in with either email address. Merging is permanent and can't be undone, so do it once you're sure both accounts are yours. If you can't get into one of the accounts to complete the merge, contact [Support@prodigyems.com](mailto:Support@prodigyems.com) and we'll help.
 
 An existing account can also be connected to a new department — you don't need to create a fresh account when you join one. If your department sent an invitation to a different address than your existing account, you can still accept it and connect the account you already have. See [Managing Users](/docs/user-management) for how invitations work.
 
