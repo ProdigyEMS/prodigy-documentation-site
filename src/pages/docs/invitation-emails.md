@@ -40,3 +40,5 @@ On department or municipal email systems, messages from outside senders are some
 Email [Support@prodigyems.com](mailto:Support@prodigyems.com) with the address you're inviting and roughly when you sent the invitations. We can check the delivery status of the messages on our side and see exactly where they stopped.
 
 For more on invitations and other ways to add users — including bulk CSV import — see [Managing Users](/docs/user-management).
+
+If the invited person already has a Prodigy account under a different email, they don't need a new one — they can accept the invite on their existing account, or combine two accounts they've ended up with using [Merging Accounts](/docs/account-merge). And if they receive the invitation but then can't sign in, point them to [Trouble Logging In?](/docs/login-help).
