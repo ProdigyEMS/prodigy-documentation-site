@@ -34,7 +34,7 @@ Click the **Invite Users** button in the top right of the My Users page. Enter t
 Select a **User Role** from the dropdown (General User, Training Officer, or Admin) and click **Send Invite**. Each user will receive an email asking them to join your department. If they don't already have a Prodigy account, they will be prompted to create one. If they already have an account, even with a different email address, they can connect it to your department.
 
 {% callout title="Copy Invitation Link" %}
-The Invite Users modal also includes a Copy Invitation Link option. This generates a link that anyone can use to register and join your department. The link can be used multiple times and doesn't expire for a year. We recommend using direct invitations whenever possible for better control over who joins your department.
+The Invite Users modal also includes a Copy Invitation Link option. This generates a link that anyone can use to register and join your department. The link can be used multiple times and stays valid for one year before it expires. We recommend using direct invitations whenever possible for better control over who joins your department.
 {% /callout %}
 
 ### Invitations Tab
