@@ -1,9 +1,9 @@
 ---
 title: Compliance Dashboard Demo Guide
-description: Internal walkthrough of every feature of the organization Compliance Dashboard (PRD-1642), using the seeded demo environment.
+description: Internal walkthrough of every feature of the organization Compliance Dashboard (PRD-1642), using the seeded demo environment. Illustrated with zoomed feature close-ups and animated walkthroughs.
 ---
 
-Welcome! This guide walks you through every feature of the new organization Compliance Dashboard (PRD-1642) using a live demo environment loaded with realistic, fully anonymized data.
+Welcome! This guide walks you through every feature of the new organization Compliance Dashboard (PRD-1642) using a live demo environment loaded with realistic, fully anonymized data. Each section pairs a full-screen shot for context with **zoomed close-ups** of the specific feature and, for the key flows, a short **animated walkthrough**.
 
 ---
 
@@ -32,7 +32,7 @@ The demo org, **Pro EMS**, has 742 providers of rich seeded data, but you have t
 
 You'll land on **Organization Home**:
 
-{% figure src="/images/compliance-demo/org-home.jpg" alt="Organization Home" /%}
+{% figure src="/images/compliance-demo/org-home.jpg" alt="Organization Home dashboard for Pro EMS" caption="Organization Home — the Needs attention panel (bottom right) and the Compliance item in the left nav are your entry points." /%}
 
 Three compliance touchpoints live here:
 
@@ -55,15 +55,25 @@ Everything below follows that order.
 
 Your daily landing page.
 
-{% figure src="/images/compliance-demo/overview.jpg" alt="Compliance Overview" /%}
+{% figure src="/images/compliance-demo/overview.jpg" alt="Compliance Overview tab" caption="The Overview tab: setup checklist, drillable KPI cards, and the action queue." /%}
 
-- **Setup checklist**: a 5-step "get your compliance program set up" tracker (create a requirement, organize groups, add dates of birth, verify NREMT registrations, run an exclusion screening). Each incomplete step deep-links to the right screen.
-- **KPI summary cards**: expired certifications, expiring soon (disjoint 30/60/90-day windows), missing required certs, trainings overdue, programs overdue, and assignments overdue. **Every card is drillable**: click "Expired certifications" and you land on the Roster pre-filtered to exactly those providers, with a dismissible filter chip.
-- **Uncovered providers card**: a data-quality check counting active members matched by zero active requirements, so nobody silently falls outside your program.
-- **Compliance trend sparkline**: a monthly point-in-time history (snapshots are captured on the 1st of each month), so you can answer "were we compliant on date X?" and watch the trend.
-- **What needs your attention (action queue)**: per-requirement gap rollups grouped by severity, computed from the same data as the roster so counts always agree. Items can carry a default owner (note the "Default: Mark Lewis" and "Default: Mary Johnson" chips), and screening alerts route straight to the Screening tab. Issues assigned to you appear under "Assigned to you."
+**The KPI summary cards** — expired certifications, expiring soon (disjoint 30/60/90-day windows), missing required certs, trainings overdue, programs overdue, and assignments overdue. **Every card is drillable.**
 
-Try it: click the red "Expired certifications" card, note the Roster filter chip it sets, then dismiss the chip.
+{% figure src="/images/compliance-demo/zoom-overview-kpi-cards.png" alt="Zoomed view of the KPI summary cards" caption="Close-up: each card is a live count you can click to drill into the roster." /%}
+
+**The setup checklist** walks a new org through getting its program running; each incomplete step deep-links to the right screen.
+
+{% figure src="/images/compliance-demo/zoom-overview-setup-checklist.png" alt="Zoomed view of the setup checklist" caption='Close-up: "Manage groups", "Add dates of birth", and "National Registry" jump straight to those tasks.' /%}
+
+**The action queue** ("What needs your attention") rolls gaps up per requirement, and can carry a **default owner** so new gaps auto-assign.
+
+{% figure src="/images/compliance-demo/zoom-overview-action-queue-owners.png" alt="Zoomed view of the action queue with owner chips" caption='Close-up: note the "Default: Mark Lewis" and "Default: Mary Johnson" owner chips.' /%}
+
+**Try it — the drill-through.** Click the red "Expired certifications" card and you land on the Roster pre-filtered to exactly those providers:
+
+{% figure src="/images/compliance-demo/gif-overview-drill-through.gif" alt="Animation: clicking a KPI card drills into the filtered roster" caption="Clicking a KPI card drills straight into the matching roster filter." /%}
+
+Other highlights on this tab: an **Uncovered providers card** (active members matched by zero requirements — nobody falls through the cracks) and a **compliance trend sparkline** (monthly point-in-time history, so you can answer "were we compliant on date X?").
 
 ---
 
@@ -71,19 +81,27 @@ Try it: click the red "Expired certifications" card, note the Roster filter chip
 
 One row per provider with a worst-status rollup plus per-item detail. Built to be inspection-ready: find a provider, see every requirement's status and dates, and open the certificate or evidence inline.
 
-{% figure src="/images/compliance-demo/roster.jpg" alt="Compliance Roster" /%}
+{% figure src="/images/compliance-demo/roster.jpg" alt="Compliance Roster tab" caption="The Roster — searchable, filterable, exportable, one row per provider per item." /%}
 
-- **One status vocabulary everywhere**: compliant, due soon, overdue, missing, pending review, excluded (plus a "snoozed" decoration). The same colors and words appear on every screen.
-- **Search and filters**: status, item type, requirement, department, verification state. Filters are URL-linkable, so you can bookmark or share a filtered view.
-- **Explainability**: every non-compliant row shows exactly why (which cert, which date, which requirement, or which screening record) and drills through to the provider's profile in one click.
-- **Snooze**: push an item out of the attention counts until a date, with a note. Snoozed items stay visible in the roster, just decorated, so nothing is hidden.
-- **Attest (trainings only)**: record that a custom training was satisfied, with who/when/note and an **optional evidence file upload** (e.g. a sign-in sheet photo). Attest is offered only on training rows, never on certification rows.
-- **Assign an issue**: hand any gap to a teammate as a tracked task right from the roster row.
-- **Bulk reminders**: select providers and use "Send reminder" to email each one a pre-formatted list of their specific gaps with a deep link. Same-day duplicates are automatically suppressed.
-- **Driver's license attributes**: DL-type certifications carry class, endorsements, and status. A suspended or revoked license shows **overdue regardless of its expiration date**.
-- **CSV export** of the current view.
+**One status vocabulary everywhere** — compliant, due soon, overdue, missing, pending review, excluded (plus a "snoozed" decoration). Every non-compliant row shows exactly *why*.
 
-Try it: search a provider, open the "why" on a red row, snooze one expired item, then attest an overdue training with a photo attached.
+{% figure src="/images/compliance-demo/zoom-roster-status-vocabulary.png" alt="Zoomed view of roster status badges and explainability text" caption='Close-up: the status badges and the explainability sub-text ("Confirmed LEIE exclusion match", "Last satisfied … via attestation; next due …").' /%}
+
+**Filter and export** by status, item type, requirement, department, and verification state — filters are URL-linkable so you can bookmark or share a view.
+
+{% figure src="/images/compliance-demo/zoom-roster-filter-toolbar.png" alt="Zoomed view of the roster filter toolbar" caption="Close-up: the filter toolbar, bulk Send reminder, and CSV Export." /%}
+
+**Every row is workable.** The row menu offers Comment/assign, Attest, Snooze, Edit active window, View evidence, and View:
+
+{% figure src="/images/compliance-demo/zoom-roster-row-actions.png" alt="Zoomed view of the per-row action menu" caption="Close-up: the per-row action menu." /%}
+
+**Try it — attest with evidence.** On a training row, Attest records who/when/note and an optional evidence upload (e.g. a sign-in sheet photo):
+
+{% figure src="/images/compliance-demo/gif-roster-attest.gif" alt="Animation: opening the attest dialog from a roster row" caption="From the row menu → Attest → record completion with optional evidence." /%}
+
+{% figure src="/images/compliance-demo/zoom-roster-attest-dialog.png" alt="Zoomed view of the attestation dialog" caption="Close-up: the attestation dialog with its Evidence (optional) upload." /%}
+
+Also here: **snooze** (push an item out of the attention counts until a date, with a note — it stays visible, just decorated), **bulk reminders** (email selected providers their specific gaps, same-day duplicates suppressed), and **driver's-license attributes** (a suspended/revoked license reads overdue regardless of expiration).
 
 ---
 
@@ -91,19 +109,21 @@ Try it: search a provider, open the "why" on a red row, snooze one expired item,
 
 The provider × requirement grid: the whole org on one screen.
 
-{% figure src="/images/compliance-demo/matrix.jpg" alt="Compliance Matrix" /%}
+{% figure src="/images/compliance-demo/matrix.jpg" alt="Compliance Matrix grid" caption="The Matrix — every provider against every requirement, with per-column compliance %." /%}
 
-- Cells show ✓ (compliant), ⚠ with days (due soon), red dots with dates (overdue), "missing", or a dash (requirement doesn't target that provider). Screening state appears too.
-- **Per-column compliance %** and gap counts for each requirement.
-- **Only-issues by default**: fully compliant providers are hidden until you flip the "Only providers with issues" toggle, keeping the grid focused.
-- **Click a gap cell** and you land on that provider+requirement's issue page (created on the fly if it doesn't exist) with its history and comment thread.
-- **Click a compliant cell** and a details modal opens in place showing the satisfying evidence; if a document is on file it's embedded right there with an "Open full" option.
-- **Assign training from a gap column**: one click pre-fills the existing Assignments flow with the affected providers and the requirement's linked class, including "assign to all N overdue."
-- **Bulk reminders from a column**, same as the roster.
-- **Saved views**: filter to a set of requirements and save the view for next time.
-- **Full-grid CSV export**.
+The **legend** defines every cell state:
 
-Try it: toggle "only issues" off to see the green sea, filter to two requirements, save the view, then click one red cell into its issue page and leave a comment.
+{% figure src="/images/compliance-demo/zoom-matrix-legend.png" alt="Zoomed view of the matrix cell-state legend" caption="Close-up: compliant, due soon, pending review, expired/overdue, excluded, required-none-on-file, and not-applicable." /%}
+
+Each column shows its **compliance % and gap count**; cells show the specific state (compliant ✓, overdue with the date, missing, due-soon with days, or a dash for not-applicable):
+
+{% figure src="/images/compliance-demo/zoom-matrix-cells.png" alt="Zoomed view of matrix cells and column percentages" caption="Close-up: column %s + gap counts, and cells showing overdue-with-date, compliant, missing, due-soon, and not-applicable." /%}
+
+**Try it — only-issues toggle.** By default the grid hides fully compliant providers. Flip "Only providers with issues" off to reveal everyone (watch a green "Compliant" rollup appear):
+
+{% figure src="/images/compliance-demo/gif-matrix-toggle.gif" alt="Animation: toggling only-providers-with-issues on the matrix" caption='Toggling "Only providers with issues" reveals the fully-compliant providers too.' /%}
+
+Click a gap cell to open that provider+requirement's **issue page** (with history and a comment thread); click a compliant cell to preview the satisfying document in place. You can also assign training from a gap column, send column reminders, save filtered views, and export the full grid as CSV.
 
 ---
 
@@ -111,14 +131,19 @@ Try it: toggle "only issues" off to see the green sea, filter to two requirement
 
 Live verification of NREMT registrations against the National Registry.
 
-{% figure src="/images/compliance-demo/national-registry.jpg" alt="National Registry" /%}
+{% figure src="/images/compliance-demo/national-registry.jpg" alt="National Registry verification tab" caption="Per-certification NREMT verification, with provenance and last-verified dates." /%}
 
-- **Per-certification verify**: confirms the provider's registration and records provenance. The Verification column distinguishes **Verified (NREMT)**, **Manually verified**, and **Unverified**, with last-verified dates.
-- **Date of birth capture**: verification requires a DOB (see the "On file" / "Missing" column). The dashboard flags providers missing one, and DOB can be captured on the profile, by an admin, or via bulk CSV upload. Privacy note: the DOB returned by NREMT is never stored; only what your org captures is kept.
-- **Automatic nightly re-verification**: a bounded daily queue re-checks registrations, prioritizing the soonest-expiring and recently renewed, so verifications stay fresh without manual work.
-- **Provider-side flow**: when a provider adds a National Registry cert themselves, they're offered a verify step immediately (and can skip it; it will surface in your queue instead).
+The **Verification column** distinguishes Verified (NREMT), Manually verified, and Unverified; the **Date of birth column** flags who's missing a DOB (verification needs one):
 
-Try it: hit **Verify** on an unverified row and watch the provenance change.
+{% figure src="/images/compliance-demo/zoom-nremt-verification-states.png" alt="Zoomed view of NREMT verification states" caption="Close-up: Verified (NREMT) vs Unverified, DOB on file, last-verified dates, and Verify buttons." /%}
+
+**Try it — verify a provider.** Clicking Verify confirms identity against the Registry using the stored DOB:
+
+{% figure src="/images/compliance-demo/gif-nremt-verify.gif" alt="Animation: opening the NREMT verify dialog" caption="Hitting Verify opens a confirmation before contacting the National Registry." /%}
+
+{% figure src="/images/compliance-demo/zoom-nremt-verify-dialog.png" alt="Zoomed view of the NREMT verify dialog" caption='Close-up: the verify dialog. Privacy note — "the stored date of birth is sent to the National Registry to confirm identity"; the DOB returned by NREMT is never stored.' /%}
+
+Verifications also **re-check automatically each night** (a bounded daily queue, prioritizing soonest-expiring and recently renewed), so expiration dates stay in sync without manual work.
 
 ---
 
@@ -126,17 +151,21 @@ Try it: hit **Verify** on an unverified row and watch the provenance change.
 
 The compliance heavyweight: automatic monthly screening of your active roster against the OIG LEIE exclusion list.
 
-{% figure src="/images/compliance-demo/screening.jpg" alt="OIG LEIE Screening" /%}
+{% figure src="/images/compliance-demo/screening.jpg" alt="OIG LEIE screening queue" caption="The Screening queue with a pending match awaiting review." /%}
 
-- **Dataset freshness** is shown up front: the OIG dataset version, when it was ingested, the last screening run (742 members screened), and the next scheduled run (monthly, per OIG guidance).
-- **Match queue**: potential matches (name, with DOB/NPI corroboration when available) land as "pending review." The demo org has dispositions in every state: 1 pending, 2 cleared, 1 confirmed.
-- **Adjudication**: hit **Review** on the pending match (Dorothy Reyes), review the matched OIG record, and either **clear** or **confirm** the exclusion. A note is required either way; the dialog will not let you adjudicate silently.
-- **Cleared never re-flags**: once you clear a false positive, subsequent monthly runs will not nag you about the same record again.
-- **Immutable evidence log + export**: every screening event and adjudication is recorded and exportable, your audit-ready proof that screening happened.
-- **Run screening now** re-screens the whole roster on demand.
-- **Strictly org-admin-only**: Training Officers see screening counts but never the named queue or the clear/confirm actions.
+The **freshness bar** shows the dataset version, last run, next scheduled run, and disposition counts:
 
-Try it: adjust the status filter to see the cleared and confirmed matches, then Review the pending one and adjudicate it with a note.
+{% figure src="/images/compliance-demo/zoom-screening-freshness.png" alt="Zoomed view of the screening freshness bar" caption="Close-up: OIG dataset 2026-07 · 742 members screened · next run monthly · 1 pending / 2 cleared / 1 confirmed." /%}
+
+**Try it — adjudicate a match.** Hit Review on the pending match to open the adjudication dialog:
+
+{% figure src="/images/compliance-demo/gif-screening-review.gif" alt="Animation: opening the LEIE match review dialog" caption="Review opens a side-by-side comparison for adjudication." /%}
+
+The dialog is built for a compliance-liability decision — a side-by-side **Prodigy member vs OIG record** comparison, explicit match chips, the honest caveat that final identity verification needs an SSN at the official OIG site, and a **required resolution note**. Both actions are recorded with the dataset version and your identity:
+
+{% figure src="/images/compliance-demo/zoom-screening-review-dialog.png" alt="Zoomed view of the LEIE match review dialog" caption='Close-up: the Match review dialog — "Not a match — clear permanently" (a cleared record never re-flags) vs "Confirm exclusion".' /%}
+
+Screening is **strictly org-admin-only** (Training Officers see the counts but never the named queue), and every event is written to an immutable, exportable evidence log — your audit-ready proof that screening happened.
 
 ---
 
@@ -144,19 +173,21 @@ Try it: adjust the status filter to see the cleared and confirmed matches, then 
 
 Where you define what "compliant" means for your organization.
 
-{% figure src="/images/compliance-demo/requirements.jpg" alt="Requirements" /%}
+{% figure src="/images/compliance-demo/requirements.jpg" alt="Requirements list" caption="The requirements list — type, scope, targeting, owner, rule, and live compliance %." /%}
 
-- **Three requirement types** (see the Type column):
-  - **Certification**: a cert type (optionally with a minimum level), e.g. "State EMS Certification current" with a "warn 60d before expiry" rule. A provider without an active, unexpired cert of that type counts as **missing**: negative reporting means you see who lacks something, not just what exists.
-  - **Training**: a named recurring training on a cadence in months (e.g. "Annual Compliance & Safety Training, every 12 months"), satisfied by a linked class completion, an outside completion, or a TO attestation. Next due = last satisfied + cadence.
-  - **Program**: a class-series rule (e.g. "Program: M&M Rounds") whose health also feeds the Programs overdue KPI.
-- **Creation wizard with impact preview**: before you save, you see exactly how many providers the rule will touch and how they'd score, so no surprise red walls.
-- **Scoping and targeting**: org-wide or per-department (Scope column); target everyone, specific groups (the "ALS Clinicians" and "EMTs" chips), or individual providers, with per-person overrides on top.
-- **Owners**: give a requirement a default owner (Owner column) and new gaps auto-create tasks assigned to them.
-- **Onboarding grace period**: optionally give new members N days before a never-satisfied training counts against them (it shows as "due soon" with a due date instead of "missing").
-- **Live compliance % per requirement** with gap counts, and an Active toggle to retire a rule without deleting it.
+Requirements come in **three types** (Certification, Training, Program) and can be scoped org-wide or per-department, targeted at everyone / a group / named people, and given a default owner and live compliance %:
 
-Try it: click "New requirement," build a certification rule through the wizard, and watch the impact preview before saving.
+{% figure src="/images/compliance-demo/zoom-requirements-columns.png" alt="Zoomed view of requirement columns" caption='Close-up: type chips, targeting ("ALS Clinicians"), owner, rule ("every 12 months" / "warn 30d before expiry"), and color-coded compliance %.' /%}
+
+**Try it — the creation wizard with impact preview.** The 3-step wizard (What → Who → Review & impact) shows you exactly who the rule will touch *before* you save:
+
+{% figure src="/images/compliance-demo/gif-requirement-wizard.gif" alt="Animation: the new-requirement wizard through to the impact preview" caption="The wizard: pick a type, name it, choose a certification, set targeting — then preview the impact." /%}
+
+That final step is the highlight — a live breakdown, a smart warning when most targeted members start non-compliant, and a sample of who'd be affected:
+
+{% figure src="/images/compliance-demo/zoom-requirement-impact-preview.png" alt="Zoomed view of the requirement impact preview" caption='Close-up: "742 members targeted · 186 compliant · 3 due soon · 553 overdue/missing today", the onboarding-grace suggestion, and a worst-first sample. No surprise red walls.' /%}
+
+You can also give training requirements an **onboarding grace period** (new members show "due soon" instead of "missing" for N days), and toggle a requirement Active/inactive without deleting it.
 
 ---
 
@@ -164,7 +195,7 @@ Try it: click "New requirement," build a certification rule through the wizard, 
 
 Recurring training programs (class series) managed as first-class compliance objects.
 
-{% figure src="/images/compliance-demo/programs.jpg" alt="Programs" /%}
+{% figure src="/images/compliance-demo/programs.jpg" alt="Programs list" caption="Programs — define a cadence + grace window, attach the classes that count as sessions." /%}
 
 Define a program (e.g. monthly M&M Rounds), set its cadence and grace window, and attach the classes that count as its sessions. Providers attend; completing a session on Prodigy counts automatically, and the matrix shows each provider's attended/owed. The demo org ships with **HALO** (6-month cadence, 2 classes) and **M&M Rounds** (2-month cadence, 12 classes). Visible to Training Officers as well as admins.
 
@@ -174,27 +205,30 @@ Define a program (e.g. monthly M&M Rounds), set its cadence and grace window, an
 
 Groups drive targeting, so requirements can say "ALS Clinicians only." Open **Users** in the left nav and hit the **Groups** button in the header (the "Manage groups" shortcut in the Overview setup checklist lands there too).
 
-{% figure src="/images/compliance-demo/groups.jpg" alt="Groups" /%}
+{% figure src="/images/compliance-demo/groups.jpg" alt="Groups list under Users" caption="The Groups page, reached from the Users section." /%}
 
-- **Groups page**: create groups per department (the demo has Bike Team EMT, EMTs, Paramedics, Tac Medics); each group name links to its own page where you rename, delete, and manage members with an inline dual-list selector.
-- **Rule-suggested membership**: define a rule (e.g. based on certifications held) and the system suggests members automatically, recomputing nightly and whenever certs change. You **approve** suggestions into real memberships or **dismiss** them permanently. Suggestions are additive-only: the system never removes anyone on its own.
+Each group has an inline **dual-list member editor** (move members between the department roster and the group):
 
-Try it: open the EMTs group, review its members, then create a rule and approve one of its suggestions.
+{% figure src="/images/compliance-demo/zoom-groups-dual-list.png" alt="Zoomed view of the group dual-list member editor" caption="Close-up: the dual-list selector — department members on the left, group members on the right." /%}
+
+And an optional **rule-suggested membership** — define a rule and the system suggests members, but never changes anything until you approve, and never removes anyone:
+
+{% figure src="/images/compliance-demo/zoom-groups-membership-rule.png" alt="Zoomed view of the membership rule editor" caption='Close-up: "nothing changes until you approve them, and the rule never removes members" — additive-only by design.' /%}
 
 ---
 
 ## 11. Notifications tab (Configure)
 
-How compliance reaches people who never open the dashboard. Note the Scope selector: settings apply separately to the organization rollup and to each department.
+How compliance reaches people who never open the dashboard. Settings apply separately to the organization rollup and to each department (see the Scope selector).
 
-{% figure src="/images/compliance-demo/notifications.jpg" alt="Notifications" /%}
+{% figure src="/images/compliance-demo/notifications.jpg" alt="Notifications settings" caption="Notifications — the weekly digest and monthly report subscriptions." /%}
 
-- **Weekly compliance digest**: per-department or org-level subscription (default off) that emails training officers one aggregated Monday email (expiring and expired certifications, overdue trainings, pending screening matches) instead of per-certification notices. At most one send per week per subscription.
-- **One-click digest actions**: digest emails carry secure single-use links so a TO can mark-lapsed, snooze a week, or jump to renew **without logging in**. Links expire after 14 days and can never fire twice. State-specific reminder ladders (New York's 10 NYCRR 800.9 requirement is pre-seeded) drive the reminder copy.
-- **Monthly compliance report**: sent on the 1st of each month with key counts and per-requirement compliance percentages, a CSV, and a dashboard deep link.
-- **Bulk gap reminders** (reachable from Roster and Matrix): pick providers, send each a personalized list of their gaps, with a send history and same-day duplicate suppression.
+{% figure src="/images/compliance-demo/zoom-notifications-cards.png" alt="Zoomed view of the notification subscription cards" caption="Close-up: the weekly compliance digest (aggregated Monday email) and the monthly compliance report (per-requirement %, with a CSV)." /%}
 
-Try it: hit "Set up" on the weekly digest, add a recipient, and save.
+- **Weekly compliance digest**: a per-department or org-level Monday email aggregating expiring/expired certs, overdue trainings, and pending screening matches — instead of per-certification notices.
+- **One-click digest actions**: digest emails carry secure single-use links so a TO can mark-lapsed, snooze a week, or jump to renew **without logging in** (14-day expiry, single-use). State-specific reminder ladders (New York's 10 NYCRR 800.9 is pre-seeded) drive the copy.
+- **Monthly compliance report**: org counts and per-requirement compliance %, with a CSV and a dashboard deep link.
+- **Bulk gap reminders** (also from Roster and Matrix): pick providers, send each a personalized list of their gaps.
 
 ---
 
@@ -207,19 +241,19 @@ Gaps aren't just displayed, they're workable:
 - "My tasks" vs "all tasks" views; the nav badge counts open tasks.
 - **Issues auto-complete when the underlying gap resolves**: fix the cert, and the task closes itself.
 
-Try it: assign an issue from a roster row, comment on it, then look for it in the Overview action queue.
+Try it: click a gap cell in the Matrix to open its issue page, comment on it, then look for it in the Overview action queue.
 
 ---
 
 ## 13. Provider self-view ("My compliance")
 
-Log out and back in as **James Smith** (`proems-user-1@e2e.prodigyems.com`), or just look at any provider's own dashboard:
+Log out and back in as **James Smith** (`proems-user-1@e2e.prodigyems.com`), or use the "View as Training Officer" toggle to see any provider's own dashboard:
 
-{% figure src="/images/compliance-demo/self-view.jpg" alt="My compliance self-view" /%}
+{% figure src="/images/compliance-demo/self-view.jpg" alt="Provider dashboard with the My compliance widget" caption="A provider's personal dashboard, with the My compliance widget on the right." /%}
 
-- Providers get a **My compliance widget** on their personal dashboard and a profile tab listing only the items that apply to them, in the same status language the admin sees (Missing, Compliant, with satisfied dates and next-due dates).
-- Each item has **fix-it actions**: update certifications, view assignments, or verify with National Registry (which prompts for a date of birth if none is on file).
-- Providers never see anyone else's data and have no access to the admin dashboard.
+{% figure src="/images/compliance-demo/zoom-self-view-widget.png" alt="Zoomed view of the My compliance widget" caption='Close-up: the provider sees only their own items in the same status language — Missing ("No active certification on file") and Compliant ("Last satisfied … via attestation; next due …").' /%}
+
+Each item has **fix-it actions**: update certifications, view assignments, or verify with National Registry (which prompts for a date of birth if none is on file). Providers never see anyone else's data and have no access to the admin dashboard.
 
 ---
 
