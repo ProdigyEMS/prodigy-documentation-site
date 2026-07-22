@@ -1,15 +1,19 @@
 ---
-title: Google Workspace SSO Setup
-description: Connect Google Workspace as your identity provider so your team can sign in to Prodigy with the Google account they already use.
+title: Google Workspace SAML SSO Setup
+description: Connect Google Workspace as a SAML identity provider so your team can sign in to Prodigy with the Google account they already use.
 ---
 
 {% callout type="note" title="New feature" %}
-Google Workspace SSO is new. If anything on this page doesn't match what you see, or you've got feedback, let us know at [Support@prodigyems.com](mailto:Support@prodigyems.com), we'd love to hear from you.
+Google Workspace SAML SSO is new. If anything on this page doesn't match what you see, or you've got feedback, let us know at [support@prodigyems.com](mailto:support@prodigyems.com), we'd love to hear from you.
 {% /callout %}
 
 ## What this does
 
-Connecting Google Workspace lets your team sign in to Prodigy with the Google account they already use for email and everything else, no separate Prodigy password to remember. The first time someone signs in this way, their Prodigy account is created automatically with the right name and department, so you don't need to create accounts by hand first.
+Connecting Google Workspace as a SAML identity provider lets your team sign in to Prodigy with the Google account they already use for email and everything else, no separate Prodigy password to remember. The first time someone signs in this way, their Prodigy account is created automatically with the right name and department, so you don't need to create accounts by hand first.
+
+{% callout type="note" title="SAML, specifically" %}
+This guide covers connecting Google Workspace via SAML. A lighter-weight Google sign-in option (OAuth/OIDC, similar to a "Sign in with Google" button) is coming soon as a separate guide, the two aren't the same setup.
+{% /callout %}
 
 ## Before you start
 
@@ -84,4 +88,4 @@ This is what's called an "IdP-initiated" sign-in, meaning your team starts from 
 
 ## Need help?
 
-If anything on your screen doesn't match what's described here, or a sign-in isn't working, reach out to [Support@prodigyems.com](mailto:Support@prodigyems.com) with a screenshot of where you're stuck and we'll help sort it out.
+If anything on your screen doesn't match what's described here, or a sign-in isn't working, reach out to [support@prodigyems.com](mailto:support@prodigyems.com) with a screenshot of where you're stuck and we'll help sort it out.

@@ -9,8 +9,8 @@ We often get requested to link other systems with Prodigy to make the user exper
 ## Single Sign On
 Many services choose to use our Single Sign On (SSO) option to access Prodigy. Many organizations use SSO solutions provided by third-party vendors, which integrate with their existing systems and applications.
 
-If your organization uses **Google Workspace**, you can connect it yourself, see our [Google Workspace SSO guide](/docs/google-workspace-sso) for step-by-step setup instructions.
+You can connect a SAML 2.0 identity provider yourself, see the step-by-step guides for [Google Workspace](/docs/google-workspace-saml-sso), [Okta](/docs/okta-saml-sso), [Microsoft Entra ID](/docs/microsoft-entra-saml-sso), or [other SAML 2.0 providers](/docs/saml-sso).
 
-For other identity providers, we can integrate with standard SSO systems. If you have an existing system you use for authentication, let us know and we can work with them to allow SSO.
+If you have an existing system you use for authentication that isn't covered above, let us know and we can work with them to allow SSO.
 ## Other Integrations
-We currently don't maintain any public documentation on using our API. If you have other systems that you are looking integrate with Prodigy reach out to [Support@prodigyems.com](mailto:Support@prodigyems.com) and we can discuss the options.
+We currently don't maintain any public documentation on using our API. If you have other systems that you are looking integrate with Prodigy reach out to [support@prodigyems.com](mailto:support@prodigyems.com) and we can discuss the options.
