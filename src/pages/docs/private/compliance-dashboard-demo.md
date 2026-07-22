@@ -201,11 +201,11 @@ Define a program (e.g. monthly M&M Rounds), set its cadence and grace window, an
 
 ---
 
-## 10. Groups (its own page under Users)
+## 10. Groups (a tab in the Users subnav)
 
-Groups drive targeting, so requirements can say "ALS Clinicians only." Open **Users** in the left nav and hit the **Groups** button in the header (the "Manage groups" shortcut in the Overview setup checklist lands there too).
+Groups drive targeting, so requirements can say "ALS Clinicians only." Open **Users** in the left nav and pick the **Groups** tab (the subnav reads Organization Users | Invitations | Groups; the "Manage groups" shortcut in the Overview setup checklist lands there too).
 
-{% figure src="/images/compliance-demo/groups.jpg" alt="Groups list under Users" caption="The Groups page, reached from the Users section." /%}
+{% figure src="/images/compliance-demo/groups.jpg" alt="Groups tab in the Users subnav" caption="Groups lives as a tab in the Users subnav." /%}
 
 Each group has an inline **dual-list member editor** (move members between the department roster and the group):
 
