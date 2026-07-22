@@ -27,7 +27,12 @@ const navigation = [
       { title: 'Certifications', href: '/docs/certifications' },
       { title: 'Certification Alerts', href: '/docs/alerts' },
       { title: 'Managing Groups', href: '/docs/groups' },
-      { title: 'Organization View', href: '/docs/organization' },
+      { title: 'Organization View', href: '/docs/organization' }
+    ],
+  },
+  {
+    title: 'Single Sign-On',
+    links: [
       { title: 'Google Workspace SSO', href: '/docs/google-workspace-sso' }
     ],
   },
@@ -59,7 +64,6 @@ const navigation = [
     title: 'Technical Questions',
     links: [
       { title: 'Do you Have an API?', href: '/docs/api' },
-      { title: 'Google Workspace SSO', href: '/docs/google-workspace-sso' },
       { title: 'Is my Users Data Safe?', href: '/docs/data-safe' },
       { title: 'URL Allow List', href: '/docs/allow_list' },
       { title: 'Network Troubleshooting', href: '/docs/network-troubleshooting' },
