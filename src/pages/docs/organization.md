@@ -4,7 +4,7 @@ description: Learn how to management your organization.
 ---
 
 The organization view gives you admin access to all departments that fall under your organization.
-{%videoplayer src="https://content.jwplatform.com/videos/PS6d8GxG-oKF7OKp9.mp4" poster="https://s3.us-east-1.amazonaws.com/media.prodigyems.com/images/org+view.png" /%}
+{%videoplayer mediaId="PS6d8GxG" /%}
 
 ---
 ## How Does it Work?

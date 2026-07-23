@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import '../styles/globals.css'
+// Server-side Sentry init fallback for Netlify runtimes that skip
+// instrumentation.js (see the module for details). Must load with every page.
+import '@/lib/sentry-server-fallback'
 
 import DefaultLayout from '@/components/DefaultLayout'
 import UserLayout from '@/components/UserLayout'
 
-import 'focus-visible'
 import '@/styles/tailwind.css'
 
 function getNodeText(node) {
@@ -65,7 +67,6 @@ export default function App({ Component, pageProps }) {
 
   // Determine the layout to use
   const layout = pageProps.markdoc?.frontmatter.layout || 'default'
-  console.log('Selected layout:', layout)
 
   const LayoutComponent = {
     default: DefaultLayout,

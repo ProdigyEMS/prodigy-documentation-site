@@ -4,7 +4,7 @@ description: Learn how to complete classes in Prodigy on behalf of a user.
 ---
 
 Prodigy has several options to complete classes on behalf of users.
-{%videoplayer src="https://cdn.jwplayer.com/videos/ULmKpTle-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/docs-video-posters/complete+class.png" /%}
+{%videoplayer mediaId="ULmKpTle" /%}
 ---
 ## Completion Options
 To give you the most flexibility with your Prodigy account, we give you several options to complete classes. Here are a few examples of how this might be used:

@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: next build
+    runs-on: ubuntu-latest
+    # A wedged server (accepts TCP, never responds) would otherwise hang the
+    # smoke-test curls until the 6-hour runner default.
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      # .nvmrc is the single source of truth for the Node version: Netlify uses
+      # it for the build, the Netlify functions runtime follows the build
+      # version, and CI must match so that runtime-only failures (e.g. the
+      # PRD-2004 ESM parse crash, which only reproduced on the Lambda Node
+      # version) surface here instead of in production.
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # `next build` succeeding is not enough: all pages are SSG'd at build
+      # time, so a crash in the server handler only shows up when a request is
+      # actually served (PRD-2004 shipped a sitewide 500 with a green build).
+      # Boot the production server and assert real responses.
+      - name: Smoke test production server
+        run: |
+          npx next start -p 3000 &
+          SERVER_PID=$!
+
+          for i in $(seq 1 30); do
+            if curl -sf --max-time 10 -o /dev/null http://localhost:3000/; then
+              break
+            fi
+            sleep 1
+          done
+
+          check() {
+            local path=$1 expected=$2 code
+            code=$(curl -s --max-time 10 -o /dev/null -w "%{http_code}" "http://localhost:3000$path")
+            echo "$code  $path (expected $expected)"
+            [ "$code" = "$expected" ]
+          }
+
+          check / 200
+          check /docs/user-management 200
+          check /docs/network-troubleshooting 200
+          check /docs/try-this-first 200
+          check /individual 200
+          check /nonexistent-smoke-path 404
+
+          kill "$SERVER_PID"

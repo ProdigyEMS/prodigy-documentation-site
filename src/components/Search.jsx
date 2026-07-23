@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState, useSyncExternalStore } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import Router from 'next/router'
@@ -14,6 +14,24 @@ function Hit({ hit, children }) {
   return <Link href={hit.url}>{children}</Link>
 }
 
+const emptySubscribe = () => () => {}
+
+/**
+ * Client-only platform modifier key for the search hotkey hint (⌘ on Apple
+ * platforms, Ctrl elsewhere). useSyncExternalStore renders the server
+ * snapshot (undefined) during SSR/hydration and swaps in the real value on
+ * the client, replacing the set-state-in-effect idiom.
+ *
+ * @returns {string | undefined} The modifier key label, or undefined on the server.
+ */
+function useModifierKey() {
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? '⌘' : 'Ctrl '),
+    () => undefined
+  )
+}
+
 function SearchIcon(props) {
   return (
     <svg aria-hidden="true" viewBox="0 0 20 20" {...props}>
@@ -24,7 +42,7 @@ function SearchIcon(props) {
 
 export function Search() {
   let [isOpen, setIsOpen] = useState(false)
-  let [modifierKey, setModifierKey] = useState()
+  let modifierKey = useModifierKey()
 
   const onOpen = useCallback(() => {
     setIsOpen(true)
@@ -35,12 +53,6 @@ export function Search() {
   }, [setIsOpen])
 
   useDocSearchKeyboardEvents({ isOpen, onOpen, onClose })
-
-  useEffect(() => {
-    setModifierKey(
-      /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? '⌘' : 'Ctrl '
-    )
-  }, [])
 
   return (
     <>

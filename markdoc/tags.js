@@ -1,5 +1,13 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
+import dynamic from 'next/dynamic'
+
+const JWPlayer = dynamic(() => import('@/components/JWPlayer').then((m) => m.JWPlayer), {
+  ssr: false,
+  loading: () => (
+    <div className="aspect-video w-full bg-gray-100 animate-pulse rounded" />
+  ),
+})
 
 
 const tags = {
@@ -34,16 +42,9 @@ const tags = {
   videoplayer: {
     selfClosing: true,
     attributes: {
-      src: { type: String },
-      poster: { type: String },
+      mediaId: { type: String, required: true, errorLevel: 'critical' },
     },
-    render: ({ src, poster }) => (
-      <videoplayer>
-        <video controls autoPlay={false} playsInline poster={poster}>
-                <source src={src} type="video/mp4"/>          
-        </video>
-      </videoplayer>
-    ),
+    render: ({ mediaId }) => <JWPlayer mediaId={mediaId} />,
   },
 
   'quick-links': {

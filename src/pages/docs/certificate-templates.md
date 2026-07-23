@@ -4,7 +4,7 @@ description: Learn how to create a certificate template.
 ---
 
 The certificate templates can be created and used in multiple courses. You can create as many certificate templates as you need, and reuse them where appropriate. You can find this option under the Classes tab by choose **Certificates** 
-{%videoplayer src="https://content.jwplatform.com/videos/N5REEER1-oKF7OKp9.mp4" poster="https://s3.amazonaws.com/media.prodigyems.com/images/certificate+templates.png" /%}
+{%videoplayer mediaId="N5REEER1" /%}
 
 ---
 {% callout title="Certificate Templates" %}

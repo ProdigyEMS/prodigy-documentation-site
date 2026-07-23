@@ -4,7 +4,7 @@ description: Learn how to assign training plans in Prodigy.
 ---
 
 This guide will walk you through creating training plan assignments and reporting on assignments.
-{%videoplayer src="https://content.jwplatform.com/videos/YgKWbGHk-oKF7OKp9.mp4" poster="/images/tp-assignment-video.png" /%}
+{%videoplayer mediaId="YgKWbGHk" /%}
 ---
 {% callout type="note" title="Access Training Plan Assignments" %}
 You can access the assignment function from 3 places. **1.** Click on **Assign to User** from the training plans table. **2.** When editing a plan, click on the **Assign Training Plan** button. **3.** Choose Choose **Training Plans** under the **Assignments** tab on your TO menu. 

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { Listbox } from '@headlessui/react'
+import { useSyncExternalStore } from 'react'
+import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/react'
 import clsx from 'clsx'
 
 const themes = [
@@ -44,72 +44,95 @@ function SystemIcon(props) {
   )
 }
 
-export function ThemeSelector(props) {
-  let [selectedTheme, setSelectedTheme] = useState()
+/**
+ * Subscribes to theme changes from outside React: the `data-theme` attribute
+ * on <html> (mutated by this component and by the inline script in
+ * _document.jsx) and cross-tab `storage` events. Storage events are reflected
+ * into the attribute so the _document MutationObserver applies classes and
+ * the snapshot below picks the change up.
+ *
+ * @param {() => void} callback - React's store-changed notifier.
+ * @returns {() => void} Unsubscribe function.
+ */
+function subscribeToThemeChanges(callback) {
+  const observer = new MutationObserver(callback)
+  observer.observe(document.documentElement, { attributeFilter: ['data-theme'] })
 
-  useEffect(() => {
-    if (selectedTheme) {
-      document.documentElement.setAttribute('data-theme', selectedTheme.value)
-    } else {
-      setSelectedTheme(
-        themes.find(
-          (theme) =>
-            theme.value === document.documentElement.getAttribute('data-theme')
-        )
+  const onStorage = (event) => {
+    if (event.key === 'theme') {
+      document.documentElement.setAttribute(
+        'data-theme',
+        event.newValue ?? 'system'
       )
     }
-  }, [selectedTheme])
+  }
+  window.addEventListener('storage', onStorage)
 
-  useEffect(() => {
-    let handler = () =>
-      setSelectedTheme(
-        themes.find(
-          (theme) => theme.value === (window.localStorage.theme ?? 'system')
-        )
-      )
+  return () => {
+    observer.disconnect()
+    window.removeEventListener('storage', onStorage)
+  }
+}
 
-    window.addEventListener('storage', handler)
+export function ThemeSelector(props) {
+  // The theme's source of truth lives outside React (the data-theme attribute
+  // + localStorage, wired together by the _document inline script), so read
+  // it with useSyncExternalStore instead of mirroring it into state via
+  // effects. The server snapshot is null: the attribute only exists on the
+  // client, and the pre-hydration inline script has already set it by the
+  // time this hydrates.
+  const themeValue = useSyncExternalStore(
+    subscribeToThemeChanges,
+    () => document.documentElement.getAttribute('data-theme'),
+    () => null
+  )
+  const selectedTheme = themes.find((theme) => theme.value === themeValue) ?? null
 
-    return () => window.removeEventListener('storage', handler)
-  }, [])
+  /**
+   * Applies a picked theme by writing the data-theme attribute; the
+   * _document MutationObserver persists it to localStorage and toggles the
+   * dark class.
+   *
+   * @param {{ value: string }} theme - The picked theme option.
+   * @returns {void}
+   */
+  const handleThemeChange = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme.value)
+  }
 
   return (
     <Listbox
       as="div"
       value={selectedTheme}
-      onChange={setSelectedTheme}
+      onChange={handleThemeChange}
       {...props}
     >
-      <Listbox.Label className="sr-only">Theme</Listbox.Label>
-      <Listbox.Button
+      <ListboxLabel className="sr-only">Theme</ListboxLabel>
+      <ListboxButton
         className="flex h-6 w-6 items-center justify-center rounded-lg shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5"
         aria-label={selectedTheme?.name}
       >
-        <LightIcon className="hidden h-4 w-4 fill-sky-400 [[data-theme=light]_&]:block" />
-        <DarkIcon className="hidden h-4 w-4 fill-sky-400 [[data-theme=dark]_&]:block" />
+        <LightIcon className="hidden h-4 w-4 fill-sky-400 in-data-[theme=light]:block" />
+        <DarkIcon className="hidden h-4 w-4 fill-sky-400 in-data-[theme=dark]:block" />
         <LightIcon className="hidden h-4 w-4 fill-slate-400 [:not(.dark)[data-theme=system]_&]:block" />
         <DarkIcon className="hidden h-4 w-4 fill-slate-400 [.dark[data-theme=system]_&]:block" />
-      </Listbox.Button>
-      <Listbox.Options className="absolute top-full left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-white p-3 text-sm font-medium shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-800 dark:ring-white/5">
+      </ListboxButton>
+      <ListboxOptions className="absolute top-full left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-white p-3 text-sm font-medium shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-800 dark:ring-white/5">
         {themes.map((theme) => (
-          <Listbox.Option
+          <ListboxOption
             key={theme.value}
             value={theme}
-            className={({ active, selected }) =>
-              clsx(
-                'flex cursor-pointer select-none items-center rounded-[0.625rem] p-1',
-                {
-                  'text-sky-500': selected,
-                  'text-slate-900 dark:text-white': active && !selected,
-                  'text-slate-700 dark:text-slate-400': !active && !selected,
-                  'bg-slate-100 dark:bg-slate-900/40': active,
-                }
-              )
-            }
+            className={clsx(
+              'flex cursor-pointer select-none items-center rounded-[0.625rem] p-1',
+              'text-slate-700 dark:text-slate-400',
+              'data-selected:text-sky-500',
+              'data-focus:text-slate-900 data-focus:bg-slate-100',
+              'dark:data-focus:text-white dark:data-focus:bg-slate-900/40',
+            )}
           >
             {({ selected }) => (
               <>
-                <div className="rounded-md bg-white p-1 shadow ring-1 ring-slate-900/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5">
+                <div className="rounded-md bg-white p-1 shadow-sm ring-1 ring-slate-900/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5">
                   <theme.icon
                     className={clsx(
                       'h-4 w-4',
@@ -122,9 +145,9 @@ export function ThemeSelector(props) {
                 <div className="ml-3">{theme.name}</div>
               </>
             )}
-          </Listbox.Option>
+          </ListboxOption>
         ))}
-      </Listbox.Options>
+      </ListboxOptions>
     </Listbox>
   )
 }
