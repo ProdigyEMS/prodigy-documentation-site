@@ -61,6 +61,7 @@ jobs:
           check /docs/network-troubleshooting 200
           check /docs/login-help 200
           check /docs/try-this-first 200
+          check /docs/network-requirements 200
           check /individual 200
           check /nonexistent-smoke-path 404
 
