@@ -135,4 +135,4 @@ Jordan
 
 ## Sending the Files to Us
 
-Email the files as attachments to [Support@prodigyems.com](mailto:Support@prodigyems.com), along with what went wrong, the time it happened, and the page you were on. If Prodigy displayed an error message with a reference code, include that code too — it lets us jump straight to the matching error in our logs. If a file is too large to attach (NetLogs can grow quickly), compress it into a `.zip` first, or reply to your support ticket and we'll send you an upload link. You can also start from the chat icon on the Prodigy page and our team will tell you where to send the files.
+Email the files as attachments to [Support@prodigyems.com](mailto:Support@prodigyems.com), along with what went wrong, the time it happened, and the page you were on. If a file is too large to attach (NetLogs can grow quickly), compress it into a `.zip` first, or reply to your support ticket and we'll send you an upload link. You can also start from the chat icon on the Prodigy page and our team will tell you where to send the files.
