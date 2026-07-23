@@ -9,12 +9,12 @@ Welcome! This guide walks you through every feature of the new organization Comp
 
 ## 1. Getting in
 
-**Demo link:** https://16-macbook-pro-2023.tail2cdf35.ts.net
+The current demo URL and seeded credentials are distributed separately so they can be rotated without committing them to this public repository. Ask the demo owner for the current access details.
 
-| Persona | Email | Password | Use it to see |
-|---|---|---|---|
-| **Org Admin** ("Mary Johnson") | `proems-admin@e2e.prodigyems.com` | `test-trainingofficer-user-password` | Everything, including OIG exclusion screening |
-| **Provider** ("James Smith") | `proems-user-1@e2e.prodigyems.com` | `test-trainingofficer-user-password` | The provider self-view ("My compliance") |
+| Persona | Use it to see |
+|---|---|
+| **Org Admin** ("Mary Johnson") | Everything, including OIG exclusion screening |
+| **Provider** ("James Smith") | The provider self-view ("My compliance") |
 
 Good to know before you start:
 

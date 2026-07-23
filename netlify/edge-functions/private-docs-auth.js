@@ -109,5 +109,9 @@ export default async function handler(request, context) {
 }
 
 export const config = {
-  path: ['/docs/private', '/docs/private/*'],
+  path: [
+    '/docs/private',
+    '/docs/private/*',
+    '/_next/data/:buildId/docs/private/*',
+  ],
 };
