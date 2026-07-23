@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "eslint": "^9.39.4",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "16.2.11",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.8.0"
   },
