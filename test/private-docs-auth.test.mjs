@@ -73,6 +73,66 @@ test('allows a request with valid credentials to continue', async () => {
   assert.equal(continued, true)
 })
 
+test('challenges requests without an Authorization header', async () => {
+  setCredentials()
+  let continued = false
+
+  const response = await handler(
+    new Request('https://docs.example.test/docs/private/guide'),
+    {
+      next() {
+        continued = true
+        return new Response('must not be served')
+      },
+    },
+  )
+
+  assert.equal(response.status, 401)
+  assert.match(response.headers.get('www-authenticate') ?? '', /^Basic /)
+  assert.equal(continued, false)
+})
+
+test('rejects an incorrect username or password', async (t) => {
+  setCredentials()
+
+  for (const [name, user, password] of [
+    ['username', 'intruder', 'correct horse'],
+    ['password', 'reviewer', 'wrong horse'],
+  ]) {
+    await t.test(name, async () => {
+      let continued = false
+      const request = new Request(
+        'https://docs.example.test/docs/private/guide',
+        { headers: { authorization: basicAuth(user, password) } },
+      )
+
+      const response = await handler(request, {
+        next() {
+          continued = true
+          return new Response('must not be served')
+        },
+      })
+
+      assert.equal(response.status, 401)
+      assert.equal(continued, false)
+    })
+  }
+})
+
+test('allows passwords containing colons', async () => {
+  const password = 'correct:horse:battery'
+  setCredentials('reviewer', password)
+  const request = new Request('https://docs.example.test/docs/private/guide', {
+    headers: { authorization: basicAuth('reviewer', password) },
+  })
+
+  const response = await handler(request, {
+    next: () => new Response('private guide'),
+  })
+
+  assert.equal(response.status, 200)
+})
+
 test('accepts the Basic authorization scheme case-insensitively', async () => {
   setCredentials()
   const authorization = basicAuth('reviewer', 'correct horse').replace(
