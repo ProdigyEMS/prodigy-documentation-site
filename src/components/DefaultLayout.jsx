@@ -32,6 +32,15 @@ const navigation = [
     ],
   },
   {
+    title: 'Single Sign-On',
+    links: [
+      { title: 'Google Workspace SAML', href: '/docs/google-workspace-saml-sso' },
+      { title: 'Okta SAML', href: '/docs/okta-saml-sso' },
+      { title: 'Microsoft Entra SAML', href: '/docs/microsoft-entra-saml-sso' },
+      { title: 'Other SAML 2.0 Providers', href: '/docs/saml-sso' }
+    ],
+  },
+  {
     title: 'Training Management',
     links: [
       { title: 'Creating Classes', href: '/docs/create-class' },
@@ -58,6 +67,7 @@ const navigation = [
   {
     title: 'Technical Questions',
     links: [
+      { title: 'Try This First', href: '/docs/try-this-first' },
       { title: 'Do you Have an API?', href: '/docs/api' },
       { title: 'Is my Users Data Safe?', href: '/docs/data-safe' },
       { title: 'URL Allow List', href: '/docs/allow_list' },

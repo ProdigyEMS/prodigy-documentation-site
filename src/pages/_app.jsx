@@ -67,7 +67,6 @@ export default function App({ Component, pageProps }) {
 
   // Determine the layout to use
   const layout = pageProps.markdoc?.frontmatter.layout || 'default'
-  console.log('Selected layout:', layout)
 
   const LayoutComponent = {
     default: DefaultLayout,
