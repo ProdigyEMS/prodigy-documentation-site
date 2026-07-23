@@ -40,11 +40,17 @@ test('protects Next.js data routes for private docs', () => {
   )
 })
 
+test('protects the private docs index routes', () => {
+  assert.ok(config.path.includes('/docs/private/'))
+  assert.ok(config.path.includes('/_next/data/:buildId/docs/private.json'))
+})
+
 test('does not commit demo credentials to the public repository', async () => {
   const guide = await readFile(DEMO_GUIDE, 'utf8')
 
   assert.doesNotMatch(guide, /\*\*Demo link:\*\*/)
   assert.doesNotMatch(guide, /\| Persona \| Email \| Password \|/)
+  assert.doesNotMatch(guide, /@e2e\.prodigyems\.com/)
 })
 
 test('allows a request with valid credentials to continue', async () => {
@@ -65,6 +71,23 @@ test('allows a request with valid credentials to continue', async () => {
 
   assert.equal(response.status, 200)
   assert.equal(continued, true)
+})
+
+test('accepts the Basic authorization scheme case-insensitively', async () => {
+  setCredentials()
+  const authorization = basicAuth('reviewer', 'correct horse').replace(
+    'Basic',
+    'bAsIc',
+  )
+  const request = new Request('https://docs.example.test/docs/private/guide', {
+    headers: { authorization },
+  })
+
+  const response = await handler(request, {
+    next: () => new Response('private guide'),
+  })
+
+  assert.equal(response.status, 200)
 })
 
 test('allows UTF-8 credentials', async () => {

@@ -78,13 +78,14 @@ export default async function handler(request, context) {
   }
 
   const header = request.headers.get('authorization') ?? '';
-  if (!header.startsWith('Basic ')) {
+  const match = /^Basic\s+(\S+)\s*$/i.exec(header);
+  if (!match) {
     return unauthorized();
   }
 
   let decoded;
   try {
-    const binary = atob(header.slice('Basic '.length).trim());
+    const binary = atob(match[1]);
     const bytes = Uint8Array.from(binary, (character) =>
       character.charCodeAt(0),
     );
@@ -125,7 +126,9 @@ export default async function handler(request, context) {
 export const config = {
   path: [
     '/docs/private',
+    '/docs/private/',
     '/docs/private/*',
+    '/_next/data/:buildId/docs/private.json',
     '/_next/data/:buildId/docs/private/*',
   ],
 };

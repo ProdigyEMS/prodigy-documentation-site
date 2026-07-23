@@ -247,7 +247,7 @@ Try it: click a gap cell in the Matrix to open its issue page, comment on it, th
 
 ## 13. Provider self-view ("My compliance")
 
-Log out and back in as **James Smith** (`proems-user-1@e2e.prodigyems.com`), or use the "View as Training Officer" toggle to see any provider's own dashboard:
+Log out and back in with the separately distributed credentials for **James Smith**, or use the "View as Training Officer" toggle to see any provider's own dashboard:
 
 {% figure src="/images/compliance-demo/self-view.jpg" alt="Provider dashboard with the My compliance widget" caption="A provider's personal dashboard, with the My compliance widget on the right." /%}
 
