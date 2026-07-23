@@ -31,6 +31,15 @@ const navigation = [
     ],
   },
   {
+    title: 'Single Sign-On',
+    links: [
+      { title: 'Google Workspace SAML', href: '/docs/google-workspace-saml-sso' },
+      { title: 'Okta SAML', href: '/docs/okta-saml-sso' },
+      { title: 'Microsoft Entra SAML', href: '/docs/microsoft-entra-saml-sso' },
+      { title: 'Other SAML 2.0 Providers', href: '/docs/saml-sso' }
+    ],
+  },
+  {
     title: 'Training Management',
     links: [
       { title: 'Creating Classes', href: '/docs/create-class' },
