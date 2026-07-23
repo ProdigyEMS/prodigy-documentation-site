@@ -58,6 +58,7 @@ const navigation = [
   {
     title: 'Technical Questions',
     links: [
+      { title: 'Try This First', href: '/docs/try-this-first' },
       { title: 'Do you Have an API?', href: '/docs/api' },
       { title: 'Is my Users Data Safe?', href: '/docs/data-safe' },
       { title: 'URL Allow List', href: '/docs/allow_list' },
