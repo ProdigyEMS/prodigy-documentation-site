@@ -84,7 +84,11 @@ export default async function handler(request, context) {
 
   let decoded;
   try {
-    decoded = atob(header.slice('Basic '.length).trim());
+    const binary = atob(header.slice('Basic '.length).trim());
+    const bytes = Uint8Array.from(binary, (character) =>
+      character.charCodeAt(0),
+    );
+    decoded = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
   } catch {
     return unauthorized();
   }
@@ -105,7 +109,17 @@ export default async function handler(request, context) {
     return unauthorized();
   }
 
-  return context.next();
+  const response = await context.next();
+  const headers = new Headers(response.headers);
+  headers.set('Cache-Control', 'no-store');
+  headers.set('CDN-Cache-Control', 'no-store');
+  headers.set('Netlify-CDN-Cache-Control', 'no-store');
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 }
 
 export const config = {

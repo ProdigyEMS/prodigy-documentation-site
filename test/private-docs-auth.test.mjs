@@ -22,6 +22,17 @@ function setCredentials(user = 'reviewer', password = 'correct horse') {
   }
 }
 
+function basicAuth(user, password) {
+  const bytes = new TextEncoder().encode(`${user}:${password}`)
+  let binary = ''
+
+  for (const byte of bytes) {
+    binary += String.fromCharCode(byte)
+  }
+
+  return `Basic ${btoa(binary)}`
+}
+
 test('protects Next.js data routes for private docs', () => {
   assert.ok(
     config.path.includes('/_next/data/:buildId/docs/private/*'),
@@ -54,6 +65,51 @@ test('allows a request with valid credentials to continue', async () => {
 
   assert.equal(response.status, 200)
   assert.equal(continued, true)
+})
+
+test('allows UTF-8 credentials', async () => {
+  const user = 'réviewer'
+  const password = 'sésame 🔒'
+  setCredentials(user, password)
+  let continued = false
+  const request = new Request('https://docs.example.test/docs/private/guide', {
+    headers: { authorization: basicAuth(user, password) },
+  })
+
+  const response = await handler(request, {
+    next() {
+      continued = true
+      return new Response('private guide')
+    },
+  })
+
+  assert.equal(response.status, 200)
+  assert.equal(continued, true)
+})
+
+test('prevents authenticated private responses from being cached', async () => {
+  setCredentials()
+  const request = new Request('https://docs.example.test/docs/private/guide', {
+    headers: { authorization: basicAuth('reviewer', 'correct horse') },
+  })
+
+  const response = await handler(request, {
+    next() {
+      return new Response('private guide', {
+        headers: {
+          'Cache-Control': 'public, max-age=0, must-revalidate',
+          'CDN-Cache-Control': 'public, s-maxage=31536000',
+          'Netlify-CDN-Cache-Control': 'public, s-maxage=31536000',
+          'X-Downstream-Header': 'preserved',
+        },
+      })
+    },
+  })
+
+  assert.equal(response.headers.get('cache-control'), 'no-store')
+  assert.equal(response.headers.get('cdn-cache-control'), 'no-store')
+  assert.equal(response.headers.get('netlify-cdn-cache-control'), 'no-store')
+  assert.equal(response.headers.get('x-downstream-header'), 'preserved')
 })
 
 test('fails closed when credentials are missing', async () => {
