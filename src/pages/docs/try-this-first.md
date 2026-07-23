@@ -35,7 +35,7 @@ If you're on a department or station network, try the same thing from a phone ho
 
 ## Still Stuck?
 
-You've ruled out the easy stuff. Two ways to go from here:
+You've ruled out the easy stuff. Three ways to go from here:
 
 - If it's specifically a login, password, or account problem, see [Trouble Logging In?](/docs/login-help).
 - Follow the [Network Troubleshooting Guide](/docs/network-troubleshooting) to capture diagnostics our team can analyze.
