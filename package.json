@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test:private-docs": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test netlify/edge-functions/private-docs-auth.test.mjs"
+    "test:private-docs": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test test/private-docs-auth.test.mjs"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {

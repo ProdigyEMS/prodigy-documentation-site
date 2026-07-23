@@ -2,10 +2,10 @@ import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import test from 'node:test'
 
-import handler, { config } from './private-docs-auth.js'
+import handler, { config } from '../netlify/edge-functions/private-docs-auth.js'
 
 const DEMO_GUIDE = new URL(
-  '../../src/pages/docs/private/compliance-dashboard-demo.md',
+  '../src/pages/docs/private/compliance-dashboard-demo.md',
   import.meta.url,
 )
 
