@@ -42,6 +42,8 @@ Keep this tab open, you'll come back to it.
 5. On the **Configure SAML** tab, enter:
    - **Single sign-on URL**: the **ACS URL** from Prodigy's wizard (Step 1)
    - **Audience URI (SP Entity ID)**: the **SP Entity ID** from Prodigy's wizard
+   - **Name ID format**: **EmailAddress**
+   - **Application username**: **Email**
 
 ## Step 3: Map the attributes
 
@@ -56,7 +58,7 @@ Still on the **Configure SAML** tab, scroll to **Attribute Statements** and add 
 All three are required. Prodigy uses them to create and correctly name an account the first time someone signs in.
 
 {% callout type="note" title="About the Name ID" %}
-By default, Okta's **Name ID format** is left unspecified, which typically resolves to the person's email. That works well for most organizations. If you're planning to load your roster into Prodigy ahead of time so training is already assigned before anyone's first sign-in, consider setting **Name ID format** to **Persistent** instead of relying on email, so a later email change doesn't disconnect someone from their pre-loaded account.
+Use **EmailAddress** with the person's email as shown above. This matches the setup in Prodigy's in-app wizard and lets Okta launch Prodigy from the assigned app tile without any additional Name ID configuration.
 {% /callout %}
 
 Click **Next**, answer the "Are you a customer or partner" question (either is fine), and click **Finish**.
