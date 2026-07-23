@@ -59,6 +59,7 @@ jobs:
           check / 200
           check /docs/user-management 200
           check /docs/network-troubleshooting 200
+          check /docs/login-help 200
           check /docs/try-this-first 200
           check /docs/invitation-emails 200
           check /docs/network-requirements 200
