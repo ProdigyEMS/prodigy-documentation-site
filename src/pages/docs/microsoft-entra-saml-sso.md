@@ -70,11 +70,43 @@ New enterprise applications aren't visible to anyone until you assign them.
 
 Back in the Prodigy tab from Step 1, scroll to the **SAML Certificates** section and download the **Federation Metadata XML** file, then upload it into Prodigy's wizard. Or, if you'd rather enter things by hand, copy the **Login URL**, **Microsoft Entra Identifier**, and the certificate shown on the same page.
 
-Then choose which department new sign-ins should land in by default, save, and you're done.
+Then choose which department new sign-ins should land in by default and save. One more step confirms it's actually working.
+
+## Step 6: Confirm it's working
+
+Saving doesn't prove the connection works, so Prodigy checks for you. The moment you save, a panel appears reading **Waiting for the first sign-in… this page updates automatically.**
+
+Leave that tab open and do a real sign-in:
+
+1. Open [myapps.microsoft.com](https://myapps.microsoft.com), or the app launcher grid in Outlook or any other Microsoft 365 app.
+2. Click the Prodigy tile you created in Step 2.
+3. You should land in Prodigy, already signed in.
+
+Back on the settings tab, the panel turns green and names who signed in:
+
+**It works! someone@yourdomain.com signed in via SAML Authentication a few seconds ago.**
+
+That's your confirmation the connection is live. It's also the only real test available: an IdP-initiated setup has no meaningful "test connection" button, because a valid sign-in has to start at Entra and come back to us.
+
+{% callout type="note" title="Only new sign-ins count" %}
+The check only counts sign-ins that happen after you save, so re-saving can't confirm itself against an older sign-in. If you change the configuration later, sign in again to re-confirm.
+{% /callout %}
+
+If nothing arrives after about 30 seconds, the wizard adds a hint:
+
+**No sign-in received yet. Double-check the IdP Entity ID matches exactly, and that your users are assigned to the Prodigy app in your identity provider.**
+
+Those two causes account for most first attempts that don't work. A mistyped Entity ID is the more common one, and it fails quietly: the assertion never gets matched to your organization at all, so nothing appears anywhere.
 
 ## How your team signs in
 
 This is what's called an "IdP-initiated" sign-in, meaning your team starts from Microsoft, not from Prodigy's own login page. Once the app is assigned, anyone with access can go to [myapps.microsoft.com](https://myapps.microsoft.com) (or the app launcher grid in Outlook or any other Microsoft 365 app) and click the Prodigy tile to be signed in automatically. There isn't a "Sign in with Microsoft" button on Prodigy's login page yet, so it's worth pointing your team to the app launcher so they know where to start.
+
+## Keeping an eye on sign-ins
+
+The **Recent sign-in activity** card on the same settings page lists every SSO sign-in attempt, including the failures, with the reason each one was rejected. A person's first successful sign-in is marked **First sign-in — account created**, so you can watch accounts being provisioned as your team comes online.
+
+If someone tells you they can't sign in, start here. It will usually tell you what went wrong without needing to open a ticket.
 
 ## Need help?
 

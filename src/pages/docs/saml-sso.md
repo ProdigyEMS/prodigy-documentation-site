@@ -72,11 +72,43 @@ Every provider handles this differently, look for an option to assign the applic
 
 Back in the Prodigy tab from Step 1, your identity provider will show you its own metadata, an Entity ID, an SSO URL, and a signing certificate, usually available as a downloadable XML file. Upload that file into Prodigy's wizard if it offers metadata import, or copy the three values in by hand.
 
-Then choose which department new sign-ins should land in by default, save, and you're done.
+Then choose which department new sign-ins should land in by default and save. One more step confirms it's actually working.
+
+## Step 6: Confirm it's working
+
+Saving doesn't prove the connection works, so Prodigy checks for you. The moment you save, a panel appears reading **Waiting for the first sign-in… this page updates automatically.**
+
+Leave that tab open and do a real sign-in:
+
+1. Open wherever your identity provider launches applications from, usually an app dashboard or portal.
+2. Click the Prodigy application you created in Step 2.
+3. You should land in Prodigy, already signed in.
+
+Back on the settings tab, the panel turns green and names who signed in:
+
+**It works! someone@yourdomain.com signed in via SAML Authentication a few seconds ago.**
+
+That's your confirmation the connection is live. It's also the only real test available: an IdP-initiated setup has no meaningful "test connection" button, because a valid sign-in has to start at your identity provider and come back to us.
+
+{% callout type="note" title="Only new sign-ins count" %}
+The check only counts sign-ins that happen after you save, so re-saving can't confirm itself against an older sign-in. If you change the configuration later, sign in again to re-confirm.
+{% /callout %}
+
+If nothing arrives after about 30 seconds, the wizard adds a hint:
+
+**No sign-in received yet. Double-check the IdP Entity ID matches exactly, and that your users are assigned to the Prodigy app in your identity provider.**
+
+Those two causes account for most first attempts that don't work. A mistyped Entity ID is the more common one, and it fails quietly: the assertion never gets matched to your organization at all, so nothing appears anywhere.
 
 ## How your team signs in
 
 This is what's called an "IdP-initiated" sign-in, meaning your team starts from your identity provider, not from Prodigy's own login page. Once it's set up, anyone with access signs in from wherever your provider normally launches applications from, an app dashboard, a bookmarked link, or similar. There isn't a "Sign in with SSO" button on Prodigy's login page yet, so it's worth pointing your team to that starting point.
+
+## Keeping an eye on sign-ins
+
+The **Recent sign-in activity** card on the same settings page lists every SSO sign-in attempt, including the failures, with the reason each one was rejected. A person's first successful sign-in is marked **First sign-in — account created**, so you can watch accounts being provisioned as your team comes online.
+
+If someone tells you they can't sign in, start here. It will usually tell you what went wrong without needing to open a ticket.
 
 ## Need help?
 
