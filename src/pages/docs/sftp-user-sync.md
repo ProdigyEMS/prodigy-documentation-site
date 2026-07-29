@@ -49,7 +49,7 @@ For your IT team's security review: each organization gets its own SFTP login, a
 
 ### Data format
 
-The second step summarizes the CSV format (covered in detail [below](#the-csv-file-format)) and lets you **Download Sample CSV** to hand your HR team a template.
+The second step summarizes the CSV format (covered in detail [below](#the-csv-file-format)) and lets you **Download Sample CSV** to hand your HR team a template. You can also [download the sample CSV template directly](https://frontend.prodigyems.com/templates/organization-user-upload-template.csv), no sign-in needed.
 
 {%figure src="/images/sftp-user-sync-2.png" alt="Setup wizard step 2 showing the required CSV columns and the sample CSV download" /%}
 
@@ -145,7 +145,7 @@ Harper,Williams,harper.williams@exampleems.org,EMP-002,DEPT-002,active,training 
 Ethan,Miller,ethan.miller@exampleems.org,EMP-005,DEPT-001,terminated,,2022-03-10
 ```
 
-The **Download Sample CSV** action on the dashboard provides a complete template including the certification columns.
+For a complete template including the certification columns, [download the sample CSV](https://frontend.prodigyems.com/templates/organization-user-upload-template.csv). The same file is available from the **Download Sample CSV** action on the dashboard.
 
 ## What happens to each row
 
@@ -153,7 +153,7 @@ For every row in a file, the sync finds the right user and applies the change:
 
 - **Returning employee ID**: if the `employee_id` has synced before, the row updates that user, refreshing their department assignment, role, status, and hire/termination dates.
 - **Existing Prodigy user in your organization**: if the email matches an existing user in your organization, the row is linked to that account and the same updates apply. From then on they're tracked by employee ID.
-- **Existing Prodigy account outside your organization**: the sync never silently absorbs an account your organization doesn't already manage. If the row includes certification data, the person is sent an email invitation instead — they join your department (with those certifications applied) when they accept. Otherwise the row is flagged for manual review.
+- **Existing Prodigy account outside your organization**: the sync never silently absorbs an account your organization doesn't already manage. Instead, the person is sent an email invitation — they join your department (with any certification data from the row applied) when they accept. Rows Prodigy can't create an invitation for are flagged for manual review.
 - **New user**: otherwise a new account is created in the mapped department. If the welcome email alert is enabled, they receive a login link automatically. A `terminated` row for someone with no Prodigy account is skipped, since there's nothing to deactivate.
 
 A `terminated` status deactivates the user's department membership, removing their access, the same as toggling a user to Inactive on the [Managing Users](/docs/user-management) page. If they're rehired later, a subsequent `active` row for the same employee ID reactivates them with their training records intact.
