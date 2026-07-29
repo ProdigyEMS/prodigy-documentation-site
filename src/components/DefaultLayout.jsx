@@ -24,6 +24,7 @@ const navigation = [
     title: 'Account Management',
     links: [
       { title: 'Managing Users', href: '/docs/user-management' },
+      { title: 'SFTP User Sync', href: '/docs/sftp-user-sync' },
       { title: 'Didn\'t Get an Invitation Email?', href: '/docs/invitation-emails' },
       { title: 'Certifications', href: '/docs/certifications' },
       { title: 'Certification Alerts', href: '/docs/alerts' },

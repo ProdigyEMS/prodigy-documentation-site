@@ -29,6 +29,10 @@ The **Configured Tokens** list shows every token created for your organization, 
 Each token grants access to your organization's data. Treat tokens like passwords, and revoke any token immediately if it is compromised or no longer needed.
 {% /callout %}
 
+## Automated User Provisioning
+
+If you want your HR system to manage Prodigy accounts automatically, creating new hires, updating departments, and deactivating terminated employees, see the [SFTP User Sync](/docs/sftp-user-sync) guide.
+
 ## Other Integrations
 
 If you have other systems you are looking to integrate with Prodigy, reach out to [support@prodigyems.com](mailto:support@prodigyems.com) and we can discuss the options.
