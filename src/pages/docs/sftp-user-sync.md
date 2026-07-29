@@ -43,6 +43,8 @@ The first step shows the connection details your HR system will use:
 
 Paste the **SSH public key** from your HR system or SFTP client into the key field. This key is how file uploads are authenticated, so there's no password to store or rotate. If you ever need to change it, the **Update SSH Key** action on the dashboard reruns this step.
 
+For your IT team's security review: each organization gets its own SFTP login, and that login is scoped to your organization's own folder on the server. It can't see or touch any other customer's files.
+
 {%figure src="/images/sftp-user-sync-1.png" alt="FTP User Sync Setup wizard step 1 showing the host, port, and SSH public key fields" /%}
 
 ### Data format
@@ -80,7 +82,7 @@ Open **Email Alert Settings** from the dashboard to choose who hears about sync 
 | Sync failures | Connection issues, file format errors, and other technical problems. These are always sent, with no configuration needed. |
 | Sync summary reports | A summary report after each processed file: user counts, changes made, and issues encountered. Set the frequency to **every sync**, or **never** to turn summaries off. |
 | Unmapped department codes | A CSV contained department codes you haven't mapped yet. |
-| Email conflicts | A synced user's email matches a deleted or inactive Prodigy account, which needs manual resolution. |
+| Email conflicts | A synced user's email matches an existing Prodigy account that can't be linked automatically, which needs manual resolution. |
 | Welcome email to new users | Automatically send new users created by the sync a welcome email with their login link. |
 
 ## Step 4: Upload your first file
@@ -117,15 +119,15 @@ The SFTP sync uses the same unified format as the manual [Upload Users CSV](/doc
 | Column | Contents |
 | --- | --- |
 | `role` | `general user`, `training officer`, or `admin`. When blank, the department mapping's Default Role applies. |
-| `hire_date` | Hire date in `YYYY-MM-DD` format |
-| `termination_date` | Termination date in `YYYY-MM-DD` format |
+| `hire_date` | Hire date in `YYYY-MM-DD` format, stored on the user's department record. A blank value never erases a date that's already set. |
+| `termination_date` | Termination date in `YYYY-MM-DD` format, stored the same way. |
 | `ems_id` | The user's 12-digit EMS ID (dashes are fine). Only filled in when the user doesn't already have one; an existing EMS ID is never overwritten. |
 
-Values are case-insensitive and surrounding whitespace is ignored, so `Active` or `Training Officer` work fine.
+Values are case-insensitive and surrounding whitespace is ignored, so `Active` or `Training Officer` work fine. Files exported from Excel using **CSV UTF-8** work as-is, and quoted fields (including commas or line breaks inside quotes) are handled correctly.
 
 ### Certification columns
 
-You can also seed each provider's existing certifications when their account is first created, which is especially useful when onboarding a large roster, so everyone starts with the right training plan. Add up to five certification groups using numbered columns:
+You can also include each provider's existing certifications, which is especially useful when onboarding a large roster, so everyone starts with the right training plan. Certifications are seeded onto brand-new accounts as they're created, and added for existing active members of your organization. Add up to five certification groups using numbered columns:
 
 ```text
 cert1_type, cert1_state, cert1_city, cert1_level, cert1_number, cert1_issued, cert1_expiration
@@ -150,7 +152,8 @@ The **Download Sample CSV** action on the dashboard provides a complete template
 For every row in a file, the sync finds the right user and applies the change:
 
 - **Returning employee ID**: if the `employee_id` has synced before, the row updates that user, refreshing their department assignment, role, status, and hire/termination dates.
-- **Existing Prodigy user**: if the email matches an existing user in your organization, the row is linked to that account and the same updates apply. From then on they're tracked by employee ID.
+- **Existing Prodigy user in your organization**: if the email matches an existing user in your organization, the row is linked to that account and the same updates apply. From then on they're tracked by employee ID.
+- **Existing Prodigy account outside your organization**: the sync never silently absorbs an account your organization doesn't already manage. If the row includes certification data, the person is sent an email invitation instead — they join your department (with those certifications applied) when they accept. Otherwise the row is flagged for manual review.
 - **New user**: otherwise a new account is created in the mapped department. If the welcome email alert is enabled, they receive a login link automatically. A `terminated` row for someone with no Prodigy account is skipped, since there's nothing to deactivate.
 
 A `terminated` status deactivates the user's department membership, removing their access, the same as toggling a user to Inactive on the [Managing Users](/docs/user-management) page. If they're rehired later, a subsequent `active` row for the same employee ID reactivates them with their training records intact.
@@ -161,16 +164,16 @@ After a user's account exists, later sync files don't overwrite their name or em
 
 ### Roles are capped
 
-The role a sync can assign is capped by a per-organization limit, and the cap defaults to **General User**. Rows requesting a higher role than the cap are clamped down to it (and noted in the logs), so a mistake in an HR export can never silently mint admin accounts. If you want the sync to manage training officer or admin roles, ask your Prodigy representative to raise the cap for your organization.
+The role a sync can assign is capped by a per-organization limit, and the cap defaults to **General User**. Rows requesting a higher role are clamped down to the cap, so a mistake in an HR export can never silently mint admin accounts. If you want the sync to manage training officer or admin roles, ask your Prodigy representative to raise the cap for your organization.
 
 ## Safety features
 
 A few guardrails protect your roster from bad uploads:
 
-- **Row-count drop protection**: if a file contains dramatically fewer rows than your previous sync (below roughly 80%), the sync aborts and sends a failure alert instead of processing it. This catches truncated exports, a network failure mid-export could otherwise look like a mass termination and deactivate large parts of your roster. If you have a legitimately large reduction coming (for example a divested division), contact support and we can adjust this behavior for your organization.
+- **Row-count drop protection**: if a file contains dramatically fewer rows than your previous completed sync (below roughly 80%), the sync aborts and sends a failure alert instead of processing it. This catches truncated exports, a network failure mid-export could otherwise look like a mass termination and deactivate large parts of your roster. Growing is always fine, so starting with a small pilot file and scaling up to the full roster won't trigger it, but going back down to a small test file after a full-roster sync will. If you have a legitimately large reduction coming (for example a divested division), contact support and we can adjust this behavior for your organization.
 - **File name validation**: files that don't match the `username_user_sync_YYYYMMDD_HHMMSS.csv` convention are rejected before any processing.
 - **The Sync Active toggle**: the dashboard has a **Sync Active** switch you can turn off any time, during an HR system migration, for example. While disabled, new files are not processed. Re-upload any files that arrived while sync was off after you re-enable it.
-- **Email conflict review**: if a row's email matches a deleted or inactive account, that row is held for manual review rather than silently reactivating or duplicating the account, and it's flagged in the sync detail (plus the email alert, if enabled).
+- **Email conflict review**: if a row's email matches an account the sync can't safely link on its own — a deleted or inactive account, or one belonging to someone outside your organization — that row is held for manual review rather than silently reactivating, duplicating, or absorbing the account. It's flagged in the sync detail (plus the email alert, if enabled).
 
 ## Monitoring your syncs
 
@@ -212,7 +215,7 @@ Click **Details** on any sync to see the full picture: a processing summary (rec
 | `Invalid role: ...` | The role column must be `general user`, `training officer`, or `admin`, or left blank. |
 | `Invalid hire_date / termination_date` | Dates must be in `YYYY-MM-DD` format. |
 | `Invalid email format: ...` | The email address isn't valid. |
-| An email conflict "requires manual review" | The row's email matches a deleted or inactive Prodigy account. Contact [support@prodigyems.com](mailto:support@prodigyems.com) and we'll help resolve it. |
+| An email conflict "requires manual review" | The row's email matches a deleted or inactive Prodigy account, or one outside your organization, and can't be linked automatically. Contact [support@prodigyems.com](mailto:support@prodigyems.com) and we'll help resolve it. |
 | `Aborted: ...` (row count drop) | The file was much smaller than your last sync, so it was rejected as a possible truncated export. Verify the export completed fully and resend; if the smaller file is intentional, contact support. |
 | Provisioning shows **Failed** | Click **Retry Provisioning** on the dashboard. If it keeps failing, contact support. |
 
