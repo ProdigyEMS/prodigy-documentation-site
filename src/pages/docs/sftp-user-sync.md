@@ -43,9 +43,13 @@ The first step shows the connection details your HR system will use:
 
 Paste the **SSH public key** from your HR system or SFTP client into the key field. This key is how file uploads are authenticated, so there's no password to store or rotate. If you ever need to change it, the **Update SSH Key** action on the dashboard reruns this step.
 
+{%figure src="/images/sftp-user-sync-1.png" alt="FTP User Sync Setup wizard step 1 showing the host, port, and SSH public key fields" /%}
+
 ### Data format
 
-The second step summarizes the CSV format (covered in detail [below](#the-csv-file-format)) and lets you **Download a sample CSV** to hand to your HR team as a template.
+The second step summarizes the CSV format (covered in detail [below](#the-csv-file-format)) and lets you **Download Sample CSV** to hand your HR team a template.
+
+{%figure src="/images/sftp-user-sync-2.png" alt="Setup wizard step 2 showing the required CSV columns and the sample CSV download" /%}
 
 Click **Complete Setup**. Prodigy provisions your dedicated SFTP account and generates your username. If provisioning shows as **Pending** or **Failed** on the dashboard afterward, use **Retry Provisioning**; if it stays failed, contact support.
 
@@ -54,6 +58,8 @@ After setup, the **Configuration** card on the dashboard shows your full connect
 ## Step 2: Set up department mappings
 
 Department mappings link the department codes in your HR system's CSV to real departments in Prodigy. When a row is synced, its `department` value is looked up in your mappings to decide which Prodigy department the user belongs to.
+
+{%figure src="/images/sftp-user-sync-3.png" alt="Department Mappings page showing configured mappings and a warning for a recently encountered unmapped code" /%}
 
 From the dashboard, open **Department Mappings** and click **Add Mapping** for each department code your HR export uses:
 
@@ -67,10 +73,12 @@ Rows with a department code that has no mapping are rejected with an `Unmapped d
 
 Open **Email Alert Settings** from the dashboard to choose who hears about sync activity and when. Alerts go to the **recipient email address** you set here.
 
+{%figure src="/images/sftp-user-sync-4.png" alt="Email Alerts page showing the recipient address and toggles for each alert type" /%}
+
 | Alert | What it covers |
 | --- | --- |
-| Sync failures | Connection issues, file format errors, and other technical problems. These are always sent. |
-| Sync summary reports | A summary of each sync: user counts, changes made, and issues encountered. Choose **every sync**, a **daily digest**, or a **weekly digest**. |
+| Sync failures | Connection issues, file format errors, and other technical problems. These are always sent, with no configuration needed. |
+| Sync summary reports | A summary report after each processed file: user counts, changes made, and issues encountered. Set the frequency to **every sync**, or **never** to turn summaries off. |
 | Unmapped department codes | A CSV contained department codes you haven't mapped yet. |
 | Email conflicts | A synced user's email matches a deleted or inactive Prodigy account, which needs manual resolution. |
 | Welcome email to new users | Automatically send new users created by the sync a welcome email with their login link. |
@@ -168,11 +176,17 @@ A few guardrails protect your roster from bad uploads:
 
 ### The dashboard
 
-The FTP User Sync dashboard shows sync health at a glance: an overall status (**Healthy**, **Paused**, **Completed with Errors**, or **Error**), totals for users synced, and a breakdown of created, updated, and deactivated users from recent activity. Files are checked for automatically, so the dashboard is informational; there's nothing to run by hand.
+The FTP User Sync dashboard shows sync health at a glance: an overall status (**Healthy**, **Paused**, **Completed with Errors**, or **Error**), totals for users synced, a sync activity chart, and the latest processed files under Recent Activity. The **Configuration** card below repeats your full connection details whenever you need them. Files are checked for automatically, so the dashboard is informational; there's nothing to run by hand.
+
+{%figure src="/images/sftp-user-sync-5.png" alt="FTP User Sync dashboard showing sync status, summary chart, recent activity, quick actions, and the configuration card" /%}
 
 ### Sync history
 
-**View Sync History** opens the complete log of every processed file. You can filter by result (**Success**, **With Errors**, **Failed**), and search by file name or date. Each sync shows one of these statuses:
+**View Sync History** opens the complete log of every processed file. You can filter by result (**Success**, **With Errors**, **Failed**), and search by file name or date.
+
+{%figure src="/images/sftp-user-sync-6.png" alt="Sync History page listing processed files with status, user counts, and error totals" /%}
+
+Each sync shows one of these statuses:
 
 | Status | Meaning |
 | --- | --- |
@@ -183,7 +197,9 @@ The FTP User Sync dashboard shows sync health at a glance: an overall status (**
 | Running / Pending | The file is currently processing or queued |
 | Interrupted | Processing was cut short; the file is automatically retried |
 
-Click **Details** on any sync to see the full picture: a processing summary (total rows, created, updated, deactivated, skipped, errors), the outcome of every row, each error with its row number and reason, and the original CSV data. You can download the file, the log, or a report from here for your records.
+Click **Details** on any sync to see the full picture: a processing summary (records found, successfully processed, created, updated, deactivated), the outcome of every row, and each error with its row number and reason. Rows rejected for an unmapped department code even link straight to the Department Mappings page so you can fix the mapping on the spot. You can download the original CSV or the annotated log from here for your records.
+
+{%figure src="/images/sftp-user-sync-7.png" alt="Sync Details page showing the processing summary and per-row results, with two rows flagged as errors" /%}
 
 ## Troubleshooting
 
