@@ -25,6 +25,10 @@ Click on any user's name to open their individual user record.
 
 There are several ways to add users to your department. If you have questions about the best option for your organization, we are happy to help get you started.
 
+{% callout title="Want this fully automated?" %}
+If your organization uses an HR system, [SFTP User Sync](/docs/sftp-user-sync) can create, update, and deactivate users automatically from a scheduled CSV export, no manual uploads needed.
+{% /callout %}
+
 ### Invite Users
 
 {%figure src="/images/user-management-2.png" alt="Invite Users modal with email and role fields" /%}
