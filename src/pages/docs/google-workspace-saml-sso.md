@@ -23,6 +23,16 @@ You'll need:
 - A Prodigy **organization admin** account
 - About 15 minutes
 
+{% callout type="warning" title="Check your Prodigy role first" %}
+**Organization admin** is a specific role in Prodigy, not a general description of seniority. The next role down, **Training Officer**, can do most day-to-day administration but **cannot** complete this setup.
+
+**How to check:** look for **Settings** in the menu of your organization account. If it isn't there, you don't have the organization admin role.
+
+**How to get it:** email [support@prodigyems.com](mailto:support@prodigyems.com) and ask to be made an organization admin. A Training Officer can't grant this role, not even to themselves, so it does have to come from us.
+
+It's worth confirming before you begin. Setup runs several steps, and the permission is only checked when you save at the end.
+{% /callout %}
+
 ## Step 1: Start the wizard in Prodigy
 
 In Prodigy, go to your organization's **Settings → Integrations → SAML Authentication** and choose **Google Workspace** when it asks which identity provider you're connecting. This screen shows you three values you'll need in a few minutes:
