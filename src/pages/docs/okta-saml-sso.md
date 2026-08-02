@@ -48,7 +48,7 @@ Keep this tab open, you'll come back to it.
 1. In the Okta Admin Console, go to **Applications → Applications**.
 2. Click **Create App Integration**.
 3. Choose **SAML 2.0** as the sign-in method and click **Next**.
-4. On the **General Settings** tab, give the integration a name, "Prodigy" works fine, and click **Next**.
+4. On the **General Settings** tab, give the integration a name, "Prodigy" works fine, upload the [Prodigy app icon](https://frontend.prodigyems.com/images/prodigyems/prodigy-app-icon-512.png), and click **Next**.
 5. On the **Configure SAML** tab, enter:
    - **Single sign-on URL**: the **ACS URL** from Prodigy's wizard (Step 1)
    - **Audience URI (SP Entity ID)**: the **SP Entity ID** from Prodigy's wizard

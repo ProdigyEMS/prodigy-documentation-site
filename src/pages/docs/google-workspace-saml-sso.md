@@ -48,7 +48,7 @@ Keep this tab open, you'll come back to it.
 1. Sign in to [admin.google.com](https://admin.google.com) with your admin account.
 2. Go to **Apps → Web and mobile apps**.
 3. Click **Add app → Add custom SAML app**.
-4. Give the app a name, "Prodigy" works fine, and click **Continue**.
+4. Give the app a name, "Prodigy" works fine, upload the [Prodigy app icon](https://frontend.prodigyems.com/images/prodigyems/prodigy-app-icon-512.png), and click **Continue**.
 5. Google now shows you *its own* sign-in details: an SSO URL, an Entity ID, and a certificate. You don't need to do anything with these by hand, just click **Download Metadata** to save them as a file, then click **Continue**. Prodigy's wizard can read that file directly instead of you copying each value one at a time.
 6. On the next screen, paste the **ACS URL** and **SP Entity ID** from Prodigy's wizard (Step 1) into the matching **ACS URL** and **Entity ID** fields. Click **Continue**.
 
