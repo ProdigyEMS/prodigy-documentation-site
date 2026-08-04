@@ -12,7 +12,7 @@
   "dependencies": {
     "@docsearch/react": "^4.0.0",
     "@headlessui/react": "^2.2.10",
-    "@markdoc/markdoc": "0.5.8",
+    "@markdoc/markdoc": "0.5.9",
     "@markdoc/next.js": "0.5.0",
     "@sentry/nextjs": "^10.63.0",
     "@sindresorhus/slugify": "^3.0.0",
