@@ -118,6 +118,15 @@ Certifications and EMS IDs from your file are applied immediately for people you
 If an email address is already in use on Prodigy, even if not in your department, the system will not create a new account. Instead, that user will receive an invitation to join your department.
 {% /callout %}
 
+<!--
+  DEEP-LINKED FROM THE APP. The import wizard's "View the full column
+  reference" link targets #the-bulk-upload-csv-format, stored as
+  LINKS.DOCS_BULK_UPLOAD_CSV_FORMAT in the prodigy repo
+  (frontend/src/shared/links.ts). Rewording this heading changes the slug and
+  silently lands those users at the top of the page — nothing errors. Update
+  the constant in the same change if you rename it.
+-->
+
 ## The bulk upload CSV format
 
 This is the full column reference for both the [Upload Users CSV](#upload-users-csv) importer and [SFTP User Sync](/docs/sftp-user-sync). Column names and values are matched case-insensitively and surrounding whitespace is ignored, so `Email` and `email` work equally well, as do `Active` and `Training Officer`. Files exported from Excel using **CSV UTF-8** work as-is.
