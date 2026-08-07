@@ -47,6 +47,7 @@ Keep this tab open, you'll come back to it.
 
 Every provider's setup screen is a little different, but they all ask for the same underlying information. Look for a section called something like "Add application," "New SAML app," or "Add relying party," and enter:
 
+- **Name**: Prodigy. If your provider supports a custom logo, use the [Prodigy app icon](https://frontend.prodigyems.com/images/prodigyems/prodigy-app-icon-512.png).
 - **ACS URL** (sometimes called Assertion Consumer Service URL, Reply URL, or Recipient URL): the **ACS URL** from Prodigy's wizard
 - **Entity ID** (sometimes called Audience URI, Identifier, or Relying Party Identifier): the **SP Entity ID** from Prodigy's wizard
 

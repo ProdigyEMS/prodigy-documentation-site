@@ -48,6 +48,7 @@ Keep this tab open, you'll come back to it.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 2. Go to **Identity → Applications → Enterprise applications → New application**.
 3. Click **Create your own application**, give it a name ("Prodigy" works fine), and choose **Integrate any other application you don't find in the gallery (Non-gallery)**. Click **Create**.
+   - Download the [Prodigy app icon](https://frontend.prodigyems.com/images/prodigyems/prodigy-app-icon-512.png) for the app's branding. Entra's **Properties** screen requires an exact 215 × 215 pixel PNG with a solid background and a file size under 100 KB, so resize the source icon to those requirements before uploading it.
 4. Open the new application and, in the **Manage** section, select **Single sign-on**.
 5. Choose **SAML**.
 6. In the **Basic SAML Configuration** section, click **Edit** and enter:
