@@ -23,6 +23,16 @@ You'll need:
 - A Prodigy **organization admin** account
 - About 15 minutes
 
+{% callout type="warning" title="Check your Prodigy role first" %}
+**Organization admin** is a specific role in Prodigy, not a general description of seniority. The next role down, **Training Officer**, can do most day-to-day administration but **cannot** complete this setup.
+
+**How to check:** look for **Settings** in the menu of your organization account. If it isn't there, you don't have the organization admin role.
+
+**How to get it:** email [support@prodigyems.com](mailto:support@prodigyems.com) and ask to be made an organization admin. A Training Officer can't grant this role, not even to themselves, so it does have to come from us.
+
+It's worth confirming before you begin. Setup runs several steps, and the permission is only checked when you save at the end.
+{% /callout %}
+
 ## Step 1: Start the wizard in Prodigy
 
 In Prodigy, go to your organization's **Settings → Integrations → SAML Authentication** and choose **Google Workspace** when it asks which identity provider you're connecting. This screen shows you three values you'll need in a few minutes:
@@ -38,7 +48,7 @@ Keep this tab open, you'll come back to it.
 1. Sign in to [admin.google.com](https://admin.google.com) with your admin account.
 2. Go to **Apps → Web and mobile apps**.
 3. Click **Add app → Add custom SAML app**.
-4. Give the app a name, "Prodigy" works fine, and click **Continue**.
+4. Give the app a name, "Prodigy" works fine, upload the [Prodigy app icon](https://frontend.prodigyems.com/images/prodigyems/prodigy-app-icon-512.png), and click **Continue**.
 5. Google now shows you *its own* sign-in details: an SSO URL, an Entity ID, and a certificate. You don't need to do anything with these by hand, just click **Download Metadata** to save them as a file, then click **Continue**. Prodigy's wizard can read that file directly instead of you copying each value one at a time.
 6. On the next screen, paste the **ACS URL** and **SP Entity ID** from Prodigy's wizard (Step 1) into the matching **ACS URL** and **Entity ID** fields. Click **Continue**.
 

@@ -23,6 +23,16 @@ You'll need:
 - A Prodigy **organization admin** account
 - About 15 minutes
 
+{% callout type="warning" title="Check your Prodigy role first" %}
+**Organization admin** is a specific role in Prodigy, not a general description of seniority. The next role down, **Training Officer**, can do most day-to-day administration but **cannot** complete this setup.
+
+**How to check:** look for **Settings** in the menu of your organization account. If it isn't there, you don't have the organization admin role.
+
+**How to get it:** email [support@prodigyems.com](mailto:support@prodigyems.com) and ask to be made an organization admin. A Training Officer can't grant this role, not even to themselves, so it does have to come from us.
+
+It's worth confirming before you begin. Setup runs several steps, and the permission is only checked when you save at the end.
+{% /callout %}
+
 ## Step 1: Start the wizard in Prodigy
 
 In Prodigy, go to your organization's **Settings → Integrations → SAML Authentication** and choose **Okta** when it asks which identity provider you're connecting. This screen shows you three values you'll need in a few minutes:
@@ -38,7 +48,7 @@ Keep this tab open, you'll come back to it.
 1. In the Okta Admin Console, go to **Applications → Applications**.
 2. Click **Create App Integration**.
 3. Choose **SAML 2.0** as the sign-in method and click **Next**.
-4. On the **General Settings** tab, give the integration a name, "Prodigy" works fine, and click **Next**.
+4. On the **General Settings** tab, give the integration a name, "Prodigy" works fine, upload the [Prodigy app icon](https://frontend.prodigyems.com/images/prodigyems/prodigy-app-icon-512.png), and click **Next**.
 5. On the **Configure SAML** tab, enter:
    - **Single sign-on URL**: the **ACS URL** from Prodigy's wizard (Step 1)
    - **Audience URI (SP Entity ID)**: the **SP Entity ID** from Prodigy's wizard

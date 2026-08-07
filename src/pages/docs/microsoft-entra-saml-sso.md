@@ -23,6 +23,16 @@ You'll need:
 - A Prodigy **organization admin** account
 - About 15 minutes
 
+{% callout type="warning" title="Check your Prodigy role first" %}
+**Organization admin** is a specific role in Prodigy, not a general description of seniority. The next role down, **Training Officer**, can do most day-to-day administration but **cannot** complete this setup.
+
+**How to check:** look for **Settings** in the menu of your organization account. If it isn't there, you don't have the organization admin role.
+
+**How to get it:** email [support@prodigyems.com](mailto:support@prodigyems.com) and ask to be made an organization admin. A Training Officer can't grant this role, not even to themselves, so it does have to come from us.
+
+It's worth confirming before you begin. Setup runs several steps, and the permission is only checked when you save at the end.
+{% /callout %}
+
 ## Step 1: Start the wizard in Prodigy
 
 In Prodigy, go to your organization's **Settings → Integrations → SAML Authentication** and choose **Microsoft Entra ID** when it asks which identity provider you're connecting. This screen shows you three values you'll need in a few minutes:
@@ -38,6 +48,7 @@ Keep this tab open, you'll come back to it.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 2. Go to **Identity → Applications → Enterprise applications → New application**.
 3. Click **Create your own application**, give it a name ("Prodigy" works fine), and choose **Integrate any other application you don't find in the gallery (Non-gallery)**. Click **Create**.
+   - Download the [Prodigy app icon](https://frontend.prodigyems.com/images/prodigyems/prodigy-app-icon-512.png) for the app's branding. Entra's **Properties** screen requires an exact 215 × 215 pixel PNG with a solid background and a file size under 100 KB, so resize the source icon to those requirements before uploading it.
 4. Open the new application and, in the **Manage** section, select **Single sign-on**.
 5. Choose **SAML**.
 6. In the **Basic SAML Configuration** section, click **Edit** and enter:

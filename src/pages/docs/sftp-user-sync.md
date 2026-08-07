@@ -26,6 +26,16 @@ You'll need:
 - An HR system (or any process) that can export a CSV and deliver it over SFTP on a schedule
 - An **SSH key pair** for authentication. Your HR system or SFTP client generates this; you'll paste the public key into Prodigy during setup. Both `ssh-rsa` and `ssh-ed25519` keys are supported, and no passwords are involved.
 
+{% callout type="warning" title="Check your Prodigy role first" %}
+**Organization admin** is a specific role in Prodigy, not a general description of seniority. The next role down, **Training Officer**, can do most day-to-day administration but **cannot** complete this setup.
+
+**How to check:** look for **Settings** in the menu of your organization account. If it isn't there, you don't have the organization admin role.
+
+**How to get it:** email [support@prodigyems.com](mailto:support@prodigyems.com) and ask to be made an organization admin. A Training Officer can't grant this role, not even to themselves, so it does have to come from us.
+
+It's worth confirming before you begin. Setup runs several steps, and the permission is only checked when you save at the end.
+{% /callout %}
+
 ## Step 1: Run the setup wizard
 
 In your organization account, go to **Settings → Integrations → FTP User Sync** and the setup wizard opens.
