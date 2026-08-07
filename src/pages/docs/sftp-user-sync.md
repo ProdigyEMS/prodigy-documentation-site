@@ -101,7 +101,7 @@ Send your complete active roster in every file rather than only changes. The syn
 
 ## The CSV file format
 
-The SFTP sync uses the same unified format as the manual [Upload Users CSV](/docs/user-management#upload-users-csv) importer, so the same file works in both places.
+The SFTP sync reads the same columns as the manual [Upload Users CSV](/docs/user-management#upload-users-csv) importer, so one file format covers both. The sync is the stricter of the two: it always requires `department`, `status`, and `employee_id`, which a department-level manual upload doesn't need.
 
 ### Required columns
 
@@ -135,6 +135,10 @@ cert2_type, cert2_state, cert2_city, ...
 ```
 
 Fill in whichever fields apply to each certification (for example, a state EMS certification has a state and level, while a CPR card may only need issue and expiration dates) and leave the rest blank. Dates use `YYYY-MM-DD`.
+
+`certN_type` must match a certification type name from the Certifications tab, and `certN_level` is limited to `EMR`, `EMT`, `AEMT`, or `Paramedic` — there is no `Intermediate`. NREMT and State EMS certifications need the full detail set, and other types need only a type. The [certification columns reference](/docs/user-management#certification-columns) covers the type and level values, the per-type required fields, and the NREMT number format in full.
+
+A certification that fails validation is skipped on its own — the reason appears in the sync detail, and the rest of the row still syncs.
 
 ### Example
 
@@ -215,6 +219,10 @@ Click **Details** on any sync to see the full picture: a processing summary (rec
 | `Invalid role: ...` | The role column must be `general user`, `training officer`, or `admin`, or left blank. |
 | `Invalid hire_date / termination_date` | Dates must be in `YYYY-MM-DD` format. |
 | `Invalid email format: ...` | The email address isn't valid. |
+| `Missing certification type` / `Unrecognized certification type '...'` | The `certN_type` value is blank or isn't a certification type Prodigy knows. Match the name shown in the Certifications tab. |
+| `Missing certification level` / `Unrecognized certification level '...'` | NREMT, State EMS, and CCEMT-P rows need a level, and it must be `EMR`, `EMT`, `AEMT`, or `Paramedic`. |
+| `Missing required field '...' for this certification` | NREMT and State EMS certifications need state, city, number, issued, and expiration. |
+| `Invalid NREMT certification number format` | An NREMT number is letters followed by seven digits, for example `M1234567`. |
 | An email conflict "requires manual review" | The row's email matches a deleted or inactive Prodigy account, or one outside your organization, and can't be linked automatically. Contact [support@prodigyems.com](mailto:support@prodigyems.com) and we'll help resolve it. |
 | `Aborted: ...` (row count drop) | The file was much smaller than your last sync, so it was rejected as a possible truncated export. Verify the export completed fully and resend; if the smaller file is intentional, contact support. |
 | Provisioning shows **Failed** | Click **Retry Provisioning** on the dashboard. If it keeps failing, contact support. |
