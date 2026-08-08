@@ -52,6 +52,15 @@ Builds run on Turbopack (Next 16 default). `@markdoc/next.js` 0.5.0's own Turbop
 - There is no `tailwind.config.js` — the theme lives in `src/styles/tailwind.css` (`@theme` block); dark mode is the `@custom-variant dark` line; typography loads via `@plugin`.
 - v4's browser floor is Safari 16.4+ / Chrome 111+ / Firefox 128+; the `:focus-visible` polyfill was removed accordingly.
 
+## Private (gated) docs
+
+Not every doc should be public. Any page under **`/docs/private/*`** is locked behind HTTP Basic Auth by the Netlify edge function `netlify/edge-functions/private-docs-auth.js`. To publish a non-public doc, just drop it under `src/pages/docs/private/` and leave it out of the sidebar `navigation` in `src/components/DefaultLayout.jsx` — no per-page wiring.
+
+- **Credentials** come from Netlify env vars `DOCS_PRIVATE_USER` / `DOCS_PRIVATE_PASSWORD` (set in the site dashboard, all contexts; never committed). The gate **fails closed**: if either is unset, the page returns 401, so a misconfig can't leak content. Preview and production share the one credential.
+- **Scope**: the gate protects the rendered page only. The Markdown **source stays in the public repo**, and page **images under `/images/**` are not gated** (they carry no secrets — anonymized UI screenshots only). Never put a real secret in a private doc's committed source.
+- The edge function declares its own `path` (inline `config`), so there is intentionally no `netlify.toml` for it. `netlify/edge-functions/**` is excluded from eslint (Deno runtime, different globals).
+- Test the lock on the deploy preview: an un-authed GET to `/docs/private/<page>` must return **401**; with the right `Authorization: Basic` header it returns **200**.
+
 ## Merging PRs
 
 `main` requires one approving review with `enforce_admins` on, and the PR author cannot self-approve. Solo-maintainer merges require a second reviewer or temporarily lifting `enforce_admins` (restore it immediately).
