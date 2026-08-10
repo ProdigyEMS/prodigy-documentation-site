@@ -28,7 +28,7 @@ You'll need:
 
 **How to check:** look for **Settings** in the menu of your organization account. If it isn't there, you don't have the organization admin role.
 
-**How to get it:** email [support@prodigyems.com](mailto:support@prodigyems.com) and ask to be made an organization admin. A Training Officer can't grant this role, not even to themselves, so it does have to come from us.
+**How to get it:** ask an existing organization admin at your organization to grant you the role. Every organization starts with one during onboarding. If you can't identify or reach yours, email [support@prodigyems.com](mailto:support@prodigyems.com) for help. A Training Officer can't grant this role, not even to themselves.
 
 It's worth confirming before you begin. Setup runs several steps, and the permission is only checked when you save at the end.
 {% /callout %}
