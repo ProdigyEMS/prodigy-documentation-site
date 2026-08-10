@@ -183,6 +183,7 @@ test('prevents authenticated private responses from being cached', async () => {
           'Cache-Control': 'public, max-age=0, must-revalidate',
           'CDN-Cache-Control': 'public, s-maxage=31536000',
           'Netlify-CDN-Cache-Control': 'public, s-maxage=31536000',
+          Vary: 'Accept-Encoding',
           'X-Downstream-Header': 'preserved',
         },
       })
@@ -192,6 +193,7 @@ test('prevents authenticated private responses from being cached', async () => {
   assert.equal(response.headers.get('cache-control'), 'no-store')
   assert.equal(response.headers.get('cdn-cache-control'), 'no-store')
   assert.equal(response.headers.get('netlify-cdn-cache-control'), 'no-store')
+  assert.equal(response.headers.get('vary'), 'Accept-Encoding, Authorization')
   assert.equal(response.headers.get('x-downstream-header'), 'preserved')
 })
 

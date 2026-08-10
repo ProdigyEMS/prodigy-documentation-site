@@ -115,6 +115,7 @@ export default async function handler(request, context) {
   headers.set('Cache-Control', 'no-store');
   headers.set('CDN-Cache-Control', 'no-store');
   headers.set('Netlify-CDN-Cache-Control', 'no-store');
+  headers.append('Vary', 'Authorization');
 
   return new Response(response.body, {
     status: response.status,
