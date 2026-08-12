@@ -24,11 +24,23 @@ const navigation = [
     title: 'Account Management',
     links: [
       { title: 'Managing Users', href: '/docs/user-management' },
+      { title: 'SFTP User Sync', href: '/docs/sftp-user-sync' },
+      { title: 'Didn\'t Get an Invitation Email?', href: '/docs/invitation-emails' },
       { title: 'Certifications', href: '/docs/certifications' },
       { title: 'Certification Alerts', href: '/docs/alerts' },
       { title: 'Managing Groups', href: '/docs/groups' },
       { title: 'Organization View', href: '/docs/organization' },
+      { title: 'Trouble Logging In?', href: '/docs/login-help' },
       { title: 'Merging Accounts', href: '/docs/account-merge' }
+    ],
+  },
+  {
+    title: 'Single Sign-On',
+    links: [
+      { title: 'Google Workspace SAML', href: '/docs/google-workspace-saml-sso' },
+      { title: 'Okta SAML', href: '/docs/okta-saml-sso' },
+      { title: 'Microsoft Entra SAML', href: '/docs/microsoft-entra-saml-sso' },
+      { title: 'Other SAML 2.0 Providers', href: '/docs/saml-sso' }
     ],
   },
   {
@@ -36,7 +48,7 @@ const navigation = [
     links: [
       { title: 'Creating Classes', href: '/docs/create-class' },
       { title: 'Edit Classes', href: '/docs/edit-class' },
-      { title: 'Certificate Templates', href: '/docs/certificate-templates' },
+      { title: 'Custom Certificates', href: '/docs/certificate-templates' },
       { title: 'Survey Builder', href: '/docs/survey-builder' },
       { title: 'Class Options', href: '/docs/class-options' },
       { title: 'Training Plan Builder', href: '/docs/training-plan-builder' },
@@ -58,9 +70,11 @@ const navigation = [
   {
     title: 'Technical Questions',
     links: [
+      { title: 'Try This First', href: '/docs/try-this-first' },
       { title: 'Do you Have an API?', href: '/docs/api' },
       { title: 'Is my Users Data Safe?', href: '/docs/data-safe' },
       { title: 'URL Allow List', href: '/docs/allow_list' },
+      { title: 'Network Requirements for IT', href: '/docs/network-requirements' },
       { title: 'Network Troubleshooting', href: '/docs/network-troubleshooting' },
       { title: 'Contact Support', href: '/docs/contactSupport' }
     ],

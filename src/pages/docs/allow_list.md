@@ -42,3 +42,8 @@ In the vast majority of cases, nothing needs to be done to allow Prodigy to func
 {% callout type="warning" title="URLs Not Covered" %}
 While this list covers all core and known external services used by ProdigyEMS, additional domains may be required to support: External links embedded in course content, Third-party scripts and APIs, Custom integrations or assets
 {% /callout %}
+
+## Related
+
+- [Network Requirements for IT](/docs/network-requirements) — how to allow Prodigy on a filtered network, including TLS-inspection bypass
+- [Network Troubleshooting](/docs/network-troubleshooting) — capturing diagnostics when something is still blocked
