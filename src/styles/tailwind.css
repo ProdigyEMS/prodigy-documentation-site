@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @import './fonts.css' layer(base);
-@import './docsearch.css' layer(base);
 @import './prism.css' layer(base);
 
 @plugin '@tailwindcss/typography';

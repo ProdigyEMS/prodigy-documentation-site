@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
+import '@docsearch/css'
+import '../styles/docsearch.css'
 import '../styles/globals.css'
 // Server-side Sentry init fallback for Netlify runtimes that skip
 // instrumentation.js (see the module for details). Must load with every page.
