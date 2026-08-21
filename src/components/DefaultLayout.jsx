@@ -30,7 +30,8 @@ const navigation = [
       { title: 'Certification Alerts', href: '/docs/alerts' },
       { title: 'Managing Groups', href: '/docs/groups' },
       { title: 'Organization View', href: '/docs/organization' },
-      { title: 'Trouble Logging In?', href: '/docs/login-help' }
+      { title: 'Trouble Logging In?', href: '/docs/login-help' },
+      { title: 'Merging Accounts', href: '/docs/account-merge' }
     ],
   },
   {
