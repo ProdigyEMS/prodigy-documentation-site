@@ -38,7 +38,7 @@ Click the **Invite Users** button in the top right of the My Users page. Enter t
 Select a **User Role** from the dropdown (General User, Training Officer, or Admin) and click **Send Invite**. Each user will receive an email asking them to join your department. If they don't already have a Prodigy account, they will be prompted to create one. If they already have an account, even with a different email address, they can connect it to your department.
 
 {% callout title="Copy Invitation Link" %}
-The Invite Users modal also includes a Copy Invitation Link option. This generates a link that anyone can use to register and join your department. The link can be used multiple times and doesn't expire for a year. We recommend using direct invitations whenever possible for better control over who joins your department.
+The Invite Users modal also includes a Copy Invitation Link option. This generates a link that anyone can use to register and join your department. The link can be used multiple times and stays valid for one year before it expires. We recommend using direct invitations whenever possible for better control over who joins your department.
 {% /callout %}
 
 ### Invitations Tab
@@ -46,6 +46,8 @@ The Invite Users modal also includes a Copy Invitation Link option. This generat
 {%figure src="/images/user-management-3.png" alt="Invitations tab showing pending invites with status and resend option" /%}
 
 After sending invitations, switch to the **Invitations** tab to track their status. Each invitation shows the email, invite date, department, role, and current status. Pending invitations will show a **Pending** status along with a **Resend Invite** link if you need to send the email again.
+
+If a user tells you an invitation never arrived, see [Didn't Get an Invitation Email?](/docs/invitation-emails) for the checks to run.
 
 Once a user accepts their invitation, they will be moved to the Department Users tab and the invitation will be removed from this list. If you need to cancel an invitation, select the checkbox next to it and click **Remove Selected**.
 
@@ -115,7 +117,7 @@ Certifications and EMS IDs from your file are applied immediately for people you
 {% /callout %}
 
 {% callout type="warning" title="Existing Email Addresses" %}
-If an email address is already in use on Prodigy, even if not in your department, the system will not create a new account. Instead, that user will receive an invitation to join your department.
+If an email address is already in use on Prodigy, even if not in your department, the system will not create a new account. Instead, that user will receive an invitation to join your department. If a user has since realized they have two separate accounts, they can combine them themselves — see [Merging Accounts](/docs/account-merge).
 {% /callout %}
 
 <!--
