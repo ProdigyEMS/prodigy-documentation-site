@@ -5,10 +5,10 @@ description: Build and edit certificate layouts to control where every element s
 
 A certificate layout controls the design of the certificates your organization issues. The layout decides where the student name sits, how large the course title prints, whether a second signature appears, and what shows in the fine print. Certificate templates hold the content, the logo, the signatures, and the notes, while the layout positions all of it on the page.
 
-Layouts are built and edited from the **Classes menu by choosing Certificates, then Manage Layouts**. This is an organization-level tool available to admins.
+Layouts are built and edited from the **Classes menu by choosing Certificates, then Manage Layouts**. This is an organization-level tool available to admins. If you do not see the **Manage Layouts** button, contact support@prodigyems.com to request access.
 
-{% callout title="Certificate Layouts is in Beta" %}
-The layout builder is marked Beta in the platform. It works, and the layouts you build here are used on real certificates, but expect the interface to keep improving.
+{% callout type="warning" title="Certificate Layouts is in Beta" %}
+The layout builder is marked Beta in the platform. It works, and published layouts are used on real certificates, but expect the interface to keep improving. Building a layout means editing JSON by hand, so it takes some technical comfort. If you would rather have help designing a layout, reach out to support@prodigyems.com.
 {% /callout %}
 
 ## Getting to Manage Layouts
@@ -21,8 +21,8 @@ The **Certificate Layouts** page lists your organization's layouts with their na
 
 {%figure src="/images/certificate-layouts-list.png" alt="Certificate Layouts list showing layout name, status, and dates" /%}
 
-{% callout title="Publishing a layout" %}
-Layouts save in Draft status. When a layout is ready to use, contact Prodigy support and we will publish it for you.
+{% callout type="warning" title="Publishing a layout" %}
+Layouts save in Draft status, and a draft is not available on certificates. Saving your work does not change any certificate your organization issues. When a layout is ready to use, contact support@prodigyems.com and we will publish it for you.
 {% /callout %}
 
 ## Building a Layout
@@ -184,7 +184,7 @@ This renders the block of label and value pairs, and it is used for class detail
 
 ### Template Variables
 
-Template variables are replaced with real data when a certificate is generated. Always write them with triple curly braces.
+Template variables are replaced with real data when a certificate is generated. Always write them with triple curly braces, and use the names exactly as listed here. The names are fixed by the certificate system and cannot be changed or invented. Adjust the styling and positioning of the sections around them, not the variable names themselves.
 
 - `{{{logoImageUrl}}}` - Organization or certificate logo
 - `{{{studentNameValue}}}` - The clinician's full name
