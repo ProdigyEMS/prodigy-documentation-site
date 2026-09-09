@@ -3,8 +3,11 @@
   "configurations": [
     {
       "name": "dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-lc",
+        "source \"$HOME/.nvm/nvm.sh\" && nvm use >/dev/null && npm run dev"
+      ],
       "port": 3000
     }
   ]
