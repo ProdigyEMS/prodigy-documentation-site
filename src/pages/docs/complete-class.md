@@ -14,7 +14,7 @@ To give you the most flexibility with your Prodigy account, we give you several 
 
 To access these setting click on **Classes->Complete Class for User**.
 ## Completing a Class
-{%figure src="/images/complete-class.png" atl="User Panel" /%}
+{%figure src="/images/complete-class.png" alt="Complete Class for User form with numbered class, session, and user selection steps" /%}
 1. Select the class to complete
 2. Select Live or Distributive as the completion type.
 {% callout title="Completion Date" %}

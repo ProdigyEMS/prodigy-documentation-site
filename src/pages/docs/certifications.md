@@ -8,23 +8,23 @@ The certifications section allows you to add certifications for individuals and 
 ---
 
 ## Report on Certifications
-{%figure src="/images/cert-filter-export.png" atl="Certification Panel" /%}
+{%figure src="/images/cert-filter-export.png" alt="Certifications list with filter options and export button" /%}
 Clicking on the Certifications tab will bring up a list of all certifications for all users in your account. You can filter this list from the top to look at certifications for an individual user, based on status, expiration date, or a specific certification. If you are looking for more detailed reporting, that can be found on the reports page.
 {% callout title="Negative Reporting" %}
 As a training officer, you may want to see all users who don't have a particular certification at all. You may request all users upload a copy of their CPR card and you will need to see who is outstanding. This can be done on Reporting->User Certifications->Status->No Certification.
 {% /callout %}
 ### Verification
-{%figure src="/images/verified.png" atl="Certification Panel" /%}
+{%figure src="/images/verified.png" alt="Verified checkbox column in the certifications list" /%}
 The Verification option is a tool designed to help you with reporting. After a user uploads a certification, you can confirm the information and image are correct and select verified. This will let you know when reviewing certifications in the future that you have already confirmed the certification is valid. If a user makes any changes, the certification will no longer be listed as valid. 
 ### Export
 Clicking the export button will download a spreadsheet of the current view.
 ### Review Images
-{%figure src="/images/view-cert.png" atl="Certification Panel" /%}
+{%figure src="/images/view-cert.png" alt="Image icon for viewing an uploaded certification image" /%}
 Users or a training officer can upload images to a certification record. You can view this image by clicking the image icon next to the verified column.
 ## Adding an Editing Certifications
 A training officer or a user can add an individual certification to an account.
 ### Adding a Certification
-{%figure src="/images/add-cert.png" atl="Certification Panel" /%}
+{%figure src="/images/add-cert.png" alt="Add Certification form with type, number, and date fields" /%}
 1. **Select the user** you are adding the certification to.
 2. **Select the certification type** — the remaining fields will update based on your selection. The two most common types are NREMT and State EMS Certification.
 3. **State and City** are required for NREMT and State EMS Certification. We are required to report these to CAPCE and also use the state to build more accurate training plans.
@@ -36,7 +36,7 @@ A training officer or a user can add an individual certification to an account.
 It is common for users to see old classes on their training plan even after updating their expiration date. This is almost always due to an incorrect Issued Date. This date should be set to when they received their most current card, for NREMT certified providers, this can be found on the NREMT website. Many users just use their last expiration date, which works as long as you haven’t started any training before that date.
 {% /callout %}
 ### Edit a Certification
-{%figure src="/images/edit-cert.png" atl="Certification Panel" /%}
+{%figure src="/images/edit-cert.png" alt="Pencil icon opening the Edit Certification form" /%}
 Clicking the pencil icon next to a certification will allow you to edit that certification. All of the same setting you have on the Add Certification option will be available. 
 {% callout title="Edit Vs Add New" %}
 We recommend editing only to correct mistakes in old certification. If you are looking to change expiration dates after a certification has been renewed, you should add a new certification. Prodigy keeps historical records of certifications, these records can be searched by a training officer and are presented to the user. 

@@ -10,11 +10,11 @@ This guide will walk you through creating training plan assignments and reportin
 You can access the assignment function from 3 places. **1.** Click on **Assign to User** from the training plans table. **2.** When editing a plan, click on the **Assign Training Plan** button. **3.** Choose Choose **Training Plans** under the **Assignments** tab on your TO menu. 
 {% /callout %}
 ## Training Plans Assignments
-{%figure src="/images/assign-training-plan.png" atl="Training Plans" /%}
+{%figure src="/images/assign-training-plan.png" alt="Training Plans Assignments table with add, edit, and delete options" /%}
 From this panel you can add new assignments, edit assignments, or delete assignments.
 ### Add Assignment
 After access the add assignment feature from any of the methods described above, you will be brought to the add assignments screen.
-{%figure src="/images/add-tp-assignment.png" atl="Training Plans" /%}
+{%figure src="/images/add-tp-assignment.png" alt="Add training plan assignment form with dates and user selection" /%}
 #### Add Assignment Options
 1. **Training Plan Name** - Select the training plan you want to assign. This will let you select any system training such as the NREMT or state recertification plans or your organizations custom training plans. 
 2. **Assign Date** - This is set for you and is the date of the actual assignment.
@@ -26,5 +26,5 @@ After access the add assignment feature from any of the methods described above,
 Clicking on a row under the **Assignments** tab on the **Training Plans Assignments** table will bring up the same page you used to create the assignment and will let you edit details and add users.
 ## Individual Assignments
 Click in the **Individual Records** tab on the **Training Plans Assignments** table will bring up a list of all assigned training plans. 
-{%figure src="/images/individual-tp-assignments.png" atl="Training Plans" /%}
+{%figure src="/images/individual-tp-assignments.png" alt="Individual Records list with Remove Selected and Export buttons" /%}
 You can select the checkbox next to users and choose to delete those assignments by clicking the **Remove Selected** Button. You can export a CSV file of all assignments by clicking the **Export** button at the top of the page.
