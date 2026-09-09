@@ -8,10 +8,10 @@ The certification alerting sends emails to users when certifications are expirin
 ---
 ## Setting up Alerts
 You access the alerts panel from the Department tab on your training officer account. At the bottom you will see a panel labeled Alerts.
-{%figure src="/images/alerts.png" atl="User Panel" /%}
+{%figure src="/images/alerts.png" alt="Alerts panel at the bottom of the Department tab" /%}
 ### Adding New Alert
 To add a new alert, click the + button on the alerts panel. A modal will pop up will all of the required information.
-{%figure src="/images/add-alert.png" atl="User Panel" /%}
+{%figure src="/images/add-alert.png" alt="Add Alert modal with certification, time frame, and recipient options" /%}
 ### Required Information
 1. **Select Certifications** — choose which certifications this alert applies to. You can select multiple certifications if they will share the same settings.
 2. **Select Time Frames** — alerts are sent when a certification is approaching expiration based on these intervals. We recommend setting at least 2. Base the timing on how difficult the certification is to renew — NREMT may warrant an alert at 90 days, while a CPR card may only need 30.
@@ -21,7 +21,7 @@ To add a new alert, click the + button on the alerts panel. A modal will pop up 
 To ensure that the user gets the email, just make sure that the “Also Notify the Expiring User” is checked. You do not need to add them to the Selected User list. You may be tempted to select all users, but this is only for training and management staff that should also get the alert.
 {% /callout %}
 ### Edit Alerts
-{%figure src="/images/edit-alert.png" atl="User Panel" /%}
+{%figure src="/images/edit-alert.png" alt="Alerts table with edit and delete buttons under the Actions heading" /%}
 To Edit an alert, click the edit button under the Actions heading. This will bring up the same options you had when you created the alert.
 ### Delete Alert
 To delete an alert, click the delete button under the Actions heading. 

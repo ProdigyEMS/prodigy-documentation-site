@@ -8,7 +8,7 @@ All of Prodigy’s credit classes are CAPCE accredited and submitted to their da
 ---
 ## Import with NREMT Certification
 Ensure that you have the correct NREMT information in the system in order to import classes.
-{%figure src="/images/nremt-import.jpeg" atl="User Panel" /%}
+{%figure src="/images/nremt-import.jpeg" alt="NREMT Transcript page with Import CAPCE Courses option" /%}
 * Log in to NREMT.org and make sure you are on the “My Certification” section.
 * Click “Transcript” on NREMT.
 * Select “Import CAPCE Courses”.
@@ -24,16 +24,16 @@ If you are a state level only provider (no NREMT certification) from MA, AR, WV,
 You will need to get your EMS ID from your NREMT account. Even though you are state certified only, for the states listed above, you will have an NREMT account to manage recertification.
 
 Log in to your NREMT account and choose "My Certification" from "My current Role"
-{%figure src="/images/ems_id.png" atl="User Panel" /%}
+{%figure src="/images/ems_id.png" alt="EMS ID shown on the NREMT My Certification page" /%}
 ### Adding EMS ID to Prodigy
 Next, add your EMS ID to your Prodigy profile.
 * Click on your profile
 * Choose "Manage Profile"
 * "Edit Profile"
 * Add EMS ID
-{%figure src="/images/ems-id-access.jpeg" atl="User Panel" /%}
-{%figure src="/images/nemsid-profile.png" atl="User Panel" /%}
-{%figure src="/images/add-nemsid.png" atl="User Panel" /%}
+{%figure src="/images/ems-id-access.jpeg" alt="Profile menu with the Manage Profile option" /%}
+{%figure src="/images/nemsid-profile.png" alt="Prodigy profile page with the Edit Profile button" /%}
+{%figure src="/images/add-nemsid.png" alt="Edit Profile form with the EMS ID field" /%}
 {% callout type="warning" title="After Adding EMS ID" %}
 If you have classes you completed before adding your EMS ID, please reach out to support@prodigyems.com and we will correct previous submissions.
 {% /callout %}
