@@ -49,6 +49,7 @@ const navigation = [
       { title: 'Creating Classes', href: '/docs/create-class' },
       { title: 'Edit Classes', href: '/docs/edit-class' },
       { title: 'Custom Certificates', href: '/docs/certificate-templates' },
+      { title: 'Creating Certificate Layouts', href: '/docs/certificate-layouts' },
       { title: 'Survey Builder', href: '/docs/survey-builder' },
       { title: 'Class Options', href: '/docs/class-options' },
       { title: 'Training Plan Builder', href: '/docs/training-plan-builder' },
