@@ -48,7 +48,7 @@ const navigation = [
     links: [
       { title: 'Creating Classes', href: '/docs/create-class' },
       { title: 'Edit Classes', href: '/docs/edit-class' },
-      { title: 'Custom Certificates', href: '/docs/certificate-templates' },
+      { title: 'Certificate Templates', href: '/docs/certificate-templates' },
       { title: 'Creating Certificate Layouts', href: '/docs/certificate-layouts' },
       { title: 'Survey Builder', href: '/docs/survey-builder' },
       { title: 'Class Options', href: '/docs/class-options' },

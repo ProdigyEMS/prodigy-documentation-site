@@ -72,7 +72,7 @@ A layout does nothing until a certificate template points at it. Open the **Clas
 
 {%figure src="/images/certificate-template-layout.png" alt="Certificate template edit page showing the Certificate Layout dropdown" /%}
 
-Two fields directly below the dropdown feed content into the layout. **Class Details Template** builds the label and value block, and **Import default** fills it with the standard set of class type, credit hours, CAPCE number, and category. **Notes** holds the fine print, which is typically the CAPCE accreditation statement. Leaving the class details template empty uses the default.
+Two fields directly below the dropdown feed content into the layout. **Class Details Template** builds the label and value block, and **Import default** fills it with the standard set of class type, credit hours, CAPCE number, and category. **Notes** holds the fine print, which is typically the CAPCE accreditation statement. Leaving the class details template empty uses the default. The rest of the template form, including logos, signatures, and department access, is covered in [Creating Certificate Templates](/docs/certificate-templates).
 
 ## Layout JSON Reference
 
