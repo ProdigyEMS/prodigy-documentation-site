@@ -14,7 +14,7 @@
     "@docsearch/react": "^5.0.0",
     "@headlessui/react": "^2.2.10",
     "@markdoc/markdoc": "0.5.11",
-    "@markdoc/next.js": "0.5.0",
+    "@markdoc/next.js": "0.6.1",
     "@sentry/nextjs": "^10.63.0",
     "@sindresorhus/slugify": "^3.0.0",
     "@tailwindcss/postcss": "^4.3.2",

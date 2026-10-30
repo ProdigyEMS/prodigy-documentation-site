@@ -44,7 +44,10 @@ docs.prodigyems.com has a Route53 health check + CloudWatch alarm (`HealthCheckD
 
 ## Turbopack + Markdoc
 
-Builds run on Turbopack (Next 16 default). `@markdoc/next.js` 0.5.0's own Turbopack support is broken (incomplete loader options, bare-specifier resolution silently producing an empty schema, absolute-path imports), so `next.config.js` wires a hand-written `turbopack.rules` entry through the project-local shim `markdoc-turbopack-loader.js`. **Do not add `--webpack` back**: the webpack config is deliberately stripped from the final Next config, so webpack builds no longer compile `.md` pages. Remove the shim + rules when `@markdoc/next.js` ≥ 0.6.0 ships the upstream fix (markdoc/next.js#70).
+Builds run on Turbopack (Next 16 default). `@markdoc/next.js` 0.6.1 fixed its loader (markdoc/next.js#70: relative schema imports, bare-name fallback to `./name`), so the old project-local shim and hand-written `turbopack.rules` are gone. Its `createTurbopackConfig` still forwards only the plugin options to the loader, and only emits rules when `nextConfig.turbopack` is set, so `next.config.js` keeps `turbopack: {}` and passes `dir`/`pagesDir`/`schemaPath`/`mode` via `withMarkdoc({...})`. **Do not add `--webpack` back**: the webpack config is deliberately stripped from the final Next config, so webpack builds no longer compile `.md` pages.
+
+- All four schema files must exist in `markdoc/`: `config.js`, `tags.js`, `nodes.js`, `functions.js`.
+- A resolve failure in the upstream loader does **not** fail the build: it silently falls back to an empty schema (tags render as nothing) and logs `[Markdoc loader] Failed to resolve`. After any markdoc upgrade, grep the build log for that string.
 
 ## Tailwind v4 gotchas
 
