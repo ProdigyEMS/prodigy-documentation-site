@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/nextjs'
+import { dataCollection } from './sentry-data-collection'
 
 // Idempotent server-side Sentry init, imported from _app so it runs when any
 // page's server bundle loads. Needed because Netlify's Next runtime does not
@@ -16,5 +17,6 @@ if (
   Sentry.init({
     dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
     tracesSampleRate: 0,
+    dataCollection,
   })
 }

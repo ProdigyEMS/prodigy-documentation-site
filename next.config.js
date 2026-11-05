@@ -1,6 +1,6 @@
 const path = require('path')
 const withMarkdoc = require('@markdoc/next.js')
-const { withSentryConfig } = require('@sentry/nextjs')
+const { withSentryConfig } = require('@sentry/nextjs/config')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

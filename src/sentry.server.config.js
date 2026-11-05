@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/nextjs'
+import { dataCollection } from './lib/sentry-data-collection'
 
 // Top-level init runs the moment this module is evaluated (via the static
 // import in instrumentation.js). Netlify's plugin-nextjs does not reliably
@@ -10,5 +11,6 @@ if (process.env.NEXT_RUNTIME === 'nodejs') {
     dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
     // Performance tracing off; error capture is unaffected.
     tracesSampleRate: 0,
+    dataCollection,
   })
 }
