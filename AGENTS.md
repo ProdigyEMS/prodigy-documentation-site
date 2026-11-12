@@ -74,15 +74,23 @@ The same model as the ProdigyEMS application repo (`develop` → `master`):
 
 To release:
 
-1. Open a PR from `develop` to `main`, titled `Release YYYY-MM-DD`, listing what ships.
-2. Get it approved by a person other than its author. `main` requires one approving review with `enforce_admins` on, so nothing lands without it. Check the release's changes on the `develop` branch deploy first.
-3. Fast-forward `main`, which GitHub records as merging the PR:
+1. Check the release's changes on the `develop` branch deploy, then open a PR from `develop` to `main`, titled `Release YYYY-MM-DD`, listing what ships.
+2. Get it approved by a person other than its author. `main` requires one approving review with `enforce_admins` on, so nothing lands without it.
+3. Fast-forward `main` to the commit that was approved, which GitHub records as merging the PR (`<pr>` is the release PR's number):
 
    ```bash
    git fetch origin
-   git merge-base --is-ancestor origin/main origin/develop && git push origin origin/develop:main
+   APPROVED=$(gh api repos/ProdigyEMS/prodigy-documentation-site/pulls/<pr>/reviews \
+     --jq '[.[] | select(.state == "APPROVED")] | last | .commit_id')
+   if [ "$APPROVED" != "$(git rev-parse origin/develop)" ]; then
+     echo "develop has moved since the approval: get the release approved again" >&2
+   elif ! git merge-base --is-ancestor origin/main "$APPROVED"; then
+     echo "main is not an ancestor of develop: stop and find out what reached main" >&2
+   else
+     git push origin "$APPROVED:main"
+   fi
    ```
 
-   Never squash, rebase or merge-commit a release. `main` requires linear history and signed commits, and a fast-forward keeps `develop`'s GitHub-signed squash commits, so `main` and `develop` stay identical. If the ancestor check fails, something reached `main` without going through `develop`: stop and find out what.
+   Never squash, rebase or merge-commit a release. `main` requires linear history and signed commits, and a fast-forward keeps `develop`'s GitHub-signed squash commits, so `main` and `develop` stay identical. If either check fails, nothing is pushed: anything merged to `develop` after the approval needs the release approved again, and a `main` that is not an ancestor means something reached it without going through `develop`.
 
 A fix that has to reach production quickly still goes through `develop` and a release; it is just released sooner.
