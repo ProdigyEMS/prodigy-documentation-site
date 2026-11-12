@@ -1,6 +1,6 @@
 # AGENTS Instructions
 
-Public docs site for docs.prodigyems.com — Next.js **pages router** (JS, not TS), Markdoc content, deployed by Netlify project `prodigydocumentation` from `main`. This file captures the operational gotchas learned in the July 2026 outage postmortem (PRD-2004: sitewide 500s for ~70 hours with every check green).
+Public docs site for docs.prodigyems.com — Next.js **pages router** (JS, not TS), Markdoc content, deployed by Netlify project `prodigydocumentation` from `main`. Work lands on `develop` first and reaches `main` only through a reviewed release (see "Branches and releases"). This file captures the operational gotchas learned in the July 2026 outage postmortem (PRD-2004: sitewide 500s for ~70 hours with every check green).
 
 ## The one lesson that matters
 
@@ -38,6 +38,7 @@ docs.prodigyems.com has a Route53 health check + CloudWatch alarm (`HealthCheckD
 
 ## Dependency updates (Renovate)
 
+- Renovate opens its PRs against `develop` (`baseBranchPatterns` in `renovate.json`). The fleet may approve and merge them there once checks pass; they reach production only with the next release.
 - Renovate PRs get a deploy preview — **check the preview actually serves 200s before merging**, especially for majors. The outage was a merged major (`@docsearch/react` v4) whose packaging bug only manifested at Lambda runtime.
 - `transpilePackages: ['@docsearch/react']` in `next.config.js` works around that packaging bug (ESM syntax in `.js` files without `"type": "module"`). Removing it requires proving the package fixed its packaging.
 - Majors that change build tooling (Tailwind, Next itself) need real migration work — do not merge on a red preview.
@@ -64,6 +65,24 @@ Not every doc should be public. Any page under **`/docs/private/*`** is locked b
 - The edge function declares its own `path` (inline `config`), so there is intentionally no `netlify.toml` for it. `netlify/edge-functions/**` is excluded from eslint (Deno runtime, different globals).
 - Test the lock on the deploy preview: an un-authed GET to `/docs/private/<page>` must return **401**; with the right `Authorization: Basic` header it returns **200**.
 
-## Merging PRs
+## Branches and releases
 
-`main` requires one approving review with `enforce_admins` on, and the PR author cannot self-approve. Solo-maintainer merges require a second reviewer or temporarily lifting `enforce_admins` (restore it immediately).
+The same model as the ProdigyEMS application repo (`develop` → `master`):
+
+- **`develop`** is the default branch and the development environment. Every PR targets it: people, agents, Renovate and Aikido AutoFix. Netlify deploys it as a branch deploy at https://develop--prodigydocumentation.netlify.app. It requires one approving review; the fleet's approval counts for Renovate PRs.
+- **`main`** is production, docs.prodigyems.com. It changes only through a release, and nothing is committed or merged to it directly.
+
+To release:
+
+1. Open a PR from `develop` to `main`, titled `Release YYYY-MM-DD`, listing what ships.
+2. Get it approved by a person other than its author. `main` requires one approving review with `enforce_admins` on, so nothing lands without it. Check the release's changes on the `develop` branch deploy first.
+3. Fast-forward `main`, which GitHub records as merging the PR:
+
+   ```bash
+   git fetch origin
+   git merge-base --is-ancestor origin/main origin/develop && git push origin origin/develop:main
+   ```
+
+   Never squash, rebase or merge-commit a release. `main` requires linear history and signed commits, and a fast-forward keeps `develop`'s GitHub-signed squash commits, so `main` and `develop` stay identical. If the ancestor check fails, something reached `main` without going through `develop`: stop and find out what.
+
+A fix that has to reach production quickly still goes through `develop` and a release; it is just released sooner.
