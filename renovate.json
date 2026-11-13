@@ -3,5 +3,6 @@
   "extends": ["config:recommended"],
   "timezone": "America/New_York",
   "schedule": ["after 8am and before 12pm every weekday"],
-  "prConcurrentLimit": 5
+  "prConcurrentLimit": 5,
+  "baseBranchPatterns": ["develop"]
 }
