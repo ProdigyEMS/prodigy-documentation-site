@@ -13,7 +13,7 @@ Training Officers and Admins can create and change requirements. In a department
 
 Open **Pulse > Requirements** and click **New requirement**.
 
-{% figure src="/images/pulse/requirements-list.png" alt="The Requirements page listing each requirement with its kind, who it applies to, owner and assignment counts" /%}
+{% figure src="/images/pulse/requirements-list.png" alt="The Requirements page listing each requirement with who it applies to, its owner, its rule, its compliance percentage and its gaps" /%}
 
 There are seven steps in the organization view: **Kind**, **Details**, **Who**, **Program**, **Owner**, **Timing** and **Review**. The department view has six, because it has no Program step. Nothing is created until you confirm on the last step, and a later step opens only when the ones before it are complete.
 

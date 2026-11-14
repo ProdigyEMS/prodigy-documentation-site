@@ -39,7 +39,7 @@ The start date is not used for the grace period on new requirements. That counts
 
 They are hidden unless you turn on **Include people no longer active** on the Roster or the Matrix. Their rows are gray, with a line under the name such as "No longer active", the date and the reason.
 
-{% figure src="/images/pulse/roster-no-longer-active.png" alt="The Roster with Include people no longer active on, showing gray rows with the last day under each name" /%}
+{% figure src="/images/pulse/roster-no-longer-active.png" alt="The Roster with Include people no longer active on, and the line that counts people no longer active and current providers" /%}
 
 - The status reads as it stood on the last day.
 - The row can be viewed and nothing else. It cannot be reminded, signed off or snoozed.

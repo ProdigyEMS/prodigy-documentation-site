@@ -39,11 +39,11 @@ A provider with no start date has no lower limit, so Pulse counts every past ses
 
 ## Add sessions
 
-1. On the series row, click **Manage**.
+1. On the series row, open **Actions** and choose **Manage**. A panel opens below the list.
 2. Under **Member classes**, click **Add class** and pick the class for that session.
 3. Repeat for each session as it is scheduled.
 
-{% figure src="/images/pulse/series-manage.png" alt="The Manage continuous series dialog with the member classes list" /%}
+{% figure src="/images/pulse/series-manage.png" alt="The Manage continuous series panel with the series settings and its member classes" /%}
 
 Only your organization's own classes can join a series, and a class can belong to one series only. Removing a class from the series, or deleting the series, leaves the class in your catalog.
 
@@ -61,6 +61,6 @@ The department view lists organization-wide series as well as its own, and can c
 
 - A series requirement has no sign-off. Attendance is the only way to meet a session.
 - A series requirement cannot be snoozed.
-- The class builder has no field for choosing a series. Add each session from the **Manage** dialog.
+- The class builder has no field for choosing a series. Add each session from the **Manage** panel.
 - Deleting a series is not blocked when a requirement uses it. Delete the requirement first.
 - Remove a series' classes before you delete it. A class that was in a deleted series cannot join another series.

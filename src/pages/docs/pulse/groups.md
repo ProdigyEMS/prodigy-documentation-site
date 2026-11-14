@@ -50,7 +50,7 @@ A membership rule names a certification type, a level, or both. Pulse then sugge
 2. Choose a **Certification type**, a **Level**, or both.
 3. Click **Save rule**.
 
-{% figure src="/images/pulse/group-rule.png" alt="A group's Membership rule section with the certification type and level pickers and the list of suggested members" /%}
+{% figure src="/images/pulse/group-rule.png" alt="A group's Membership rule section with the certification type picker, Save rule and the Suggested members list" /%}
 
 Suggested people appear under **Suggested members**.
 
