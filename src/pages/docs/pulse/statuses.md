@@ -85,6 +85,8 @@ An assignment that a requirement created is not listed a second time. The requir
 | Not reviewed yet | Pending review |
 | Cleared by an Admin | No row |
 
+Screening rows are shown to organization Admins only.
+
 ## The warning window
 
 Due soon follows each requirement's own **Warn before due** setting, which starts at 30 days. Assignments use a fixed 30 days. For this reason the Overview card **Expiring within 90 days** counts by days, not by the Due soon status.

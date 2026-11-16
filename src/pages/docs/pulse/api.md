@@ -158,7 +158,7 @@ Every error has the shape `{"message": "...", "meta": ...}`. `meta` is `null`, e
 | 400 | `email` is missing or is not an email address |
 | 401 | The token header is missing, or the token is unknown, revoked or expired |
 | 403 | The token does not have the `compliance:read` scope. The message says so. |
-| 403 | Pulse is not turned on for the organization: "The compliance dashboard is not enabled for this organization." |
+| 403 | Pulse is not turned on for the organization: "Pulse is not enabled for this organization." |
 | 404 | No active member of your organization has that email: "User not found or not in organization." |
 | 429 | Too many requests. Wait and try again. |
 

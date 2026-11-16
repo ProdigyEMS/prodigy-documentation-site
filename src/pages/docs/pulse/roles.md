@@ -48,7 +48,7 @@ A department Training Officer can still own a requirement, be assigned a follow-
 
 ## Screening
 
-Only an organization Admin, in the organization view, can open the Screening page, run a screening, review a match or export the evidence. Training Officers receive the number of pending matches in the weekly digest and the monthly report, and see **Pending review** or **Excluded** against a provider on the Roster.
+Only an organization Admin, in the organization view, can open the Screening page, run a screening, review a match or export the evidence. Training Officers see no match and no count of matches. The Roster and its exports leave screening rows out for them, and the weekly digest and the monthly report give the number of pending matches only to recipients who are organization Admins.
 
 ## Providers
 

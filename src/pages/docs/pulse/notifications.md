@@ -41,7 +41,7 @@ Only Training Officers and Admins in that scope can be recipients. Someone who l
 - Missing required certifications
 - Classes that are overdue or due soon
 - Sign-offs needed or coming due
-- The number of exclusion matches waiting for review
+- The number of exclusion matches waiting for review, for recipients who are organization Admins
 
 Snoozed items are left out. If there is nothing to report, no digest is sent that week.
 

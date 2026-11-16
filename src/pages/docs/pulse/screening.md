@@ -62,8 +62,9 @@ A decision can be reversed. Open the match again, write a new note, and choose t
 
 - The Pulse sidebar item and the Screening sub-item carry the count of matches waiting, for Admins.
 - The Overview's attention list shows **screening matches awaiting review** to Admins.
-- The weekly digest and the monthly report include the number of pending matches. They are sent to Training Officers as well as Admins.
-- A provider with a pending or confirmed match shows **Pending review** or **Excluded** on the Roster, in a row named **OIG exclusion list**. Training Officers who can read the Roster see that status too. The OIG record and the decision stay on the Screening page. Screening does not appear on the Matrix.
+- The weekly digest and the monthly report give the number of pending matches to recipients who are organization Admins. Other recipients get the same email without that number.
+- A provider with a pending or confirmed match shows **Pending review** or **Excluded** on the Roster, in a row named **OIG exclusion list**. Only organization Admins get that row, on screen and in the Roster's exports. The OIG record and the decision stay on the Screening page. Screening does not appear on the Matrix.
+- Training Officers see no match and no count of matches anywhere in Pulse.
 - Providers are never told about a match by Pulse. Screening is left out of reminders and out of each provider's own list.
 
 ## Export the evidence

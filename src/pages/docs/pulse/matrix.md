@@ -12,7 +12,7 @@ description: See every provider against every requirement in one grid, act on a 
 {% figure src="/images/pulse/matrix.png" alt="The Matrix with providers down the side, requirements across the top, and a colored cell for each status" /%}
 
 - Each column header shows the requirement's compliance percentage and its number of gaps.
-- The last column, **Overall**, is each provider's most severe status across requirements. Exclusion screening is not part of the Matrix. A pending or confirmed match shows on the Roster.
+- The last column, **Overall**, is each provider's most severe status across requirements. Exclusion screening is not part of the Matrix. A pending or confirmed match shows on the Roster, to organization Admins.
 - A cell shows the status by color. A late item reads as days late, an upcoming one as days left, and a continuous series as attended of owed, such as 9/12.
 - **Doesn't apply** marks a requirement that does not apply to that provider.
 

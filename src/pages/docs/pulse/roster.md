@@ -14,7 +14,7 @@ description: Use the Pulse Roster to filter providers by status, send reminders,
 | Column | Shows |
 | --- | --- |
 | Provider | The provider's name. Hover for their email. |
-| Requirement | The item's name, with its kind, how a certification was verified, and the owner underneath. Screening rows read **OIG exclusion list**. |
+| Requirement | The item's name, with its kind, how a certification was verified, and the owner underneath. Screening rows read **OIG exclusion list** and are shown to organization Admins only. |
 | Status | The [status](/docs/pulse/statuses). Click it to preview the certificate when one is stored. |
 | Last satisfied | The date it was last met |
 | Due / Expires | The due or expiration date, in red when overdue. Hover for the number of days overdue. |
@@ -26,7 +26,7 @@ The table shows 10 rows a page and sorts by **Provider**, **Status** (most sever
 ## Find rows
 
 - **Search providers** matches part of a name.
-- **Status**, **Type** and **Requirement** each take several values. **Type** lists Certification, Class, Continuous series, Administrative, Skill, Screening and Assignment.
+- **Status**, **Type** and **Requirement** each take several values. **Type** lists Certification, Class, Continuous series, Administrative, Skill, Screening and Assignment. The Screening type and the Excluded status are offered to organization Admins only.
 - **Department** is available in the organization view.
 - **Issues only** hides Compliant rows. Picking a status turns it off, and turning it on clears the status filter.
 - **Include people no longer active** adds gray rows for people who left. See [Employment Dates and People Who Left](/docs/pulse/employment-dates).
