@@ -30,8 +30,6 @@ The schedules are fixed. Pulse sends no email about exclusion screening to provi
 6. Add recipients.
 7. Click **Save**.
 
-{% figure src="/images/pulse/notifications.png" alt="The Notifications page with the Weekly Pulse digest card and the Monthly Pulse report card" /%}
-
 Only Training Officers and Admins in that scope can be recipients. Someone who loses that role stops receiving it. A digest that is on with no recipients is not sent.
 
 ### What the digest contains

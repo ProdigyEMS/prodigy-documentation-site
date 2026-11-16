@@ -9,8 +9,6 @@ description: See every provider against every requirement in one grid, act on a 
 
 ## Read the grid
 
-{% figure src="/images/pulse/matrix.png" alt="The Matrix with providers down the side, requirements across the top, and a colored cell for each status" /%}
-
 - Each column header shows the requirement's compliance percentage and its number of gaps.
 - The last column, **Overall**, is each provider's most severe status across requirements. Exclusion screening is not part of the Matrix. A pending or confirmed match shows on the Roster, to organization Admins.
 - A cell shows the status by color. A late item reads as days late, an upcoming one as days left, and a continuous series as attended of owed, such as 9/12.
@@ -30,8 +28,6 @@ Assignments are not columns on the Matrix. They appear on the Roster only.
 ## Act on a column
 
 Open the menu in a column's header.
-
-{% figure src="/images/pulse/matrix-column-menu.png" alt="A Matrix column menu with Assign training to providers with gaps and Send reminder to providers with gaps" /%}
 
 - **Assign training to providers with gaps** is offered on Class columns. It opens the assignment form with the class and those providers filled in.
 - **Send reminder to providers with gaps** emails each provider with a gap in that column. The same rules apply as for [Roster reminders](/docs/pulse/roster#send-reminders).

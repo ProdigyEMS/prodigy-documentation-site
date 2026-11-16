@@ -17,8 +17,6 @@ The back link returns you where you came from, with the same filters, page and s
 
 Screening rows, assignment rows and rows for people no longer active have no gap page.
 
-{% figure src="/images/pulse/gap-page.png" alt="A gap page with the provider and requirement in the title, the reason, the fix buttons, the follow-up picker and the comments" /%}
-
 ## Why it has this status
 
 Under the title, Pulse states the reason in up to three sentences: where the provider stands, what is on record, and the rule. For example: "Expired 12 days ago, on October 30, 2026." or "Never signed off. Due every 12 months."
@@ -50,8 +48,6 @@ A sign-off is a training officer's record that the provider met the requirement 
 3. Optionally add a **Note** and attach a file: a copy of the record, the skill sheet, or other evidence. JPEG, PNG and PDF are accepted.
 4. Click **Sign off**, or **Record attestation** for a Class.
 
-{% figure src="/images/pulse/sign-off-dialog.png" alt="The Sign off dialog with the date, note and optional attachment" /%}
-
 The sign-off is saved under your name on the provider's record.
 
 **Who can sign off.** You need a Training Officer or Admin role at the organization level. If the requirement says **Only specific people**, you must be one of them. A role on a department alone is not enough, in either view.
@@ -68,8 +64,6 @@ Snoozing sets an item aside until a date. Use it when the gap is known and being
 2. Choose **Snooze until**. The earliest date is tomorrow.
 3. Optionally give a **Reason**.
 4. Click **Snooze**.
-
-{% figure src="/images/pulse/snooze-dialog.png" alt="The Snooze dialog with the snooze until date and reason" /%}
 
 While snoozed, the item:
 

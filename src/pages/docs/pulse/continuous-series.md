@@ -35,15 +35,11 @@ A provider with no start date has no lower limit, so Pulse counts every past ses
 4. Set **Days to complete**. It starts at 90.
 5. Click **Create series**.
 
-{% figure src="/images/pulse/series-list.png" alt="The Continuous series page listing each series with its sessions and days to complete" /%}
-
 ## Add sessions
 
 1. On the series row, open **Actions** and choose **Manage**. A panel opens below the list.
 2. Under **Member classes**, click **Add class** and pick the class for that session.
 3. Repeat for each session as it is scheduled.
-
-{% figure src="/images/pulse/series-manage.png" alt="The Manage continuous series panel with the series settings and its member classes" /%}
 
 Only your organization's own classes can join a series, and a class can belong to one series only. Removing a class from the series, or deleting the series, leaves the class in your catalog.
 

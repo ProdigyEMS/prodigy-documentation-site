@@ -11,8 +11,6 @@ A new organization starts with nothing tracked. This page gives an order that wo
 
 **Get Pulse set up** appears above the counts on **Pulse > Overview**. Each step checks your live data, so a step is done when the data says so, not when you tick it.
 
-{% figure src="/images/pulse/setup-checklist.png" alt="The Get Pulse set up checklist on the Overview page with its progress line" /%}
-
 | Step | Done when | Its button opens |
 | --- | --- | --- |
 | Create your first requirement | At least one active requirement exists | The new requirement steps |

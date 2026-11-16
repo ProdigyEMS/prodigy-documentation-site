@@ -13,8 +13,6 @@ Training Officers and Admins can create and change requirements. In a department
 
 Open **Pulse > Requirements** and click **New requirement**.
 
-{% figure src="/images/pulse/requirements-list.png" alt="The Requirements page listing each requirement with who it applies to, its owner, its rule, its compliance percentage and its gaps" /%}
-
 There are seven steps in the organization view: **Kind**, **Details**, **Who**, **Program**, **Owner**, **Timing** and **Review**. The department view has six, because it has no Program step. Nothing is created until you confirm on the last step, and a later step opens only when the ones before it are complete.
 
 ### 1. Kind
@@ -24,8 +22,6 @@ Pick one of the five kinds. The kind cannot be changed later. See [Requirement K
 ### 2. Details
 
 The fields depend on the kind. Every kind has a **Name** of up to 200 characters. Providers see this name in their own list and in assignments, so use the words they already use.
-
-{% figure src="/images/pulse/wizard-details.png" alt="The Details step for a Class requirement, with the class, how often, and how it gets marked done" /%}
 
 For a Class, **Next** stays disabled until something can mark it done: a linked class, a sign-off, or an outside completion.
 
@@ -37,8 +33,6 @@ Choose who it applies to.
 - **Only certain groups or people.** Search for groups or people, or paste email addresses separated by commas, spaces or new lines. Someone included by any row is in, and someone in two rows counts once.
 
 In the organization view, a **Department** picker on this step sets the requirement's scope: **Whole organization** or one department. The scope cannot be changed after the requirement is created.
-
-{% figure src="/images/pulse/wizard-who.png" alt="The Who step with groups and people listed in the Included table and the live provider count below" /%}
 
 A count under the step shows how many providers the requirement would apply to and how many would need it today.
 
@@ -59,8 +53,6 @@ For Class, Administrative and Skill requirements you also choose **Who can sign 
 - **Any training officer or admin** is the default.
 - **Only specific people** limits sign-off to the people you add. Use it when one person is accountable, such as a fit-test administrator.
 
-{% figure src="/images/pulse/wizard-owner.png" alt="The Owner step with the owner picker and the two sign-off choices" /%}
-
 Signing off needs a Training Officer or Admin role at the organization level, under either choice. A person whose role is on a department only can be an owner, but cannot sign off and cannot be listed under **Only specific people**.
 
 ### 6. Timing
@@ -73,8 +65,6 @@ Signing off needs a Training Officer or Admin role at the organization level, un
 ### 7. Review
 
 The review states what happens when you create it: how many providers need it today, how many start Compliant, how many assignments open, how many providers are emailed, and what the owner will see.
-
-{% figure src="/images/pulse/wizard-review.png" alt="The Review step listing how many providers need the requirement today, the assignments that will open and the emails that will be sent" /%}
 
 The button reads **Create requirement**, or **Create and assign N providers** when it will create assignments. Everything except the kind, the series and the department scope can be changed later.
 
@@ -105,8 +95,6 @@ Automatic assignments never assign a training plan, and a Certification requirem
 
 Click a requirement's name to open its page. It shows the rule, who it applies to, the owner, its programs, a count for each status, and a table of the people it applies to. From the table you can send reminders and open any provider's gap, as on the [Roster](/docs/pulse/roster).
 
-{% figure src="/images/pulse/requirement-page.png" alt="A requirement's page with its rule, status counts and the table of people it applies to" /%}
-
 ## Edit a requirement
 
 Use **Edit** on the requirement's page or in its row menu. Editing opens on the Details step and ends on **Review changes**, which lists each setting before and after, how many providers change status, and what happens to assignments.
@@ -123,8 +111,6 @@ In the row menu on the Requirements page, choose **Deactivate**. The row shows *
 ## Delete a requirement
 
 Choose **Delete** in the row menu or on the requirement's page. The dialog states what will happen before you confirm.
-
-{% figure src="/images/pulse/requirement-delete.png" alt="The delete dialog listing the assignments that will be withdrawn, kept and unlinked" /%}
 
 - Open assignments the requirement created, and that nobody has started, are withdrawn. No email is sent.
 - Assignments that are in progress or completed are kept.

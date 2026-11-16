@@ -18,8 +18,6 @@ Programs are created and changed in the organization view. The department view s
 3. Optionally add a **Description** and choose who it is **Run by**. That person must be a Training Officer or Admin at the organization level.
 4. Click **Create program**.
 
-{% figure src="/images/pulse/programs-list.png" alt="The Programs page with one row per program showing requirements, providers, fully compliant and with a gap" /%}
-
 You can also create a program on the Program step while creating a requirement.
 
 ## Add requirements to a program
@@ -28,8 +26,6 @@ You can also create a program on the Program step while creating a requirement.
 2. Click **Add requirements**, tick the requirements, and confirm.
 
 To take one out, use **Remove** on its row. The requirement itself, its owner and the people it applies to stay the same.
-
-{% figure src="/images/pulse/program-page.png" alt="A program's page with its counts, the Matrix view and Audit Ready Export buttons, and its requirements table" /%}
 
 ## Read a program
 

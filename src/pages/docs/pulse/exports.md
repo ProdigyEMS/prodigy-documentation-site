@@ -23,8 +23,6 @@ Training Officers and Admins can run it. It covers the scope of the view you are
 3. Leave **Include people no longer active** on to include the people who left during the period.
 4. Check the preview, then click **Download CSV**.
 
-{% figure src="/images/pulse/audit-ready-export.png" alt="The Audit Ready Export dialog with the period dates, the people no longer active option and a preview of the first rows" /%}
-
 ### How dates are applied
 
 - Each current provider is judged as of the **To** date, using only records dated on or before it.

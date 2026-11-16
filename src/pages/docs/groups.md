@@ -24,7 +24,6 @@ Groups can be managed in two places. Both work on the same groups.
 
 ## The Groups Tab
 Click **Users** in the sidebar, then the **Groups** tab. In the organization view, choose a department in the **Department** picker to list its groups.
-{%figure src="/images/pulse/groups-list.png" alt="The Groups tab under Users, listing each group with its department and member count" /%}
 
 - **Create a group.** Type a name in **Group name** and click **New group**.
 - **Rename a group.** Click the group's name to open its page, edit the name under **Details** and click **Rename**. A name can be up to 50 characters.

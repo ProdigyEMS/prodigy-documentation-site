@@ -16,8 +16,6 @@ Employment dates are a start date and a termination date kept for Pulse. They ar
 3. Enter a **Start date**, a **Termination date**, or both. Leave a date blank to keep that side open.
 4. Click **Save dates**.
 
-{% figure src="/images/pulse/employment-dates.png" alt="The Employment dates section on a provider's profile with the start date and termination date" /%}
-
 The section says whether the dates came from imported hire and termination dates or were set by hand.
 
 ### What the dates change
@@ -38,8 +36,6 @@ The start date is not used for the grace period on new requirements. That counts
 ## How they are shown
 
 They are hidden unless you turn on **Include people no longer active** on the Roster or the Matrix. Their rows are gray, with a line under the name such as "No longer active", the date and the reason.
-
-{% figure src="/images/pulse/roster-no-longer-active.png" alt="The Roster with Include people no longer active on, and the line that counts people no longer active and current providers" /%}
 
 - The status reads as it stood on the last day.
 - The row can be viewed and nothing else. It cannot be reminded, signed off or snoozed.
