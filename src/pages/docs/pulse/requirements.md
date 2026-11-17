@@ -124,7 +124,7 @@ In the row menu on the Requirements page, choose **Deactivate**. The row shows *
 
 Choose **Delete** in the row menu or on the requirement's page. The dialog states what will happen before you confirm.
 
-{% figure src="/images/pulse/requirement-delete.png" alt="The delete dialog listing the assignments that will be withdrawn, kept and unlinked" /%}
+{% figure src="/images/pulse/requirement-delete.png" alt="The delete dialog for a requirement, saying what leaves the dashboard and what is kept" /%}
 
 - Open assignments the requirement created, and that nobody has started, are withdrawn. No email is sent.
 - Assignments that are in progress or completed are kept.
