@@ -5,6 +5,8 @@ description: The five kinds of Pulse requirement, what each asks you to enter, a
 
 Every requirement has one of five kinds. The kind decides what counts as done, and it cannot be changed after the requirement is created. To use another kind, delete the requirement and create a new one. {% .lead %}
 
+{% figure src="/images/pulse/wizard-kind.png" alt="The Kind step of the new requirement steps, showing the five kinds as cards" /%}
+
 ---
 
 ## The five kinds

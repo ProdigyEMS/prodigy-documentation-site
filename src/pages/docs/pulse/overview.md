@@ -11,6 +11,8 @@ In the organization view the page covers the whole organization. In a department
 
 ## Count cards
 
+{% figure src="/images/pulse/overview-cards.png" alt="The seven count cards on the Overview page, in a row for certifications and a row for classes and records" /%}
+
 A card with a count above zero is tinted. Click any card to open the Roster with that card's filters.
 
 Each card counts Roster rows, one for each provider and requirement. A provider who is missing two required certifications counts twice.
@@ -29,6 +31,8 @@ Snoozed items are left out of every card except **Assignments overdue**, because
 
 ## What needs your attention
 
+{% figure src="/images/pulse/action-queue.png" alt="The What needs your attention list with one row per requirement and its overdue, missing and due soon counts" /%}
+
 This list has one row for each requirement with open gaps. A row shows how many providers are overdue, missing and due soon, the requirement's owner, and how many of its follow-ups are assigned to you. Click a row to open the Roster filtered to that requirement.
 
 The first five requirements are shown. **Show all** lists the rest.
@@ -42,6 +46,8 @@ Under the requirements, the list can also show:
 When nothing is overdue, missing or waiting on you, the list reads **All clear in this scope**.
 
 ## Compliance trend
+
+{% figure src="/images/pulse/trend.png" alt="The Compliance trend chart with lines for expired or suspended, missing required, classes overdue and series overdue" /%}
 
 The chart plots four counts over the last 12 months: **Expired or suspended**, **Missing required**, **Classes overdue** and **Series overdue**.
 

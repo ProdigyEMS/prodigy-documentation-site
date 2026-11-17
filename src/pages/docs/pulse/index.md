@@ -34,6 +34,8 @@ Pulse also reports two things that are not requirements you define:
 
 Pulse is an item in the left sidebar for Training Officers and Admins. It opens two groups of pages.
 
+{% figure src="/images/pulse/pulse-nav.png" alt="The Pulse item in the sidebar, opened to show the Monitor and Configure groups" /%}
+
 | Group | Page | What you do there |
 | --- | --- | --- |
 | Monitor | [Overview](/docs/pulse/overview) | Read the counts and see which requirements have open gaps |
@@ -68,6 +70,8 @@ Providers never open the Pulse pages. Each provider sees their own items in a **
 Pulse is part of the organization license. There is no separate purchase, and Prodigy turns it on for your organization.
 
 Until it is on, the Pulse page shows an **Activation required** panel. Click **Contact Prodigy to activate** to open an email to [support@prodigyems.com](mailto:support@prodigyems.com). There is no setting you can switch yourself.
+
+{% figure src="/images/pulse/activation-required.png" alt="The Activation required panel with the Contact Prodigy to activate button" /%}
 
 Once Pulse is on, start with [Set Up Pulse](/docs/pulse/setup).
 

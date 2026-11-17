@@ -17,6 +17,8 @@ You need three things.
 2. **An access token with the View compliance scope.** An organization Admin creates it under **Settings**, **API Tokens**, by clicking **Generate access token** and ticking **View compliance**. The token is shown once, so copy it then. See [Prodigy API](/docs/api).
 3. **A new token if yours is older.** A token cannot be edited, and tokens created before this scope existed do not have it. Generate a new one.
 
+{% figure src="/images/pulse/api-token-scope.png" alt="The Generate access token form with the View compliance scope ticked" /%}
+
 `compliance:read` stands alone. It does not include any other scope, and no other scope includes it.
 
 ## Requests

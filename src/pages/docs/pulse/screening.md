@@ -23,6 +23,8 @@ Only active members who have not been terminated are screened.
 
 ## The Screening page
 
+{% figure src="/images/pulse/screening.png" alt="The Screening page with the dataset, last run, next scheduled date and match counts above the match table" /%}
+
 The panel at the top shows:
 
 | Item | Shows |
@@ -43,6 +45,8 @@ When a screening has run and nothing matched, the page reads **Nothing flagged. 
 3. If you need to confirm identity, click **Open exclusions.oig.hhs.gov** and search there.
 4. Type a resolution note. Both buttons stay disabled until you do.
 5. Click **Not a match: clear permanently** or **Confirm exclusion**.
+
+{% figure src="/images/pulse/match-review.png" alt="The Match review dialog with the Prodigy member and the OIG LEIE record side by side, the note field and the two decision buttons" /%}
 
 Every decision is recorded with the file version, your name, the date and your note.
 

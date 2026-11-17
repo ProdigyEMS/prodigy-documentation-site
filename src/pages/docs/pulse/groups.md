@@ -15,6 +15,8 @@ The Groups tab is available to every organization. Membership rules and suggesti
 
 Click **Users** in the sidebar, then the **Groups** tab. In the organization view, choose a department in the **Department** picker to list its groups.
 
+{% figure src="/images/pulse/groups-list.png" alt="The Groups tab under Users, listing each group with its department and member count" /%}
+
 A red number next to a group's name is its count of suggested members waiting for a decision.
 
 ## Create a group
@@ -47,6 +49,8 @@ A membership rule names a certification type, a level, or both. Pulse then sugge
 1. Open the group's page and find **Membership rule**.
 2. Choose a **Certification type**, a **Level**, or both.
 3. Click **Save rule**.
+
+{% figure src="/images/pulse/group-rule.png" alt="A group's Membership rule section with the certification type picker, Save rule and the Suggested members list" /%}
 
 Suggested people appear under **Suggested members**.
 

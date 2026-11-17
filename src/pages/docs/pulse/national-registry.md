@@ -15,6 +15,8 @@ Verification confirms a National Registry certification. It does not check a sta
 
 ## The National Registry page
 
+{% figure src="/images/pulse/national-registry.png" alt="The National Registry page listing each provider's NREMT certification with its verification status and last verified date" /%}
+
 The page lists every active NREMT certification held by an active member, with one of three statuses.
 
 | Status | Meaning |
@@ -29,6 +31,8 @@ The page lists every active NREMT certification held by an active member, with o
 
 1. Click **Verify** on the row.
 2. Read the result.
+
+{% figure src="/images/pulse/nremt-verify-dialog.png" alt="The Verification result dialog showing the registry status with the NREMT and Prodigy expiration dates" /%}
 
 | Result | What it means | What to do |
 | --- | --- | --- |

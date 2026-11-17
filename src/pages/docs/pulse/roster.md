@@ -9,6 +9,8 @@ description: Use the Pulse Roster to filter providers by status, send reminders,
 
 ## Read the table
 
+{% figure src="/images/pulse/roster.png" alt="The Roster with status chips above a table of provider, requirement, status, last satisfied and due or expires" /%}
+
 | Column | Shows |
 | --- | --- |
 | Provider | The provider's name. Hover for their email. |
@@ -39,6 +41,8 @@ Click the provider's name or the requirement's name to open the [gap page](/docs
 
 The menu at the end of a row offers only what applies to that row.
 
+{% figure src="/images/pulse/roster-row-actions.png" alt="The row actions menu open on a Roster row" /%}
+
 | Action | Offered when |
 | --- | --- |
 | Sign off / Attest | The item accepts a sign-off and you are allowed to give one. See [Sign off](/docs/pulse/gaps#sign-off). |
@@ -57,6 +61,8 @@ A reminder is an email to a provider listing their own open items.
 1. Tick the checkbox on a row for each provider you want to remind. Any one of their rows will do.
 2. Click **Send reminder**.
 3. Confirm in the **Send gap reminders** dialog.
+
+{% figure src="/images/pulse/roster-reminder.png" alt="The Send gap reminders dialog confirming the number of providers selected" /%}
 
 A line above the table then reports how many were sent and how many were skipped, and why.
 

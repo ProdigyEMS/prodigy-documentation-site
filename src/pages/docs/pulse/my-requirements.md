@@ -11,6 +11,8 @@ You see your own items only. Nobody else's list is visible to you.
 
 ## Read the panel
 
+{% figure src="/images/pulse/my-requirements.png" alt="The My requirements panel on a provider's dashboard, listing each item with its status, due date and the person to ask" /%}
+
 Items are listed with the most urgent first. Each one shows:
 
 - its name;
