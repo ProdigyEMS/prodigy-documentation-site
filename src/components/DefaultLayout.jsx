@@ -35,6 +35,41 @@ const navigation = [
     ],
   },
   {
+    title: 'Pulse',
+    links: [
+      { title: 'What Is Pulse', href: '/docs/pulse' },
+      { title: 'Set Up Pulse', href: '/docs/pulse/setup' },
+      { title: 'Who Can Do What', href: '/docs/pulse/roles' },
+      { title: 'My Requirements (Providers)', href: '/docs/pulse/my-requirements' },
+    ],
+  },
+  {
+    title: 'Pulse: Configure',
+    links: [
+      { title: 'Requirement Kinds', href: '/docs/pulse/requirement-kinds' },
+      { title: 'Create and Change Requirements', href: '/docs/pulse/requirements' },
+      { title: 'Continuous Series', href: '/docs/pulse/continuous-series' },
+      { title: 'Programs', href: '/docs/pulse/programs' },
+      { title: 'Groups and Suggested Members', href: '/docs/pulse/groups' },
+      { title: 'Employment Dates and People Who Left', href: '/docs/pulse/employment-dates' },
+      { title: 'Digest, Report and Reminders', href: '/docs/pulse/notifications' },
+    ],
+  },
+  {
+    title: 'Pulse: Monitor',
+    links: [
+      { title: 'Statuses', href: '/docs/pulse/statuses' },
+      { title: 'Overview', href: '/docs/pulse/overview' },
+      { title: 'Roster', href: '/docs/pulse/roster' },
+      { title: 'Work a Gap', href: '/docs/pulse/gaps' },
+      { title: 'Matrix', href: '/docs/pulse/matrix' },
+      { title: 'National Registry Verification', href: '/docs/pulse/national-registry' },
+      { title: 'OIG Exclusion Screening', href: '/docs/pulse/screening' },
+      { title: 'Exports and Audit Ready Export', href: '/docs/pulse/exports' },
+      { title: 'Pulse in the Public API', href: '/docs/pulse/api' },
+    ],
+  },
+  {
     title: 'Single Sign-On',
     links: [
       { title: 'Google Workspace SAML', href: '/docs/google-workspace-saml-sso' },
