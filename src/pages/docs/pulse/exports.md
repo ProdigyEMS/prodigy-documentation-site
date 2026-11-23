@@ -3,7 +3,7 @@ title: Exports and Audit Ready Export
 description: The four files Pulse can export, and how the Audit Ready Export reports each provider's standing as of a date.
 ---
 
-Pulse exports four CSV files. Three are a copy of what is on screen. The fourth, the Audit Ready Export, reports each provider's standing on each requirement as of the end of a period you choose, with the evidence behind it. {% .lead %}
+Pulse exports four CSV files. The Roster and Matrix exports are a copy of what is on screen. The Screening evidence export lists every active member, whatever the table's filters. The Audit Ready Export reports each provider's standing on each requirement as of the end of a period you choose, with the evidence behind it. {% .lead %}
 
 | Export | From | Contains |
 | --- | --- | --- |

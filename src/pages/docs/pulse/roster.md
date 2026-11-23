@@ -45,7 +45,7 @@ The menu at the end of a row offers only what applies to that row.
 
 | Action | Offered when |
 | --- | --- |
-| Sign off / Attest | The item accepts a sign-off and you are allowed to give one. See [Sign off](/docs/pulse/gaps#sign-off). |
+| Sign off (Administrative, Skill) or Attest (Class) | The item accepts a sign-off and you are allowed to give one. See [Sign off](/docs/pulse/gaps#sign-off). |
 | Verify | An NREMT certification is on file and has not been verified by the National Registry |
 | Snooze | The item can be snoozed and is not snoozed already. See [Snooze](/docs/pulse/gaps#snooze). |
 | Preview certificate | A certificate image or PDF is stored |

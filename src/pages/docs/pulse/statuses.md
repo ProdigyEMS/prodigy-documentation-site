@@ -9,7 +9,7 @@ Every row in Pulse carries one status. The same six statuses are used on the Ove
 
 ## The six statuses
 
-Listed from most to least severe. A provider's overall status is the most severe status among their items.
+Listed from most to least severe. A provider's overall status is the most severe status among their items. The Matrix's **Overall** column leaves out exclusion screening, so it never shows Excluded or Pending review.
 
 | Status | Meaning |
 | --- | --- |
@@ -43,7 +43,7 @@ Listed from most to least severe. A provider's overall status is the most severe
 | Expiration inside the warning window | Due soon |
 | Expiration later than that | Compliant |
 
-An expired certification is Overdue, not Missing. Missing means no active certification of that type at all. A certification that expires today is Due soon until the day ends.
+An expired certification is Overdue, not Missing. Missing means no active certification that matches the requirement's type, and its level and state when they are set. A certification at another level or from another state is Missing too. A certification that expires today is Due soon until the day ends.
 
 ### Class, Administrative and Skill
 

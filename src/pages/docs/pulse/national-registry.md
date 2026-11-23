@@ -3,7 +3,7 @@ title: National Registry Verification
 description: Verify NREMT certifications with the National Registry from Pulse, and understand what verified means.
 ---
 
-Pulse can check an NREMT certification with the National Registry of Emergency Medical Technicians and record the result. A verified certification is one whose expiration date in Prodigy matches the Registry's. {% .lead %}
+Pulse can check an NREMT certification with the National Registry of Emergency Medical Technicians and record the result. A certification is marked verified when the Registry's expiration date matches the one in Prodigy. {% .lead %}
 
 Training Officers and Admins can verify from **Pulse > National Registry**. A provider can verify their own certification.
 

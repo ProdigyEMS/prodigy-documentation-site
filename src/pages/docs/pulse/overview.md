@@ -27,6 +27,8 @@ Each card counts Roster rows, one for each provider and requirement. A provider 
 | Sign-offs needed | Administrative and Skill items that are Missing or Overdue |
 | Assignments overdue | Class and training plan assignments past their due date |
 
+A certification that expired more than 180 days ago is on no card. It still reads Overdue on the Roster, and the [API](/docs/pulse/api) counts it as `expiredOlder`.
+
 Snoozed items are left out of every card except **Assignments overdue**, because an assignment cannot be snoozed.
 
 ## What needs your attention

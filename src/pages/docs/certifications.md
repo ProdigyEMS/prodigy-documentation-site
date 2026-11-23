@@ -20,7 +20,7 @@ The Verification option is a tool designed to help you with reporting. After a u
 An NREMT certification can also be checked with the National Registry of Emergency Medical Technicians. Prodigy looks up the certification number and compares the Registry's expiration date with the one on file. When they match, the certification is marked verified. When they differ, the result shows both dates so the record can be corrected.
 
 - **A provider** can check their own certification. After adding an NREMT certification, Prodigy offers to verify it. Later, the certification's row on its page under Certifications has a **Verify with National Registry** button.
-- **A training officer or Admin** in an organization with Pulse can check any member's certification from **Pulse > National Registry**, which also shows which certifications the Registry has confirmed and which were only ticked as verified by hand.
+- **A training officer or Admin** in an organization with Pulse can check members' certifications from **Pulse > National Registry**: a department training officer for their own department, an organization training officer or Admin for the whole organization. The page also shows which certifications the Registry has confirmed and which were only ticked as verified by hand.
 
 This checks National Registry certifications only. A state license, a CPR card and every other certification type still rely on the Verified tick above. See [National Registry Verification](/docs/pulse/national-registry) for what is sent to the Registry and what each result means.
 ### Export

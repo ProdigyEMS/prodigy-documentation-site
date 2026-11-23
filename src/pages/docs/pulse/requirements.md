@@ -68,7 +68,7 @@ Signing off needs a Training Officer or Admin role at the organization level, un
 - **When it starts** is always today for a new requirement. Anyone who has not met it is due now, except new members inside a grace period.
 - **Warn before due (days)** sets when a provider turns Due soon. It applies to Certification requirements and to repeating Class, Administrative and Skill requirements.
 - **Grace for new members (days)** is optional, for Class, Administrative and Skill. See [what the grace period counts from](/docs/pulse/requirement-kinds#timing-rules-shared-by-class-administrative-and-skill).
-- **Create assignments automatically** appears for Class and Continuous series, and is on for a new requirement.
+- **Create assignments automatically** is available for a Class requirement with a linked class and for a Continuous series, and is on for a new requirement. See [Automatic assignments](#automatic-assignments).
 
 ### 7. Review
 
