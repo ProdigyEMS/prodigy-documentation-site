@@ -19,15 +19,35 @@ Prodigy offers a public API that allows you to use your organization's Prodigy d
 
 ### Generating an API Access Token
 
-Every API request is authenticated with an access token tied to your organization. Admins can generate a token from **Settings** by choosing **API Tokens** under the Integrations section, then clicking **Generate access token**.
+Every API request is authenticated with an access token tied to your organization. Organization Admins can generate a token from **Settings** by choosing **API Tokens** under the Integrations section, then clicking **Generate access token**. Choose the token's [scopes](#token-scopes), then copy the token when it appears. It is shown once.
 
 {%figure src="/images/api-tokens.png" alt="The API Tokens page in Settings showing configured tokens and the Generate access token button" /%}
 
-The **Configured Tokens** list shows every token created for your organization, along with the last few characters of each token, when it was created, and its current status. You can search the list by token name, which is helpful once you have tokens for multiple integrations.
+The **Configured Tokens** list shows every token created for your organization, along with the last few characters of each token, its scopes, when it was created, and its current status. You can search the list by token name, which is helpful once you have tokens for multiple integrations.
 
 {% callout type="warning" title="Keep Tokens Secure" %}
 Each token grants access to your organization's data. Treat tokens like passwords, and revoke any token immediately if it is compromised or no longer needed.
 {% /callout %}
+
+### Token Scopes
+
+A token can call only the endpoints its scopes cover. Tick at least one scope when you generate the token, and give each integration only the scopes it needs. **Select all scopes** and **Select read only** tick them for you.
+
+| Scope | What the integration can do |
+| --- | --- |
+| View users | List members and see their profile details |
+| View transcripts | See each member's transcript of completed classes |
+| View certificates | See members' class-completion certificates |
+| View certifications | See members' licenses and certifications |
+| View training plans | See members' training plans |
+| View classes | List your organization's classes |
+| View assignments | List assignments and their completion records |
+| Manage assignments | Create, update and delete assignments. Viewing them also needs View assignments. |
+| View compliance | See members' Pulse status and your organization's Pulse summary. Works only for organizations with Pulse. See [Pulse in the Public API](/docs/pulse/api). |
+
+No scope includes another. A token with Manage assignments and without View assignments can change assignments and cannot list them.
+
+A token's scopes cannot be changed after it is created. To give an integration a different set, generate a new token, move the integration to it, and revoke the old one. A token created before a scope existed does not have that scope, so an integration that reads Pulse needs a token generated with **View compliance** ticked.
 
 ## Automated User Provisioning
 

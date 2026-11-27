@@ -61,6 +61,8 @@ jobs:
 
           check / 200
           check /docs/user-management 200
+          check /docs/pulse 200
+          check /docs/pulse/requirements 200
           check /docs/sftp-user-sync 200
           check /docs/network-troubleshooting 200
           check /docs/login-help 200
